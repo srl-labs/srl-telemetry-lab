@@ -1,0 +1,121 @@
+username: admin
+password: admin
+port: 57400
+timeout: 10s
+skip-verify: true
+encoding: json_ietf
+
+targets:
+  clab-telemetry01-leaf1:
+  clab-telemetry01-leaf2:
+  clab-telemetry01-leaf3:
+  clab-telemetry01-spine1:
+  clab-telemetry01-spine2:
+
+subscriptions:
+  srl_if_stats:
+    paths:
+      - /interface[name=ethernet-1/*]/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  srl_cpu:
+    paths:
+      - /platform/control[slot=*]/cpu[index=all]/
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  srl_mem:
+    paths:
+      - /platform/control[slot=*]/memory
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
+  srl_bgp_stats:
+    paths:
+      - /network-instance[name=*]/protocols/bgp/statistics
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    # stream-mode: on-change
+
+  srl_ipv4_routes:
+    paths:
+      - /network-instance[name=*]/route-table/ipv4-unicast/statistics/
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    # stream-mode: on-change
+
+  srl_ipv6_routes:
+    paths:
+      - /network-instance[name=*]/route-table/ipv6-unicast/statistics/
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    # stream-mode: on-change
+
+outputs:
+  prom:
+    type: prometheus
+    listen: :9273
+    path: /metrics
+    metric-prefix: gnmic
+    append-subscription-name: true
+    expiration: 15s # maximum lifetime of metrics in the local cache
+    debug: false
+    event-processors:
+      - proc-convert-strings-to-int
+      - trim-prefixes
+  # stdout:
+  #   type: file
+  #   file-type: stdout
+  #   event-processors:
+  #     - proc-convert-strings-to-int
+  #     - trim-prefixes
+
+processors:
+  # convert string values to integers
+  proc-convert-strings-to-int:
+    event-convert:
+      value-names:
+        - ".*routes$"
+        - ".*memory$"
+        - ".*paths$"
+        - ".*prefixes$"
+        - ".*packets$"
+        - ".*octets$"
+        - "carrier-transitions"
+        - "free"
+        - "physical"
+        - "reserved"
+      type: int
+
+  trim-prefixes:
+    event-strings:
+      value-names:
+        - ".*"
+      transforms:
+        # - path-base:
+        #     apply-on: "name"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-interfaces:interface/statistics/"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-cpu:cpu/"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-memory:memory/"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-network-instance:network-instance/protocols/srl_nokia-bgp:bgp/statistics/"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv4-unicast/statistics/"
+        - trim-prefix:
+            apply-on: "name"
+            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv6-unicast/statistics/"

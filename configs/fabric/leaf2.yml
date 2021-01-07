@@ -1,0 +1,110 @@
+---
+#################################
+####       INTERFACES        ####
+#################################
+srl_nokia-interfaces:interface:
+  - name: ethernet-1/1
+    admin-state: enable
+    subinterface:
+      - index: 0
+        admin-state: enable
+        ipv6:
+          address:
+            - ip-prefix: 2002::192:168:21:0/127
+  - name: ethernet-1/2
+    admin-state: enable
+    subinterface:
+      - index: 0
+        admin-state: enable
+        ipv6:
+          address:
+            - ip-prefix: 2002::192:168:22:0/127
+  - name: ethernet-1/36
+    admin-state: enable
+    subinterface:
+      - index: 0
+        admin-state: enable
+        ipv4:
+          address:
+            - ip-prefix: 172.17.22.1/24
+        ipv6:
+          address:
+            - ip-prefix: 2002::172:17:22:1/112
+  - name: lo0
+    admin-state: enable
+    subinterface:
+      - index: 0
+        admin-state: enable
+        ipv4:
+          address:
+            - ip-prefix: 10.0.1.2/32
+        ipv6:
+          address:
+            - ip-prefix: 2002::10:0:1:2/128
+
+#################################
+####    NETWORK INSTANCE     ####
+#################################
+srl_nokia-network-instance:network-instance:
+  - name: default
+    interface:
+      - name: ethernet-1/1.0
+      - name: ethernet-1/2.0
+      - name: ethernet-1/36.0
+      - name: lo0.0
+    protocols:
+      srl_nokia-bgp:bgp:
+        admin-state: enable
+        autonomous-system: 102
+        router-id: 10.0.1.2
+        ebgp-default-policy:
+          import-reject-all: false
+          export-reject-all: false
+        group:
+          - group-name: eBGPv6
+            export-policy: export-local
+            ipv4-unicast:
+              admin-state: enable
+              advertise-ipv6-next-hops: true
+              receive-ipv6-next-hops: true
+            ipv6-unicast:
+              admin-state: enable
+        ipv4-unicast:
+          multipath:
+            allow-multiple-as: true
+            max-paths-level-1: 64
+            max-paths-level-2: 64
+        ipv6-unicast:
+          multipath:
+            allow-multiple-as: true
+            max-paths-level-1: 64
+            max-paths-level-2: 64
+        neighbor:
+          - peer-address: 2002::192:168:21:1
+            admin-state: enable
+            peer-as: 201
+            peer-group: eBGPv6
+          - peer-address: 2002::192:168:22:1
+            admin-state: enable
+            peer-as: 202
+            peer-group: eBGPv6
+
+#################################
+####     ROUTING POLICY      ####
+#################################
+srl_nokia-routing-policy:routing-policy:
+  prefix-set:
+    - name: local
+      prefix:
+        - ip-prefix: 172.17.22.0/24
+          mask-length-range: 24..32
+        - ip-prefix: 2002::172:17:22:0/112
+          mask-length-range: 112..128
+  policy:
+    - name: export-local
+      statement:
+        - sequence-id: 10
+          match:
+            prefix-set: local
+          action:
+            accept: {}

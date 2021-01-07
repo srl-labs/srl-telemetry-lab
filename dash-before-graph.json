@@ -1,0 +1,1088 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 2,
+    "id": 1,
+    "iteration": 1609962345844,
+    "links": [],
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/1",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 4,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/2",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 8,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/36",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "editedFlag": false,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "flowchartsData": {
+                "allowDrawio": true,
+                "editorTheme": "kennedy",
+                "editorUrl": "https://embed.diagrams.net/",
+                "flowcharts": [
+                    {
+                        "bgColor": "#4d5766",
+                        "center": true,
+                        "csv": "## See more information for the syntax at https://drawio-app.com/import-from-csv-to-drawio/\n##\n## Example CSV. Use ## for comments and # for configuration.\n## The following names are reserved and should not be used (or ignored):\n## id, tooltip, placeholder(s), link and label (see below)\n##\n#\n## Node label with placeholders and HTML.\n## Default is '%name_of_first_column%'.\n#\n# label: %name%<br><i style=\"color:gray;\">%position%</i><br><a href=\"mailto:%email%\">Email</a>\n#\n## Node style (placeholders are replaced once).\n## Default is the current style for nodes.\n#\n# style: label;image=%image%;whiteSpace=wrap;html=1;rounded=1;fillColor=%fill%;strokeColor=%stroke%;\n#\n## Parent style for nodes with child nodes (placeholders are replaced once).\n#\n# parentstyle: swimlane;whiteSpace=wrap;html=1;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;\n#\n## Optional column name that contains a reference to a named style in styles.\n## Default is the current style for nodes.\n#\n# stylename: -\n#\n## JSON for named styles of the form {\"name\": \"style\", \"name\": \"style\"} where style is a cell style with\n## placeholders that are replaced once.\n#\n# styles: -\n#\n## Optional column name that contains a reference to a named label in labels.\n## Default is the current label.\n#\n# labelname: -\n#\n## JSON for named labels of the form {\"name\": \"label\", \"name\": \"label\"} where label is a cell label with\n## placeholders.\n#\n# labels: -\n#\n## Uses the given column name as the identity for cells (updates existing cells).\n## Default is no identity (empty value or -).\n#\n# identity: -\n#\n## Uses the given column name as the parent reference for cells. Default is no parent (empty or -).\n## The identity above is used for resolving the reference so it must be specified.\n#\n# parent: -\n#\n## Adds a prefix to the identity of cells to make sure they do not collide with existing cells (whose\n## IDs are numbers from 0..n, sometimes with a GUID prefix in the context of realtime collaboration).\n## Default is csvimport-.\n#\n# namespace: csvimport-\n#\n## Connections between rows (\"from\": source colum, \"to\": target column).\n## Label, style and invert are optional. Defaults are '', current style and false.\n## If placeholders are used in the style, they are replaced with data from the source.\n## An optional placeholders can be set to target to use data from the target instead.\n## In addition to label, an optional fromlabel and tolabel can be used to name the column\n## that contains the text for the label in the edges source or target (invert ignored).\n## The label is concatenated in the form fromlabel + label + tolabel if all are defined.\n## The target column may contain a comma-separated list of values.\n## Multiple connect entries are allowed.\n#\n# connect: {\"from\": \"manager\", \"to\": \"name\", \"invert\": true, \"label\": \"manages\", \\\n#          \"style\": \"curved=1;endArrow=blockThin;endFill=1;fontSize=11;\"}\n# connect: {\"from\": \"refs\", \"to\": \"id\", \"style\": \"curved=1;fontSize=11;\"}\n#\n## Node x-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# left: \n#\n## Node y-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# top: \n#\n## Node width. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the width. Default is auto.\n#\n# width: auto\n#\n## Node height. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the height. Default is auto.\n#\n# height: auto\n#\n## Padding for autosize. Default is 0.\n#\n# padding: -12\n#\n## Comma-separated list of ignored columns for metadata. (These can be\n## used for connections and styles but will not be added as metadata.)\n#\n# ignore: id,image,fill,stroke,refs,manager\n#\n## Column to be renamed to link attribute (used as link).\n#\n# link: url\n#\n## Spacing between nodes. Default is 40.\n#\n# nodespacing: 40\n#\n## Spacing between levels of hierarchical layouts. Default is 100.\n#\n# levelspacing: 100\n#\n## Spacing between parallel edges. Default is 40. Use 0 to disable.\n#\n# edgespacing: 40\n#\n## Name or JSON of layout. Possible values are auto, none, verticaltree, horizontaltree,\n## verticalflow, horizontalflow, organic, circle or a JSON string as used in Layout, Apply.\n## Default is auto.\n#\n# layout: auto\n#\n## ---- CSV below this line. First line are column names. ----\nname,position,id,location,manager,email,fill,stroke,refs,url,image\nEvan Miller,CFO,emi,Office 1,,me@example.com,#dae8fc,#6c8ebf,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-9-2-128.png\nEdward Morrison,Brand Manager,emo,Office 2,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-10-3-128.png\nRon Donovan,System Admin,rdo,Office 3,Evan Miller,me@example.com,#d5e8d4,#82b366,\"emo,tva\",https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-2-128.png\nTessa Valet,HR Director,tva,Office 4,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-3-128.png\n",
+                        "download": false,
+                        "enableAnim": true,
+                        "grid": false,
+                        "lock": true,
+                        "name": "Main",
+                        "scale": true,
+                        "tooltip": true,
+                        "type": "xml",
+                        "url": "http://<YourUrl>/<Your XML/drawio file/api>",
+                        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<mxfile host=\"app.diagrams.net\" modified=\"2021-01-06T16:46:40.075Z\" agent=\"5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36\" etag=\"HBRHFSgm0StiGrs0O8pq\" version=\"14.0.5\" type=\"github\"><diagram id=\"KJtYdw0eZzOHVuxyC3Ms\" name=\"Page-4\">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</diagram></mxfile>",
+                        "zoom": "100%"
+                    }
+                ]
+            },
+            "format": "short",
+            "graphId": "flowchart_16",
+            "gridPos": {
+                "h": 20,
+                "w": 12,
+                "x": 12,
+                "y": 0
+            },
+            "id": 16,
+            "newFlag": false,
+            "pluginVersion": "7.3.5",
+            "rulesData": {
+                "rulesData": [
+                    {
+                        "aggregation": "current",
+                        "alias": "myRule",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 50
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 80
+                            }
+                        ],
+                        "order": 1,
+                        "overlayIcon": false,
+                        "pattern": ".*",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    }
+                ]
+            },
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Link Bandwidth",
+            "type": "agenty-flowcharting-panel",
+            "valueName": "current",
+            "version": "1.0.0b"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 6,
+                "x": 0,
+                "y": 11
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "alignAsTable": false,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "gnmic_srl_cpu_total_instant{source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Instant",
+                    "refId": "A"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 6,
+            "gridPos": {
+                "h": 9,
+                "w": 6,
+                "x": 6,
+                "y": 11
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "gnmic_srl_mem_free{source=\"$NE\"}",
+                    "interval": "",
+                    "legendFormat": "free",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_mem_physical{source=\"$NE\"}",
+                    "interval": "",
+                    "legendFormat": "physical",
+                    "refId": "C"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "decbytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "blue",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 20
+            },
+            "id": 8,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Routes",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active ECMP Routes",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "IPv4 Routing Stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "green",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 6,
+                "y": 20
+            },
+            "id": 10,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_bgp_stats_up_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Up Peers",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Peers",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_disabled_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Disabled Peers",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "BGP Peer stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "blue",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 25
+            },
+            "id": 9,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_ipv6_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_ipv6_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Routes",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_ipv6_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active ECMP Routes",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "IPv6 Routing Stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "yellow",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 6,
+                "y": 25
+            },
+            "id": 11,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_received_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Received Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Active Routes",
+                    "refId": "B"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "BGP Route Stats",
+            "type": "bargauge"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "clab-telemetry01-leaf1:57400",
+                    "value": "clab-telemetry01-leaf1:57400"
+                },
+                "datasource": "Prometheus",
+                "definition": "label_values(source)",
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "",
+                "multi": false,
+                "name": "NE",
+                "options": [],
+                "query": "label_values(source)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "New dashboard",
+    "uid": "kawVPD-Gk",
+    "version": 9
+}

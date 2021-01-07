@@ -1,0 +1,3282 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 2,
+    "id": 1,
+    "iteration": 1610008579225,
+    "links": [],
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/1",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 4,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/1\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/2",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 4,
+                "x": 8,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/36",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "editedFlag": false,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "flowchartsData": {
+                "allowDrawio": true,
+                "editorTheme": "kennedy",
+                "editorUrl": "https://embed.diagrams.net/",
+                "flowcharts": [
+                    {
+                        "bgColor": "#4d5766",
+                        "center": true,
+                        "csv": "## See more information for the syntax at https://drawio-app.com/import-from-csv-to-drawio/\n##\n## Example CSV. Use ## for comments and # for configuration.\n## The following names are reserved and should not be used (or ignored):\n## id, tooltip, placeholder(s), link and label (see below)\n##\n#\n## Node label with placeholders and HTML.\n## Default is '%name_of_first_column%'.\n#\n# label: %name%<br><i style=\"color:gray;\">%position%</i><br><a href=\"mailto:%email%\">Email</a>\n#\n## Node style (placeholders are replaced once).\n## Default is the current style for nodes.\n#\n# style: label;image=%image%;whiteSpace=wrap;html=1;rounded=1;fillColor=%fill%;strokeColor=%stroke%;\n#\n## Parent style for nodes with child nodes (placeholders are replaced once).\n#\n# parentstyle: swimlane;whiteSpace=wrap;html=1;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;\n#\n## Optional column name that contains a reference to a named style in styles.\n## Default is the current style for nodes.\n#\n# stylename: -\n#\n## JSON for named styles of the form {\"name\": \"style\", \"name\": \"style\"} where style is a cell style with\n## placeholders that are replaced once.\n#\n# styles: -\n#\n## Optional column name that contains a reference to a named label in labels.\n## Default is the current label.\n#\n# labelname: -\n#\n## JSON for named labels of the form {\"name\": \"label\", \"name\": \"label\"} where label is a cell label with\n## placeholders.\n#\n# labels: -\n#\n## Uses the given column name as the identity for cells (updates existing cells).\n## Default is no identity (empty value or -).\n#\n# identity: -\n#\n## Uses the given column name as the parent reference for cells. Default is no parent (empty or -).\n## The identity above is used for resolving the reference so it must be specified.\n#\n# parent: -\n#\n## Adds a prefix to the identity of cells to make sure they do not collide with existing cells (whose\n## IDs are numbers from 0..n, sometimes with a GUID prefix in the context of realtime collaboration).\n## Default is csvimport-.\n#\n# namespace: csvimport-\n#\n## Connections between rows (\"from\": source colum, \"to\": target column).\n## Label, style and invert are optional. Defaults are '', current style and false.\n## If placeholders are used in the style, they are replaced with data from the source.\n## An optional placeholders can be set to target to use data from the target instead.\n## In addition to label, an optional fromlabel and tolabel can be used to name the column\n## that contains the text for the label in the edges source or target (invert ignored).\n## The label is concatenated in the form fromlabel + label + tolabel if all are defined.\n## The target column may contain a comma-separated list of values.\n## Multiple connect entries are allowed.\n#\n# connect: {\"from\": \"manager\", \"to\": \"name\", \"invert\": true, \"label\": \"manages\", \\\n#          \"style\": \"curved=1;endArrow=blockThin;endFill=1;fontSize=11;\"}\n# connect: {\"from\": \"refs\", \"to\": \"id\", \"style\": \"curved=1;fontSize=11;\"}\n#\n## Node x-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# left: \n#\n## Node y-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# top: \n#\n## Node width. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the width. Default is auto.\n#\n# width: auto\n#\n## Node height. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the height. Default is auto.\n#\n# height: auto\n#\n## Padding for autosize. Default is 0.\n#\n# padding: -12\n#\n## Comma-separated list of ignored columns for metadata. (These can be\n## used for connections and styles but will not be added as metadata.)\n#\n# ignore: id,image,fill,stroke,refs,manager\n#\n## Column to be renamed to link attribute (used as link).\n#\n# link: url\n#\n## Spacing between nodes. Default is 40.\n#\n# nodespacing: 40\n#\n## Spacing between levels of hierarchical layouts. Default is 100.\n#\n# levelspacing: 100\n#\n## Spacing between parallel edges. Default is 40. Use 0 to disable.\n#\n# edgespacing: 40\n#\n## Name or JSON of layout. Possible values are auto, none, verticaltree, horizontaltree,\n## verticalflow, horizontalflow, organic, circle or a JSON string as used in Layout, Apply.\n## Default is auto.\n#\n# layout: auto\n#\n## ---- CSV below this line. First line are column names. ----\nname,position,id,location,manager,email,fill,stroke,refs,url,image\nEvan Miller,CFO,emi,Office 1,,me@example.com,#dae8fc,#6c8ebf,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-9-2-128.png\nEdward Morrison,Brand Manager,emo,Office 2,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-10-3-128.png\nRon Donovan,System Admin,rdo,Office 3,Evan Miller,me@example.com,#d5e8d4,#82b366,\"emo,tva\",https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-2-128.png\nTessa Valet,HR Director,tva,Office 4,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-3-128.png\n",
+                        "download": false,
+                        "enableAnim": true,
+                        "grid": false,
+                        "lock": true,
+                        "name": "Main",
+                        "scale": true,
+                        "tooltip": true,
+                        "type": "xml",
+                        "url": "http://<YourUrl>/<Your XML/drawio file/api>",
+                        "xml": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<mxfile host=\"app.diagrams.net\" modified=\"2021-01-06T21:38:59.900Z\" agent=\"5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36\" etag=\"aZPRuEKzv--bZNhDemIG\" version=\"14.0.5\" type=\"github\"><diagram id=\"KJtYdw0eZzOHVuxyC3Ms\" name=\"Page-4\">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</diagram></mxfile>",
+                        "zoom": "100%"
+                    }
+                ]
+            },
+            "format": "short",
+            "graphId": "flowchart_16",
+            "gridPos": {
+                "h": 20,
+                "w": 12,
+                "x": 12,
+                "y": 0
+            },
+            "id": 16,
+            "newFlag": false,
+            "pluginVersion": "7.3.5",
+            "rulesData": {
+                "rulesData": [
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/3_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 1,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/3:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-120",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-16",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/3_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 2,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/3:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-1",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-8",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/1_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 3,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/1:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-42",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-5",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/2_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 4,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/2:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-15",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-7",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/3_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 5,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/3:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-122",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-17",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/3_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 6,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/3:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-2",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-11",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/2_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 7,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/2:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-118",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-10",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/1_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 8,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/1:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-0",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-9",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/2_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 9,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/2:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-116",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-14",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/1_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 10,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/1:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-114",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-13",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-1_e1/1_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 11,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine1:57400:ethernet-1/1:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-112",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-12",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "spine-2_e1/2_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 12,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-spine2:57400:ethernet-1/2:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-16",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-15",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-2_e1/36_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 13,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf2:57400:ethernet-1/36:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-96",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-22",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-2_e1/36_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 14,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf2:57400:ethernet-1/36:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-19",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-19",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-1_e1/36_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 15,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf1:57400:ethernet-1/36:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-55",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-18",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-3_e1/36_out",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 16,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf3:57400:ethernet-1/36:out",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-100",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-20",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-3_e1/36_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 17,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf3:57400:ethernet-1/36:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-107",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-23",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "leaf-1_e1/36_in",
+                        "column": "Time",
+                        "dateColumn": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "dateTHData": [
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "0d"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1d"
+                            },
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": "-1w"
+                            }
+                        ],
+                        "decimals": 1,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": true,
+                        "hidden": false,
+                        "invert": true,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "newRule": false,
+                        "numberTHData": [
+                            {
+                                "color": "#abbbbb",
+                                "comparator": "ge",
+                                "level": 0
+                            },
+                            {
+                                "color": "#4bdd33",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 5000000
+                            },
+                            {
+                                "color": "#ff8000",
+                                "comparator": "gt",
+                                "level": 0,
+                                "value": 50000000
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "ge",
+                                "level": 0,
+                                "value": 100000000
+                            }
+                        ],
+                        "order": 18,
+                        "overlayIcon": false,
+                        "pattern": "clab-telemetry01-leaf1:57400:ethernet-1/36:in",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "MzNvUIA4c6WraNlcx4m_-87",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": false,
+                        "stringTHData": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*/"
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*warning.*/"
+                            },
+                            {
+                                "color": "rgba(245, 54, 54, 0.9)",
+                                "comparator": "eq",
+                                "level": 0,
+                                "value": "/.*(success|ok).*/"
+                            }
+                        ],
+                        "textData": [
+                            {
+                                "hidden": false,
+                                "pattern": "agJGtUolQpaysEPCJuB_-21",
+                                "textOn": "wmd",
+                                "textPattern": "/.*/",
+                                "textReplace": "content"
+                            }
+                        ],
+                        "textProp": "id",
+                        "textRegEx": false,
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "bps",
+                        "valueData": []
+                    }
+                ]
+            },
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_out_octets[30s])*8",
+                    "interval": "",
+                    "legendFormat": "{{source}}:{{interface_name}}:out",
+                    "refId": "A"
+                },
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets[30s])*8",
+                    "interval": "",
+                    "legendFormat": "{{source}}:{{interface_name}}:in",
+                    "refId": "B"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Link Bandwidth",
+            "type": "agenty-flowcharting-panel",
+            "valueName": "current",
+            "version": "1.0.0b"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 6,
+                "x": 0,
+                "y": 11
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "alignAsTable": false,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "gnmic_srl_cpu_total_instant{source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Instant",
+                    "refId": "A"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 6,
+            "gridPos": {
+                "h": 9,
+                "w": 6,
+                "x": 6,
+                "y": 11
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "gnmic_srl_mem_free{source=\"$NE\"}",
+                    "interval": "",
+                    "legendFormat": "free",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_mem_physical{source=\"$NE\"}",
+                    "interval": "",
+                    "legendFormat": "physical",
+                    "refId": "C"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "decbytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "blue",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 20
+            },
+            "id": 8,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Routes",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active ECMP Routes",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "IPv4 Routing Stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "green",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 6,
+                "y": 20
+            },
+            "id": 10,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_bgp_stats_up_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Up Peers",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Peers",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_disabled_peers{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Disabled Peers",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "BGP Peer stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "blue",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 25
+            },
+            "id": 9,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_ipv6_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_ipv6_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Routes",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_ipv6_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active ECMP Routes",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "IPv6 Routing Stats",
+            "type": "bargauge"
+        },
+        {
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "yellow",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 6,
+                "y": 25
+            },
+            "id": 11,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_received_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Received Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_bgp_stats_total_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Active Routes",
+                    "refId": "B"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "BGP Route Stats",
+            "type": "bargauge"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "clab-telemetry01-leaf1:57400",
+                    "value": "clab-telemetry01-leaf1:57400"
+                },
+                "datasource": "Prometheus",
+                "definition": "label_values(source)",
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "",
+                "multi": false,
+                "name": "NE",
+                "options": [],
+                "query": "label_values(source)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "SR Linux Telemetry",
+    "uid": "kawVPD-Gk",
+    "version": 18
+}

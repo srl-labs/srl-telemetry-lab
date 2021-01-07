@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 5s
+
+# metrics_path defaults to '/metrics'
+# scheme defaults to 'http'.
+scrape_configs:
+  - job_name: "telegraf"
+    static_configs:
+      # - targets: ["clab-telemetry01-gnmic:9273"]
+      - targets: ["172.80.80.1:9273"]
