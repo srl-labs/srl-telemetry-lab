@@ -24,7 +24,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": null,
+            "datasource": "Prometheus",
             "description": "",
             "fieldConfig": {
                 "defaults": {
@@ -142,7 +142,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": null,
+            "datasource": "Prometheus",
             "description": "",
             "fieldConfig": {
                 "defaults": {
@@ -260,7 +260,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": null,
+            "datasource": "Prometheus",
             "description": "",
             "fieldConfig": {
                 "defaults": {
@@ -374,7 +374,7 @@
             }
         },
         {
-            "datasource": null,
+            "datasource": "Prometheus",
             "editedFlag": false,
             "fieldConfig": {
                 "defaults": {
@@ -2732,7 +2732,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": null,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -2829,7 +2829,7 @@
             "bars": false,
             "dashLength": 10,
             "dashes": false,
-            "datasource": null,
+            "datasource": "Prometheus",
             "description": "",
             "fieldConfig": {
                 "defaults": {
@@ -2942,7 +2942,7 @@
             }
         },
         {
-            "datasource": null,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3017,7 +3017,7 @@
             "type": "bargauge"
         },
         {
-            "datasource": null,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3092,7 +3092,7 @@
             "type": "bargauge"
         },
         {
-            "datasource": null,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {
@@ -3167,7 +3167,7 @@
             "type": "bargauge"
         },
         {
-            "datasource": null,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {

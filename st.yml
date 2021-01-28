@@ -76,11 +76,10 @@ topology:
     grafana:
       kind: linux
       image: grafana/grafana:7.3.5
-      env:
-        GF_SECURITY_ADMIN_USER: admin
-        GF_SECURITY_ADMIN_PASSWORD: admin
       binds:
-        # - /root/container-lab/lab-examples/telemetry01/grafana.db:/var/lib/grafana/grafana.db
+        - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
+        - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
+        - configs/grafana/dashboards:/var/lib/grafana/dashboards
         - configs/grafana/grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
       ports:
         - 3000:3000
