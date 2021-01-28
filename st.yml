@@ -76,11 +76,12 @@ topology:
     grafana:
       kind: linux
       image: grafana/grafana:7.3.5
-      # mgmt_ipv4: 172.80.80.43
-      # mgmt_ipv6: 2001::172:80:80:43
+      env:
+        GF_SECURITY_ADMIN_USER: admin
+        GF_SECURITY_ADMIN_PASSWORD: admin
       binds:
         # - /root/container-lab/lab-examples/telemetry01/grafana.db:/var/lib/grafana/grafana.db
-        - ./grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
+        - configs/grafana/grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
       ports:
         - 3000:3000
 
