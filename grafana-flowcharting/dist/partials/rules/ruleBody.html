@@ -1,0 +1,235 @@
+<!-- OPTIONS -->
+<div class="section gf-form-group">
+    <h5 class="section-heading">
+        Options
+        <info-popover mode="right-normal"><span
+                ng-bind-html="$GF.popover('Options for mapping objects and metrics', 'MAPPING','fc_archi_example')"></span>
+        </info-popover>
+    </h5>
+    <div class="gf-form">
+        <label class="gf-form-label width-10">Rule name
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Name of the rule, for information', 'MAPPING#Rule name')"></span>
+            </info-popover>
+        </label>
+        <input type="text" class="gf-form-input width-12" ng-model="rule.data.alias" id="{{ rule.getId() }}"
+            placeholder="Name of this rule" />
+    </div>
+    <!-- Data type -->
+    <div class="gf-form" ng-if="editor.isMultipleType()">
+        <label class="gf-form-label width-10">Metrics Type
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Only one type of queries by rule Series or table', 'MAPPING#Aggregation')"></span>
+            </info-popover>
+        </label>
+        <div class="gf-form-select-wrapper width-12">
+            <select class="gf-form-input" ng-model="rule.data.metricType"
+                ng-options="c.value as c.text for c in editor.metricType" ng-blur="editor.onRulesChange()"></select>
+        </div>
+    </div>
+    <!-- Metric Name -->
+    <div class="gf-form">
+        <label class="gf-form-label width-10">Apply to metrics
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Select alias or name of metric', 'MAPPING#Apply to metrics named','mp_metrics_name')"></span>
+            </info-popover>
+        </label>
+        <input type="text" placeholder="Name or regex of metric" class="gf-form-input width-12"
+            ng-model="rule.data.pattern" bs-tooltip="'Specify regex using /my.*regex/ syntax'"
+            bs-typeahead="editor.getMetricNames" ng-blur="editor.ValidateDate(rule) && editor.onRulesChange()"
+            ng-model-onblur data-min-length="0" data-items="100" data-placement="right"
+            ng-if="rule.data.metricType === 'serie'" />
+        <div class="gf-form-select-wrapper width-12" ng-if="rule.data.metricType === 'table'">
+            <select class="gf-form-input" ng-model="rule.data.refId" ng-options="o for o in editor.getTablesName()"
+                ng-blur="editor.ValidateDate(rule) && editor.onRulesChange()">
+                <option style="display:none" value="">select a table</option>
+            </select>
+        </div>
+    </div>
+    <!-- Columns -->
+    <div class="gf-form" ng-if="rule.data.metricType === 'table'">
+        <label class="gf-form-label width-10">Apply to column
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Column name of the table', 'MAPPING#Aggregation')"></span>
+            </info-popover>
+        </label>
+        <div class="gf-form-select-wrapper width-12">
+            <select class="gf-form-input" ng-model="rule.data.column"
+                ng-options="o for o in editor.getColumnsForTable(rule.data.refId)"
+                ng-blur="editor.ValidateDate(rule) && editor.onRulesChange()">
+                <option style="display:none" value="">select a column</option>
+            </select>
+        </div>
+    </div>
+    <!-- Aggregation -->
+    <div class="gf-form">
+        <label class="gf-form-label width-10">Aggregation
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Select an aggregation for all values of metric', 'MAPPING#Aggregation')"></span>
+            </info-popover>
+        </label>
+        <div class="gf-form-select-wrapper width-12">
+            <select class="gf-form-input" ng-model="rule.data.aggregation"
+                ng-options="c.value as c.text for c in editor.aggregationTypes"
+                ng-blur="editor.ValidateDate(rule) && editor.onRulesChange()"></select>
+        </div>
+    </div>
+</div>
+
+<!-- TYPE -->
+<div class="section gf-form-group">
+    <h5 class="section-heading">
+        Type
+        <info-popover mode="right-normal">
+            <span
+                ng-bind-html="$GF.popover('Specify unit (Number, String or date) and type for displayed values by Text Mappings.', 'MAPPING#Type')">
+            </span>
+        </info-popover>
+    </h5>
+    <div class="gf-form">
+        <label class="gf-form-label width-10">Type
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Select type and unit of metric to display it for the good format.', 'MAPPING#Type')"></span>
+            </info-popover>
+        </label>
+        <div class="gf-form-select-wrapper width-12">
+            <select class="gf-form-input" ng-model="rule.data.type"
+                ng-options="c.value as c.text for c in editor.metricTypes"
+                ng-change="editor.ValidateDate(rule) && editor.onRulesChange()"></select>
+        </div>
+    </div>
+    <!-- <div class="gf-form" ng-if="rule.data.type === 'date'">
+        <label class="gf-form-label width-10">Tag or column
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Select a column/Tag from metric with a date format (Unix Timestamp or a text).', 'MAPPING#Type')"></span>
+            </info-popover>
+        </label>
+        <div class="gf-form-select-wrapper width-12">
+            <select class="gf-form-input" ng-model="rule.data.dateColumn"
+                ng-options="o for o in editor.getColumnsNameForRule(rule)" ng-blur="editor.onRulesChange()">
+                <option style="display:none" value="">select a column</option>
+            </select>
+        </div>
+    </div> -->
+
+    <div class="gf-form" ng-if="rule.data.type === 'date'">
+        <label class="gf-form-label width-10">Output date Format
+            <info-popover mode="right-normal"><span
+                    ng-bind-html="$GF.popover('Select format of the date to display it in text with text mapping.', 'MAPPING#Type')"></span>
+            </info-popover>
+        </label>
+        <gf-form-dropdown model="rule.data.dateFormat" css-class="gf-form-input width-12" lookup-text="true"
+            get-options="editor.dateFormats" on-change="editor.ValidateDate(rule) && editor.onRulesChange()"
+            allow-custom="true">
+        </gf-form-dropdown>
+    </div>
+
+
+    <div ng-if="rule.data.type === 'string'">
+        <gf-form-switch class="gf-form" label-class="width-14" ng-if="rule.data.type === 'string'" label="Sanitize HTML"
+            checked="rule.data.sanitize" on-change="editor.onRulesChange()"></gf-form-switch>
+    </div>
+    <div ng-if="rule.data.type === 'string'">
+        <gf-form-switch class="gf-form" label-class="width-14" ng-if="rule.data.type === 'string'"
+            label="Preserve Formatting" checked="rule.data.preserveFormat" on-change="editor.onRulesChange()">
+        </gf-form-switch>
+    </div>
+
+    <div ng-if="rule.data.type === 'number'">
+        <div class="gf-form">
+            <label class="gf-form-label width-10">Unit
+                <info-popover mode="right-normal"><span
+                        ng-bind-html="$GF.popover('Select unit of aggregated value.', 'MAPPING#Type')"></span>
+                </info-popover>
+            </label>
+            <div class="gf-form-dropdown-typeahead width-12" ng-model="rule.data.unit"
+                dropdown-typeahead2="editor.unitFormats"
+                dropdown-typeahead-on-select="editor.setUnitFormat(rule, $subItem)"></div>
+        </div>
+        <div class="gf-form">
+            <label class="gf-form-label width-10">Decimals
+                <info-popover mode="right-normal"><span
+                        ng-bind-html="$GF.popover('Select number of decimals', 'MAPPING#Type')"></span>
+                </info-popover>
+            </label>
+            <input type="number" class="gf-form-input width-4" data-placement="right" ng-model="rule.data.decimals"
+                ng-blur="editor.onRulesChange()" />
+        </div>
+    </div>
+</div>
+
+<!-- Thresholds -->
+<ng-include src="$GF.plugin.getPartialPath() + 'rules/thresholds/thresholdsSection.html'"> </ng-include>
+
+<!-- TOOLTIP -->
+<ng-include src="$GF.plugin.getPartialPath() + 'rules/tooltip/tooltipSection.html'"> </ng-include>
+
+<!-- GRAPH TOOLTIP -->
+<ng-include src="$GF.plugin.getPartialPath() + 'rules/graph/graphSection.html'"> </ng-include>
+
+<!-- MAPPINGS -->
+<div class="editor-row">
+    <!-- SHAPE MAPPING -->
+    <ng-include src="$GF.plugin.getPartialPath() + 'rules/shapes/shapesSection.html'"> </ng-include>
+
+    <!-- TEXT MAPPING -->
+    <ng-include src="$GF.plugin.getPartialPath() + 'rules/labels/labelsSection.html'"> </ng-include>
+
+    <!-- LINK MAPPING -->
+    <ng-include src="$GF.plugin.getPartialPath() + 'rules/links/linksSection.html'"> </ng-include>
+
+    <!-- LINK MAPPING -->
+    <ng-include src="$GF.plugin.getPartialPath() + 'rules/events/eventsSection.html'"> </ng-include>
+
+    <!-- VALUE MAPPING & RANGE MAPPING -->
+    <ng-include src="$GF.plugin.getPartialPath() + 'rules/valuemaps/valuesmapsSection.html'"> </ng-include>
+</div>
+
+<div class="clearfix"></div>
+
+
+<div class="gf-table-columnfooter" colspan="1">
+    <div class="gf-form-inline">
+        <div class="gf-form" style="margin-right: 5px;">
+            <button class="btn btn-primary btn-small" ng-click="editor.cloneRule(rule);" title="Clone rule">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path fill="currentColor"
+                        d="M21,8.94a1.31,1.31,0,0,0-.06-.27l0-.09a1.07,1.07,0,0,0-.19-.28h0l-6-6h0a1.07,1.07,0,0,0-.28-.19.32.32,0,0,0-.09,0A.88.88,0,0,0,14.05,2H10A3,3,0,0,0,7,5V6H6A3,3,0,0,0,3,9V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V18h1a3,3,0,0,0,3-3V9S21,9,21,8.94ZM15,5.41,17.59,8H16a1,1,0,0,1-1-1ZM15,19a1,1,0,0,1-1,1H6a1,1,0,0,1-1-1V9A1,1,0,0,1,6,8H7v7a3,3,0,0,0,3,3h5Zm4-4a1,1,0,0,1-1,1H10a1,1,0,0,1-1-1V5a1,1,0,0,1,1-1h3V7a3,3,0,0,0,3,3h3Z">
+                    </path>
+                </svg>
+                &nbsp;Clone the rule
+            </button>
+        </div>
+        <div class="gf-form" style="margin-right: 5px;">
+            <button class="btn btn-secondary btn-small" ng-click="rule.data.reduce = true;" title="Refresh/Apply">
+                <span>
+                  <i class="fa fa-chevron-up" title="Collapse rule">
+                  </i>
+                </span>
+                &nbsp;Collapse the rule
+              </button>
+        </div>
+        <div class="gf-form" style="margin-right: 5px;">
+            <button class="btn btn-danger btn-small" ng-click="editor.removeRule(rule, true);" title="Remove rule">
+                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="css-4fl056">
+                    <path
+                        d="M10,18a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,10,18ZM20,6H16V5a3,3,0,0,0-3-3H11A3,3,0,0,0,8,5V6H4A1,1,0,0,0,4,8H5V19a3,3,0,0,0,3,3h8a3,3,0,0,0,3-3V8h1a1,1,0,0,0,0-2ZM10,5a1,1,0,0,1,1-1h2a1,1,0,0,1,1,1V6H10Zm7,14a1,1,0,0,1-1,1H8a1,1,0,0,1-1-1V8H17Zm-3-1a1,1,0,0,0,1-1V11a1,1,0,0,0-2,0v6A1,1,0,0,0,14,18Z">
+                    </path>
+                </svg>
+                &nbsp;Remove the Rule
+            </button>
+        </div>
+    </div>
+</div>
+<!-- BUTTONS RULES -->
+<!-- <div class="gf-form-inline">
+    <div class="gf-form" style="margin-right: 5px;">
+        <button class="btn btn-danger btn-small" ng-click="editor.removeRule(rule, true)"><i class="fa fa-trash"></i>
+            Remove Rule</button>
+    </div>
+    <div class="gf-form">
+        <button class="btn btn-secondary btn-small" ng-click="editor.cloneRule(rule)"><i class="fa fa-copy"></i>
+            Copy Rule</button>
+    </div>
+</div> -->
