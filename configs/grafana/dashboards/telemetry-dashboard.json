@@ -15,8 +15,7 @@
     "editable": true,
     "gnetId": null,
     "graphTooltip": 2,
-    "id": 1,
-    "iteration": 1610008579225,
+    "iteration": 1611866224535,
     "links": [],
     "panels": [
         {
@@ -49,7 +48,7 @@
             "fill": 7,
             "fillGradient": 0,
             "gridPos": {
-                "h": 11,
+                "h": 10,
                 "w": 4,
                 "x": 0,
                 "y": 0
@@ -167,7 +166,7 @@
             "fill": 7,
             "fillGradient": 0,
             "gridPos": {
-                "h": 11,
+                "h": 10,
                 "w": 4,
                 "x": 4,
                 "y": 0
@@ -285,13 +284,13 @@
             "fill": 7,
             "fillGradient": 0,
             "gridPos": {
-                "h": 11,
+                "h": 10,
                 "w": 4,
                 "x": 8,
                 "y": 0
             },
             "hiddenSeries": false,
-            "id": 14,
+            "id": 17,
             "legend": {
                 "alignAsTable": true,
                 "avg": false,
@@ -320,13 +319,13 @@
             "steppedLine": false,
             "targets": [
                 {
-                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/3\"}[1m])*8",
                     "interval": "",
                     "legendFormat": "ethernet-1/1 IN",
                     "refId": "A"
                 },
                 {
-                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/3\"}[1m])*8",
                     "interval": "",
                     "legendFormat": "ethernet-1/1 OUT",
                     "refId": "B"
@@ -336,7 +335,7 @@
             "timeFrom": null,
             "timeRegions": [],
             "timeShift": null,
-            "title": "Throughput e-1/36",
+            "title": "Throughput e-1/3",
             "tooltip": {
                 "shared": true,
                 "sort": 0,
@@ -352,6 +351,7 @@
             },
             "yaxes": [
                 {
+                    "$$hashKey": "object:204",
                     "format": "bps",
                     "label": null,
                     "logBase": 1,
@@ -360,12 +360,13 @@
                     "show": true
                 },
                 {
+                    "$$hashKey": "object:205",
                     "format": "short",
                     "label": null,
                     "logBase": 1,
                     "max": null,
                     "min": null,
-                    "show": false
+                    "show": true
                 }
             ],
             "yaxis": {
@@ -408,7 +409,7 @@
             "format": "short",
             "graphId": "flowchart_16",
             "gridPos": {
-                "h": 20,
+                "h": 21,
                 "w": 12,
                 "x": 12,
                 "y": 0
@@ -2733,6 +2734,126 @@
             "dashLength": 10,
             "dashes": false,
             "datasource": "Prometheus",
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 7,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 6,
+                "x": 0,
+                "y": 10
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "7.3.5",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "expr": "irate(gnmic_srl_if_stats_in_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 IN",
+                    "refId": "A"
+                },
+                {
+                    "expr": "-irate(gnmic_srl_if_stats_out_octets{source=\"$NE\",interface_name=\"ethernet-1/36\"}[1m])*8",
+                    "interval": "",
+                    "legendFormat": "ethernet-1/1 OUT",
+                    "refId": "B"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Throughput e-1/36",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "Mem Free": "blue"
+            },
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "custom": {}
@@ -2742,10 +2863,10 @@
             "fill": 1,
             "fillGradient": 0,
             "gridPos": {
-                "h": 9,
+                "h": 11,
                 "w": 6,
-                "x": 0,
-                "y": 11
+                "x": 6,
+                "y": 10
             },
             "hiddenSeries": false,
             "id": 2,
@@ -2770,10 +2891,15 @@
             "pointradius": 2,
             "points": false,
             "renderer": "flot",
-            "seriesOverrides": [],
+            "seriesOverrides": [
+                {
+                    "alias": "Mem Free",
+                    "yaxis": 2
+                }
+            ],
             "spaceLength": 10,
             "stack": false,
-            "steppedLine": false,
+            "steppedLine": true,
             "targets": [
                 {
                     "expr": "gnmic_srl_cpu_total_instant{source=\"$NE\"}",
@@ -2781,6 +2907,12 @@
                     "interval": "",
                     "legendFormat": "Total Instant",
                     "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_mem_free{source=\"$NE\"}",
+                    "interval": "",
+                    "legendFormat": "Mem Free",
+                    "refId": "B"
                 }
             ],
             "thresholds": [],
@@ -2803,6 +2935,7 @@
             },
             "yaxes": [
                 {
+                    "$$hashKey": "object:364",
                     "format": "percent",
                     "label": null,
                     "logBase": 1,
@@ -2811,125 +2944,9 @@
                     "show": true
                 },
                 {
-                    "format": "short",
-                    "label": null,
-                    "logBase": 1,
-                    "max": null,
-                    "min": null,
-                    "show": true
-                }
-            ],
-            "yaxis": {
-                "align": false,
-                "alignLevel": null
-            }
-        },
-        {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": "Prometheus",
-            "description": "",
-            "fieldConfig": {
-                "defaults": {
-                    "custom": {},
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "fill": 1,
-            "fillGradient": 6,
-            "gridPos": {
-                "h": 9,
-                "w": 6,
-                "x": 6,
-                "y": 11
-            },
-            "hiddenSeries": false,
-            "id": 4,
-            "legend": {
-                "alignAsTable": true,
-                "avg": false,
-                "current": true,
-                "max": true,
-                "min": false,
-                "show": true,
-                "total": false,
-                "values": true
-            },
-            "lines": true,
-            "linewidth": 1,
-            "nullPointMode": "null",
-            "options": {
-                "alertThreshold": false
-            },
-            "percentage": false,
-            "pluginVersion": "7.3.5",
-            "pointradius": 2,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-                {
-                    "expr": "gnmic_srl_mem_free{source=\"$NE\"}",
-                    "interval": "",
-                    "legendFormat": "free",
-                    "refId": "B"
-                },
-                {
-                    "expr": "gnmic_srl_mem_physical{source=\"$NE\"}",
-                    "interval": "",
-                    "legendFormat": "physical",
-                    "refId": "C"
-                }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeRegions": [],
-            "timeShift": null,
-            "title": "Memory",
-            "tooltip": {
-                "shared": true,
-                "sort": 0,
-                "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-                "buckets": null,
-                "mode": "time",
-                "name": null,
-                "show": true,
-                "values": []
-            },
-            "yaxes": [
-                {
+                    "$$hashKey": "object:365",
                     "format": "decbytes",
-                    "label": null,
-                    "logBase": 1,
-                    "max": null,
-                    "min": "0",
-                    "show": true
-                },
-                {
-                    "format": "short",
-                    "label": null,
+                    "label": "",
                     "logBase": 1,
                     "max": null,
                     "min": null,
@@ -2940,81 +2957,6 @@
                 "align": false,
                 "alignLevel": null
             }
-        },
-        {
-            "datasource": "Prometheus",
-            "fieldConfig": {
-                "defaults": {
-                    "color": {
-                        "fixedColor": "blue",
-                        "mode": "fixed"
-                    },
-                    "custom": {},
-                    "mappings": [],
-                    "thresholds": {
-                        "mode": "absolute",
-                        "steps": [
-                            {
-                                "color": "green",
-                                "value": null
-                            },
-                            {
-                                "color": "red",
-                                "value": 80
-                            }
-                        ]
-                    }
-                },
-                "overrides": []
-            },
-            "gridPos": {
-                "h": 5,
-                "w": 6,
-                "x": 0,
-                "y": 20
-            },
-            "id": 8,
-            "options": {
-                "displayMode": "basic",
-                "orientation": "auto",
-                "reduceOptions": {
-                    "calcs": [
-                        "last"
-                    ],
-                    "fields": "",
-                    "values": false
-                },
-                "showUnfilled": true
-            },
-            "pluginVersion": "7.3.5",
-            "targets": [
-                {
-                    "expr": "gnmic_srl_ipv4_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
-                    "format": "time_series",
-                    "instant": false,
-                    "interval": "",
-                    "legendFormat": "Active Routes",
-                    "refId": "A"
-                },
-                {
-                    "expr": "gnmic_srl_ipv4_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
-                    "instant": false,
-                    "interval": "",
-                    "legendFormat": "Total Routes",
-                    "refId": "B"
-                },
-                {
-                    "expr": "gnmic_srl_ipv4_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
-                    "instant": false,
-                    "interval": "",
-                    "legendFormat": "Active ECMP Routes",
-                    "refId": "C"
-                }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "IPv4 Routing Stats",
-            "type": "bargauge"
         },
         {
             "datasource": "Prometheus",
@@ -3045,12 +2987,14 @@
             "gridPos": {
                 "h": 5,
                 "w": 6,
-                "x": 6,
-                "y": 20
+                "x": 0,
+                "y": 21
             },
-            "id": 10,
+            "id": 8,
             "options": {
-                "displayMode": "basic",
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
                 "orientation": "auto",
                 "reduceOptions": {
                     "calcs": [
@@ -3059,7 +3003,84 @@
                     "fields": "",
                     "values": false
                 },
-                "showUnfilled": true
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.3.5",
+            "targets": [
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "format": "time_series",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active Routes",
+                    "refId": "A"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_total_routes{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Total Routes",
+                    "refId": "B"
+                },
+                {
+                    "expr": "gnmic_srl_ipv4_routes_active_routes_with_ecmp{network_instance_name=\"default\",source=\"$NE\"}",
+                    "instant": false,
+                    "interval": "",
+                    "legendFormat": "Active ECMP Routes",
+                    "refId": "C"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "IPv4 Routing Stats",
+            "type": "stat"
+        },
+        {
+            "datasource": "Prometheus",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "fixedColor": "dark-yellow",
+                        "mode": "fixed"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 6,
+                "y": 21
+            },
+            "id": 10,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "textMode": "auto"
             },
             "pluginVersion": "7.3.5",
             "targets": [
@@ -3089,14 +3110,14 @@
             "timeFrom": null,
             "timeShift": null,
             "title": "BGP Peer stats",
-            "type": "bargauge"
+            "type": "stat"
         },
         {
             "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "fixedColor": "blue",
+                        "fixedColor": "super-light-red",
                         "mode": "fixed"
                     },
                     "custom": {},
@@ -3121,12 +3142,14 @@
                 "h": 5,
                 "w": 6,
                 "x": 0,
-                "y": 25
+                "y": 26
             },
             "id": 9,
             "options": {
-                "displayMode": "basic",
-                "orientation": "auto",
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "vertical",
                 "reduceOptions": {
                     "calcs": [
                         "last"
@@ -3134,7 +3157,7 @@
                     "fields": "",
                     "values": false
                 },
-                "showUnfilled": true
+                "textMode": "value_and_name"
             },
             "pluginVersion": "7.3.5",
             "targets": [
@@ -3164,18 +3187,26 @@
             "timeFrom": null,
             "timeShift": null,
             "title": "IPv6 Routing Stats",
-            "type": "bargauge"
+            "type": "stat"
         },
         {
             "datasource": "Prometheus",
             "fieldConfig": {
                 "defaults": {
                     "color": {
-                        "fixedColor": "yellow",
                         "mode": "fixed"
                     },
                     "custom": {},
-                    "mappings": [],
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "",
+                            "to": "",
+                            "type": 1,
+                            "value": ""
+                        }
+                    ],
                     "thresholds": {
                         "mode": "absolute",
                         "steps": [
@@ -3190,17 +3221,32 @@
                         ]
                     }
                 },
-                "overrides": []
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Total Active Routes"
+                        },
+                        "properties": [
+                            {
+                                "id": "max",
+                                "value": 234
+                            }
+                        ]
+                    }
+                ]
             },
             "gridPos": {
                 "h": 5,
                 "w": 6,
                 "x": 6,
-                "y": 25
+                "y": 26
             },
             "id": 11,
             "options": {
-                "displayMode": "basic",
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
                 "orientation": "auto",
                 "reduceOptions": {
                     "calcs": [
@@ -3209,7 +3255,7 @@
                     "fields": "",
                     "values": false
                 },
-                "showUnfilled": true
+                "textMode": "value_and_name"
             },
             "pluginVersion": "7.3.5",
             "targets": [
@@ -3232,7 +3278,7 @@
             "timeFrom": null,
             "timeShift": null,
             "title": "BGP Route Stats",
-            "type": "bargauge"
+            "type": "stat"
         }
     ],
     "refresh": "5s",
@@ -3245,8 +3291,8 @@
                 "allValue": null,
                 "current": {
                     "selected": false,
-                    "text": "clab-telemetry01-leaf1:57400",
-                    "value": "clab-telemetry01-leaf1:57400"
+                    "text": "clab-st-leaf1:57400",
+                    "value": "clab-st-leaf1:57400"
                 },
                 "datasource": "Prometheus",
                 "definition": "label_values(source)",
@@ -3271,12 +3317,12 @@
         ]
     },
     "time": {
-        "from": "now-5m",
+        "from": "now-30m",
         "to": "now"
     },
     "timepicker": {},
     "timezone": "",
     "title": "SR Linux Telemetry",
     "uid": "kawVPD-Gk",
-    "version": 18
+    "version": 1
 }
