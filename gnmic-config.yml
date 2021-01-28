@@ -6,11 +6,11 @@ skip-verify: true
 encoding: json_ietf
 
 targets:
-  clab-telemetry01-leaf1:
-  clab-telemetry01-leaf2:
-  clab-telemetry01-leaf3:
-  clab-telemetry01-spine1:
-  clab-telemetry01-spine2:
+  clab-st-leaf1:
+  clab-st-leaf2:
+  clab-st-leaf3:
+  clab-st-spine1:
+  clab-st-spine2:
 
 subscriptions:
   srl_if_stats:
@@ -40,7 +40,6 @@ subscriptions:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-    # stream-mode: on-change
 
   srl_ipv4_routes:
     paths:
@@ -48,7 +47,6 @@ subscriptions:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-    # stream-mode: on-change
 
   srl_ipv6_routes:
     paths:
@@ -56,7 +54,6 @@ subscriptions:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-    # stream-mode: on-change
 
 outputs:
   prom:
@@ -65,7 +62,8 @@ outputs:
     path: /metrics
     metric-prefix: gnmic
     append-subscription-name: true
-    expiration: 15s # maximum lifetime of metrics in the local cache
+    export-timestamps: false
+    expiration: -1 # maximum lifetime of metrics in the local cache
     debug: false
     event-processors:
       - proc-convert-strings-to-int
@@ -99,23 +97,23 @@ processors:
       value-names:
         - ".*"
       transforms:
-        # - path-base:
+        - path-base:
+            apply-on: "name"
+        # - trim-prefix:
         #     apply-on: "name"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-interfaces:interface/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-cpu:cpu/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-memory:memory/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/protocols/srl_nokia-bgp:bgp/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv4-unicast/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv6-unicast/statistics/"
+        #     prefix: "/srl_nokia-interfaces:interface/statistics/"
+        # - trim-prefix:
+        #     apply-on: "name"
+        #     prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-cpu:cpu/"
+        # - trim-prefix:
+        #     apply-on: "name"
+        #     prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-memory:memory/"
+        # - trim-prefix:
+        #     apply-on: "name"
+        #     prefix: "/srl_nokia-network-instance:network-instance/protocols/srl_nokia-bgp:bgp/statistics/"
+        # - trim-prefix:
+        #     apply-on: "name"
+        #     prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv4-unicast/statistics/"
+        # - trim-prefix:
+        #     apply-on: "name"
+        #     prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv6-unicast/statistics/"

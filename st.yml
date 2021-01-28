@@ -1,7 +1,7 @@
-name: telemetry01
+name: st # short for streaming telemetry ;)
 
 mgmt:
-  network: te01
+  network: st
   ipv4_subnet: 172.80.80.0/24
   ipv6_subnet: 2001::172:80:80:0/112
 
@@ -13,7 +13,7 @@ topology:
     srl:
       type: ixr6
       image: srlinux:20.6.3-145
-      license: license.key
+      license: srl-license.key
     linux:
       image: ghcr.io/hellt/network-multitool
 
@@ -21,44 +21,30 @@ topology:
     ### SPINES ###
     spine1:
       type: ixr6
-      mgmt_ipv4: 172.80.80.21
-      mgmt_ipv6: 2001::172:80:80:21
     spine2:
       type: ixr6
-      mgmt_ipv4: 172.80.80.22
-      mgmt_ipv6: 2001::172:80:80:22
 
     ### LEAFS ###
     leaf1:
       type: ixrd2
-      mgmt_ipv4: 172.80.80.11
-      mgmt_ipv6: 2001::172:80:80:11
     leaf2:
       type: ixrd2
-      mgmt_ipv4: 172.80.80.12
-      mgmt_ipv6: 2001::172:80:80:12
     leaf3:
       type: ixrd2
-      mgmt_ipv4: 172.80.80.13
-      mgmt_ipv6: 2001::172:80:80:13
 
     ### CLIENTS ###
     client1:
       kind: linux
-      mgmt_ipv4: 172.80.80.31
-      mgmt_ipv6: 2001::172:80:80:31
       binds:
-        - /root/container-lab/lab-examples/telemetry01/configs/client1:/config
+        - configs/client1:/config
     client2:
       kind: linux
-      mgmt_ipv4: 172.80.80.32
-      mgmt_ipv6: 2001::172:80:80:32
       binds:
-        - /root/container-lab/lab-examples/telemetry01/configs/client2:/config
+        - configs/client2:/config
     client3:
       kind: linux
-      mgmt_ipv4: 172.80.80.33
-      mgmt_ipv6: 2001::172:80:80:33
+      binds:
+        - configs/client3:/config
 
     ### TELEMETRY STACK ###
     # telegraf:
@@ -68,19 +54,20 @@ topology:
     #   mgmt_ipv6: 2001::172:80:80:41
     #   binds:
     #     - /root/container-lab/lab-examples/telemetry01/configs/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
-    # gnmic:
-    #   kind: linux
-    #   image: ghcr.io/karimra/gnmic:0.6.0
-    #   binds:
-    #     - /root/container-lab/lab-examples/telemetry01/gnmic-config.yml:/gnmic-config.yml:ro
-    #   cmd: --config /gnmic-config.yml --log subscribe
+    gnmic:
+      kind: linux
+      image: ghcr.io/karimra/gnmic:0.7.0
+      binds:
+        - gnmic-config.yml:/gnmic-config.yml:ro
+      cmd: --config /gnmic-config.yml --log subscribe
+
     prometheus:
       kind: linux
       image: prom/prometheus:v2.23.0
-      mgmt_ipv4: 172.80.80.42
-      mgmt_ipv6: 2001::172:80:80:42
+      # mgmt_ipv4: 172.80.80.42
+      # mgmt_ipv6: 2001::172:80:80:42
       binds:
-        - /root/container-lab/lab-examples/telemetry01/configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+        - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
         # - /root/container-lab/lab-examples/telemetry01/prom-data:/data/prometheus:rw
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
@@ -89,8 +76,8 @@ topology:
     grafana:
       kind: linux
       image: grafana/grafana:7.3.5
-      mgmt_ipv4: 172.80.80.43
-      mgmt_ipv6: 2001::172:80:80:43
+      # mgmt_ipv4: 172.80.80.43
+      # mgmt_ipv6: 2001::172:80:80:43
       binds:
         # - /root/container-lab/lab-examples/telemetry01/grafana.db:/var/lib/grafana/grafana.db
         - ./grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
