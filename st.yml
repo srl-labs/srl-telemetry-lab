@@ -47,13 +47,6 @@ topology:
         - configs/client3:/config
 
     ### TELEMETRY STACK ###
-    # telegraf:
-    #   kind: linux
-    #   image: telegraf:1.15-alpine
-    #   mgmt_ipv4: 172.80.80.41
-    #   mgmt_ipv6: 2001::172:80:80:41
-    #   binds:
-    #     - /root/container-lab/lab-examples/telemetry01/configs/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
     gnmic:
       kind: linux
       image: ghcr.io/karimra/gnmic:0.7.0
@@ -64,11 +57,8 @@ topology:
     prometheus:
       kind: linux
       image: prom/prometheus:v2.23.0
-      # mgmt_ipv4: 172.80.80.42
-      # mgmt_ipv6: 2001::172:80:80:42
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-        # - /root/container-lab/lab-examples/telemetry01/prom-data:/data/prometheus:rw
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
         - 9090:9090
