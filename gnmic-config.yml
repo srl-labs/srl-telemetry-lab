@@ -22,7 +22,7 @@ subscriptions:
 
   srl_cpu:
     paths:
-      - /platform/control[slot=*]/cpu[index=all]/
+      - /platform/control[slot=*]/cpu[index=all]/total
     mode: stream
     stream-mode: sample
     sample-interval: 5s
@@ -79,21 +79,5 @@ processors:
       value-names:
         - ".*"
       transforms:
-        - trim-prefix:
+        - path-base:
             apply-on: "name"
-            prefix: "/srl_nokia-interfaces:interface/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-cpu:cpu/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-platform:platform/srl_nokia-platform-control:control/srl_nokia-platform-memory:memory/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/protocols/srl_nokia-bgp:bgp/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv4-unicast/statistics/"
-        - trim-prefix:
-            apply-on: "name"
-            prefix: "/srl_nokia-network-instance:network-instance/route-table/srl_nokia-ip-route-tables:ipv6-unicast/statistics/"

@@ -2908,7 +2908,7 @@
             "steppedLine": true,
             "targets": [
                 {
-                    "expr": "gnmic_srl_cpu_total_instant{source=\"$NE\"}",
+                    "expr": "gnmic_srl_cpu_instant{source=\"$NE\"}",
                     "instant": false,
                     "interval": "",
                     "legendFormat": "Total Instant",
