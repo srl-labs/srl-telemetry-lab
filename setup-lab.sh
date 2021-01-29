@@ -34,19 +34,7 @@ echo "  2.1 Configuring client1 IP addressing" | tee -a st-lab-setup.log
 docker exec -it clab-st-client1 bash /config/ip.sh
 echo "  2.2 Configuring client2 IP addressing" | tee -a st-lab-setup.log
 docker exec -it clab-st-client2 bash /config/ip.sh
-echo
-echo "3 Starting iperf" | tee -a st-lab-setup.log
-echo "  3.1 Starting iperf server on client1" | tee -a st-lab-setup.log
-docker exec -it clab-st-client1 bash /config/iperf.sh
-echo "  3.2 Starting iperf client on client2" | tee -a st-lab-setup.log
-docker exec -it clab-st-client2 bash /config/iperf.sh
+echo "  2.3 Configuring client3 IP addressing" | tee -a st-lab-setup.log
+docker exec -it clab-st-client3 bash /config/ip.sh
 echo
 echo "Setup finished, check st-lab-setup.log"
-
-
-#TODO 
-# add a step chown -R 65534:65534 /root/container-lab/lab-examples/telemetry01/prom-data* to set right permissions for prom container to run
-
-# install weathermap
-# curl -LO https://github.com/algenty/flowcharting-repository/raw/master/archives/agenty-flowcharting-panel-0.9.0.zip (or wget from container' /var/lib/grafana/plugins)
-# unzip agenty-flowcharting-panel-0.9.0.zip
