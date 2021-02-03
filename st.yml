@@ -66,6 +66,8 @@ topology:
     grafana:
       kind: linux
       image: grafana/grafana:7.3.5
+      env:
+        GF_INSTALL_PLUGINS: grafana-polystat-panel
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro

@@ -55,6 +55,13 @@ subscriptions:
     stream-mode: sample
     sample-interval: 5s
 
+  srl_apps:
+    paths:
+      - /system/app-management/application[name=*]
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+
 outputs:
   prom:
     type: prometheus
