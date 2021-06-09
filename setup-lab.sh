@@ -1,4 +1,8 @@
 #!/bin/bash
+# Copyright 2020 Nokia
+# Licensed under the BSD 3-Clause License.
+# SPDX-License-Identifier: BSD-3-Clause
+
 CFG_DIR=./configs
 
 # configure_srl function performs SR Linux configuraion using gnmic client

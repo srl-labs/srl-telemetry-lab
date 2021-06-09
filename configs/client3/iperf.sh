@@ -1,3 +1,7 @@
+# Copyright 2020 Nokia
+# Licensed under the BSD 3-Clause License.
+# SPDX-License-Identifier: BSD-3-Clause
+
 # Start iperf3 server in the background
 # with 10 parallel tcp streams, each 2Mbit/s == 64Mbit/s
 # using ipv6 interfaces
