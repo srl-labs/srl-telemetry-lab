@@ -15,9 +15,8 @@ topology:
 
   kinds:
     srl:
-      type: ixr6
-      image: srlinux:20.6.3-145
-      license: srl-license.key
+      image: ghcr.io/nokia/srlinux
+      # license: srl-license.key
     linux:
       image: ghcr.io/hellt/network-multitool
 
@@ -30,11 +29,8 @@ topology:
 
     ### LEAFS ###
     leaf1:
-      type: ixrd2
     leaf2:
-      type: ixrd2
     leaf3:
-      type: ixrd2
 
     ### CLIENTS ###
     client1:
@@ -53,7 +49,7 @@ topology:
     ### TELEMETRY STACK ###
     gnmic:
       kind: linux
-      image: ghcr.io/karimra/gnmic:0.7.0
+      image: ghcr.io/karimra/gnmic:0.22.1
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
