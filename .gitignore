@@ -1,3 +1,4 @@
 clab-st
 srl-license.key
 *.log
+.*.clab.y?ml
