@@ -53,6 +53,8 @@ srl_nokia-network-instance:network-instance:
       - name: ethernet-1/2.0
       - name: ethernet-1/3.0
       - name: lo0.0
+    ip-forwarding:
+      receive-ipv4-check: false
     protocols:
       srl_nokia-bgp:bgp:
         admin-state: enable
