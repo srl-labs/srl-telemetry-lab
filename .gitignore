@@ -1,4 +1,4 @@
 clab-st
-srl-license.key
+*.key
 *.log
 .*.clab.y?ml

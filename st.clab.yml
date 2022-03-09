@@ -15,7 +15,8 @@ topology:
 
   kinds:
     srl:
-      image: ghcr.io/nokia/srlinux
+      image: ghcr.io/nokia/srlinux:21.11.2
+      type: ixrd2l
       # license: srl-license.key
     linux:
       image: ghcr.io/hellt/network-multitool
@@ -23,9 +24,11 @@ topology:
   nodes:
     ### SPINES ###
     spine1:
-      type: ixr6
+      type: ixrd3l
+      group: spine
     spine2:
-      type: ixr6
+      type: ixrd3l
+      group: spine
 
     ### LEAFS ###
     leaf1:
@@ -36,7 +39,7 @@ topology:
     client1:
       kind: linux
       binds:
-        - configs/client1:/config
+        - ${PWD}/configs/client1:/config
     client2:
       kind: linux
       binds:
