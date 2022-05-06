@@ -39,7 +39,7 @@ topology:
     client1:
       kind: linux
       binds:
-        - ${PWD}/configs/client1:/config
+        - configs/client1:/config
     client2:
       kind: linux
       binds:
@@ -52,14 +52,14 @@ topology:
     ### TELEMETRY STACK ###
     gnmic:
       kind: linux
-      image: ghcr.io/karimra/gnmic:0.22.1
+      image: ghcr.io/karimra/gnmic:0.25.0-rc1
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
 
     prometheus:
       kind: linux
-      image: prom/prometheus:v2.23.0
+      image: prom/prometheus:v2.35.0
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
@@ -68,7 +68,7 @@ topology:
 
     grafana:
       kind: linux
-      image: grafana/grafana:7.3.5
+      image: grafana/grafana:8.5.2
       env:
         GF_INSTALL_PLUGINS: grafana-polystat-panel
       binds:
