@@ -10,4 +10,4 @@ global:
 scrape_configs:
   - job_name: "telegraf"
     static_configs:
-      - targets: ["clab-st-gnmic:9273"]
+      - targets: ["gnmic:9273"]

@@ -4,4 +4,4 @@ apiVersion: 1
 datasources:
   - name: Prometheus
     type: prometheus
-    url: http://clab-st-prometheus:9090
+    url: http://prometheus:9090

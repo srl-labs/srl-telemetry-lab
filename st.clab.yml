@@ -37,7 +37,7 @@ topology:
 
     ### LEAFS ###
     leaf1:
-      #startup-config: configs/fabric/leaf1.json
+      startup-config: configs/fabric/leaf1.json
       mgmt_ipv4: 172.80.80.11
     leaf2:
       startup-config: configs/fabric/leaf2.json
