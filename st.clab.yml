@@ -3,11 +3,12 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 name: st # short for streaming telemetry ;)
+prefix: ""
 
 mgmt:
   network: st
   ipv4_subnet: 172.80.80.0/24
-  ipv6_subnet: 2001::172:80:80:0/112
+  ipv6_subnet: ""
 
 topology:
   defaults:
@@ -26,28 +27,56 @@ topology:
     spine1:
       type: ixrd3l
       group: spine
+      startup-config: configs/fabric/spine1.json
+      mgmt_ipv4: 172.80.80.21
     spine2:
       type: ixrd3l
       group: spine
+      startup-config: configs/fabric/spine2.json
+      mgmt_ipv4: 172.80.80.22
 
     ### LEAFS ###
     leaf1:
+      #startup-config: configs/fabric/leaf1.json
+      mgmt_ipv4: 172.80.80.11
     leaf2:
+      startup-config: configs/fabric/leaf2.json
+      mgmt_ipv4: 172.80.80.12
     leaf3:
+      startup-config: configs/fabric/leaf3.json
+      mgmt_ipv4: 172.80.80.13
 
     ### CLIENTS ###
     client1:
       kind: linux
+      mgmt_ipv4: 172.80.80.31
       binds:
         - configs/client1:/config
+      exec:
+        - ip address add 172.17.11.2/24 dev eth1
+        - ip route add 172.17.0.0/16 via 172.17.11.1
+        - ip -6 address add 2002::172:17:11:2/112 dev eth1
+        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:11:1
     client2:
       kind: linux
+      mgmt_ipv4: 172.80.80.32
       binds:
         - configs/client2:/config
+      exec:
+        - ip address add 172.17.22.2/24 dev eth1
+        - ip route add 172.17.0.0/16 via 172.17.22.1
+        - ip -6 address add 2002::172:17:22:2/112 dev eth1
+        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:22:1
     client3:
       kind: linux
+      mgmt_ipv4: 172.80.80.33
       binds:
         - configs/client3:/config
+      exec:
+        - ip address add 172.17.33.2/24 dev eth1
+        - ip route add 172.17.0.0/16 via 172.17.33.1
+        - ip -6 address add 2002::172:17:33:2/112 dev eth1
+        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:33:1
 
     ### TELEMETRY STACK ###
     gnmic:

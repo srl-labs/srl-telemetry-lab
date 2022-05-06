@@ -9,11 +9,11 @@ CFG_DIR=./configs
 # since when SRL containers starts it performs some configuration commits, the immediate gNMI Set will fail
 # this function implements a loop that will try to have a successful Set retrying every 2s
 configure_srl () {
-  OUT=$(/usr/local/bin/gnmic -a clab-st-$1 --timeout 30s -u admin -p admin -e json_ietf --skip-verify set --update-path / --update-file $CFG_DIR/fabric/$1.yml 2>&1)
+  OUT=$(/usr/local/bin/gnmic -a $1 --timeout 30s -u admin -p admin -e json_ietf --skip-verify set --update-path / --update-file $CFG_DIR/fabric/$1.yml 2>&1)
   echo $OUT | grep -q -e '\"operation\": \"UPDATE\"'
   while [ $? -ne 0 ]; do
     sleep 2
-    OUT=$(/usr/local/bin/gnmic -a clab-st-$1 --timeout 30s -u admin -p admin -e json_ietf --skip-verify set --update-path / --update-file $CFG_DIR/fabric/$1.yml 2>&1)
+    OUT=$(/usr/local/bin/gnmic -a $1 --timeout 30s -u admin -p admin -e json_ietf --skip-verify set --update-path / --update-file $CFG_DIR/fabric/$1.yml 2>&1)
     echo $OUT | grep -q -e '\"operation\": \"UPDATE\"'
   done
   # log succesful exec into the log file
@@ -35,10 +35,10 @@ configure_srl "spine2"
 echo | tee -a st-lab-setup.log
 echo "2 Configuring client IPv4/6" | tee -a st-lab-setup.log
 echo "  2.1 Configuring client1 IP addressing" | tee -a st-lab-setup.log
-docker exec -it clab-st-client1 bash /config/ip.sh
+docker exec -it client1 bash /config/ip.sh
 echo "  2.2 Configuring client2 IP addressing" | tee -a st-lab-setup.log
-docker exec -it clab-st-client2 bash /config/ip.sh
+docker exec -it client2 bash /config/ip.sh
 echo "  2.3 Configuring client3 IP addressing" | tee -a st-lab-setup.log
-docker exec -it clab-st-client3 bash /config/ip.sh
+docker exec -it client3 bash /config/ip.sh
 echo
 echo "Setup finished, check st-lab-setup.log"
