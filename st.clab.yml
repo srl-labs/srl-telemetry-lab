@@ -53,30 +53,21 @@ topology:
       binds:
         - configs/client1:/config
       exec:
-        - ip address add 172.17.11.2/24 dev eth1
-        - ip route add 172.17.0.0/16 via 172.17.11.1
-        - ip -6 address add 2002::172:17:11:2/112 dev eth1
-        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:11:1
+        - bash /config/ip.sh
     client2:
       kind: linux
       mgmt_ipv4: 172.80.80.32
       binds:
         - configs/client2:/config
       exec:
-        - ip address add 172.17.22.2/24 dev eth1
-        - ip route add 172.17.0.0/16 via 172.17.22.1
-        - ip -6 address add 2002::172:17:22:2/112 dev eth1
-        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:22:1
+        - bash /config/ip.sh
     client3:
       kind: linux
       mgmt_ipv4: 172.80.80.33
       binds:
         - configs/client3:/config
       exec:
-        - ip address add 172.17.33.2/24 dev eth1
-        - ip route add 172.17.0.0/16 via 172.17.33.1
-        - ip -6 address add 2002::172:17:33:2/112 dev eth1
-        - ip -6 route add 2002::172:17:0:0/96 via 2002::172:17:33:1
+        - bash /config/ip.sh
 
     ### TELEMETRY STACK ###
     gnmic:
@@ -109,12 +100,12 @@ topology:
         - 3000:3000
 
   links:
-    - endpoints: ["spine1:e1-1", "leaf1:e1-1"]
-    - endpoints: ["spine1:e1-2", "leaf2:e1-1"]
-    - endpoints: ["spine1:e1-3", "leaf3:e1-1"]
-    - endpoints: ["spine2:e1-1", "leaf1:e1-2"]
-    - endpoints: ["spine2:e1-2", "leaf2:e1-2"]
-    - endpoints: ["spine2:e1-3", "leaf3:e1-2"]
-    - endpoints: ["leaf1:e1-36", "client1:eth1"]
-    - endpoints: ["leaf2:e1-36", "client2:eth1"]
-    - endpoints: ["leaf3:e1-36", "client3:eth1"]
+    - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
+    - endpoints: ["spine1:e1-2", "leaf2:e1-49"]
+    - endpoints: ["spine1:e1-3", "leaf3:e1-49"]
+    - endpoints: ["spine2:e1-1", "leaf1:e1-50"]
+    - endpoints: ["spine2:e1-2", "leaf2:e1-50"]
+    - endpoints: ["spine2:e1-3", "leaf3:e1-50"]
+    - endpoints: ["leaf1:e1-1", "client1:eth1"]
+    - endpoints: ["leaf2:e1-1", "client2:eth1"]
+    - endpoints: ["leaf3:e1-1", "client3:eth1"]
