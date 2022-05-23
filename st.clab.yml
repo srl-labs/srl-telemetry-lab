@@ -80,7 +80,7 @@ topology:
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
-      group: 10 # group 10 is assigned to the nodes of a telemetry stack
+      group: "10" # group 10 is assigned to the nodes of a telemetry stack
 
     prometheus:
       kind: linux
@@ -90,7 +90,7 @@ topology:
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
         - 9090:9090
-      group: 10
+      group: "10"
 
     grafana:
       kind: linux
@@ -102,7 +102,7 @@ topology:
         - configs/grafana/grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
       ports:
         - 3000:3000
-      group: 10
+      group: "10"
 
   links:
     - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
