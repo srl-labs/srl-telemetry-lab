@@ -51,10 +51,11 @@ topology:
     client1:
       kind: linux
       mgmt_ipv4: 172.80.80.31
-      binds:
-        - configs/client1:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.1/24 dev eth1
+        - ip -6 address add 2002::172:17:0:1/96 dev eth1
+        - iperf3 -s -p 5201 -D > iperf3_1.log
+        - iperf3 -s -p 5202 -D > iperf3_2.log
       group: server
     client2:
       kind: linux
@@ -62,15 +63,15 @@ topology:
       binds:
         - configs/client2:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.2/24 dev eth1
+        - ip -6 address add 2002::172:17:0:2/96 dev eth1
       group: server
     client3:
       kind: linux
       mgmt_ipv4: 172.80.80.33
-      binds:
-        - configs/client3:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.3/24 dev eth1
+        - ip -6 address add 2002::172:17:0:3/96 dev eth1
       group: server
 
     ### TELEMETRY STACK ###
