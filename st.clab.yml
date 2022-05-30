@@ -8,7 +8,6 @@ prefix: ""
 mgmt:
   network: st
   ipv4_subnet: 172.80.80.0/24
-  ipv6_subnet: ""
 
 topology:
   defaults:
@@ -16,9 +15,8 @@ topology:
 
   kinds:
     srl:
-      image: ghcr.io/nokia/srlinux:21.11.2
+      image: ghcr.io/nokia/srlinux:21.11.3
       type: ixrd2l
-      # license: srl-license.key
     linux:
       image: ghcr.io/hellt/network-multitool
 
@@ -39,35 +37,44 @@ topology:
     leaf1:
       startup-config: configs/fabric/leaf1.cfg
       mgmt_ipv4: 172.80.80.11
+      group: leaf
     leaf2:
       startup-config: configs/fabric/leaf2.cfg
       mgmt_ipv4: 172.80.80.12
+      group: leaf
     leaf3:
       startup-config: configs/fabric/leaf3.cfg
       mgmt_ipv4: 172.80.80.13
+      group: leaf
 
     ### CLIENTS ###
     client1:
       kind: linux
       mgmt_ipv4: 172.80.80.31
-      binds:
-        - configs/client1:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.1/24 dev eth1
+        - ip -6 address add 2002::172:17:0:1/96 dev eth1
+        - iperf3 -s -p 5201 -D > iperf3_1.log
+        - iperf3 -s -p 5202 -D > iperf3_2.log
+      group: server
     client2:
       kind: linux
       mgmt_ipv4: 172.80.80.32
       binds:
         - configs/client2:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.2/24 dev eth1
+        - ip -6 address add 2002::172:17:0:2/96 dev eth1
+      group: server
     client3:
       kind: linux
       mgmt_ipv4: 172.80.80.33
       binds:
         - configs/client3:/config
       exec:
-        - bash /config/ip.sh
+        - ip address add 172.17.0.3/24 dev eth1
+        - ip -6 address add 2002::172:17:0:3/96 dev eth1
+      group: server
 
     ### TELEMETRY STACK ###
     gnmic:
@@ -76,6 +83,7 @@ topology:
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
+      group: "10" # group 10 is assigned to the nodes of a telemetry stack
 
     prometheus:
       kind: linux
@@ -85,12 +93,11 @@ topology:
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
         - 9090:9090
+      group: "10"
 
     grafana:
       kind: linux
       image: grafana/grafana:8.5.2
-      env:
-        GF_INSTALL_PLUGINS: grafana-polystat-panel
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -98,6 +105,7 @@ topology:
         - configs/grafana/grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
       ports:
         - 3000:3000
+      group: "10"
 
   links:
     - endpoints: ["spine1:e1-1", "leaf1:e1-49"]

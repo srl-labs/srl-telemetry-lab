@@ -1,4 +1,4 @@
 clab-st
 *.key
 *.log
-.*.clab.y?ml
+.*.clab.y*ml
