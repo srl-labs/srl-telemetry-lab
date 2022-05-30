@@ -69,6 +69,8 @@ topology:
     client3:
       kind: linux
       mgmt_ipv4: 172.80.80.33
+      binds:
+        - configs/client3:/config
       exec:
         - ip address add 172.17.0.3/24 dev eth1
         - ip -6 address add 2002::172:17:0:3/96 dev eth1

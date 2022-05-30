@@ -8,26 +8,22 @@ set -eu
 
 startTraffic1-2() {
     echo "starting traffic between clients 1 and 2"
-    docker exec client1 bash /config/iperf.sh
     docker exec client2 bash /config/iperf.sh
 }
 
 startTraffic1-3() {
     echo "starting traffic between clients 1 and 3"
-    docker exec client1 bash /config/iperf.sh
     docker exec client3 bash /config/iperf.sh
 }
 
 stopAll() {
     echo "stopping all traffic"
-    docker exec client1 pkill iperf3
     docker exec client2 pkill iperf3
     docker exec client3 pkill iperf3
 }
 
 startAll() {
     echo "starting traffic on all clients"
-    docker exec client1 bash /config/iperf.sh
     docker exec client2 bash /config/iperf.sh
     docker exec client3 bash /config/iperf.sh
 }

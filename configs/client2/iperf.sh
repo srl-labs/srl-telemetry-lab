@@ -5,4 +5,4 @@
 # Start iperf3 server in the background
 # with 4 parallel tcp streams, each 200 Kbit/s == 800Kbit/s
 # using ipv6 interfaces
-iperf3 -c 2002::172:17:0:1 -t 10000 -i 10 -p 5201 -B 2002::172:17:0:2 -P 32 -b 200K &
+iperf3 -c 2002::172:17:0:1 -t 10000 -i 1 -p 5201 -B 2002::172:17:0:2 -P 32 -b 200K -M 1460 &
