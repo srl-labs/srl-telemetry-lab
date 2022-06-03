@@ -19,5 +19,6 @@ Fabric configuration consists of adding SR Linux configuration (interfaces, IGP,
 To run traffic between the nodes, leverage `traffic.sh` control script.
 
 ## Access details
+
 * Grafana: http://localhost:3000
 * Prometheus: http://localhost:9090/graph
