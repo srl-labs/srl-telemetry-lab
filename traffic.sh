@@ -16,16 +16,26 @@ startTraffic1-3() {
     docker exec client3 bash /config/iperf.sh
 }
 
-stopAll() {
-    echo "stopping all traffic"
-    docker exec client2 pkill iperf3
-    docker exec client3 pkill iperf3
-}
-
 startAll() {
     echo "starting traffic on all clients"
     docker exec client2 bash /config/iperf.sh
     docker exec client3 bash /config/iperf.sh
+}
+
+stopTraffic1-2() {
+    echo "stopping traffic between clients 1 and 2"
+    docker exec client2 pkill iperf3
+}
+
+stopTraffic1-3() {
+    echo "stopping traffic between clients 1 and 3"
+    docker exec client3 pkill iperf3
+}
+
+stopAll() {
+    echo "stopping all traffic"
+    docker exec client2 pkill iperf3
+    docker exec client3 pkill iperf3
 }
 
 # start traffic
@@ -42,6 +52,12 @@ if [ $1 == "start" ]; then
 fi
 
 if [ $1 == "stop" ]; then
+    if [ $2 == "1-2" ]; then
+        stopTraffic1-2
+    fi
+    if [ $2 == "1-3" ]; then
+        stopTraffic1-3
+    fi
     if [ $2 == "all" ]; then
         stopAll
     fi

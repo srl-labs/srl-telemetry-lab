@@ -20,6 +20,25 @@ The lab is deployed with [containerlab](https://containerlab.dev) project where 
 containerlab deploy -t st.clab.yml
 ```
 
+Once the lab is completed, it can be removed with the destroy command.
+
+```bash
+# destroy a lab
+containerlab destroy -t st.clab.yml
+```
+
+## Accessing the network elements
+Once the lab has been deployed, the different SR Linux nodes can be accessed via SSH through their management IP address, given in the summary displayed after the execution of the deploy command. It is also possible to reach those nodes directly via their hostname, defined in the topology file. Linux clients cannot be reached via SSH, as it is not enabled, but it is possible to connect to them with a docker exec command.
+
+```bash
+# reach a SR Linux leaf or a spine via SSH
+ssh admin@leaf1
+ssh admin@spine1
+
+# reach a Linux client via Docker
+docker exec -it client1 bash
+```
+
 ## Fabric configuration
 The DC fabric used in this lab consists of three leaves and two spines interconnected with each other as shown in the diagram.
 
@@ -28,6 +47,25 @@ The DC fabric used in this lab consists of three leaves and two spines interconn
 Leaves and spines use Nokia SR Linux IXR-D2 and IXR-D3L chassis respectively. Each network element of this topology is equipped with a [startup configuration file](configs/fabric/) that is applied at the node's startup.
 
 Once booted, network nodes will come up with interfaces, underlay protocols and overlay service configured. The fabric is configured with Layer 2 EVPN service between the leaves.
+
+### Verifying the underlay and overlay status
+The underlay network is provided by eBGP, the overlay network, by iBGP. By connecting via SSH on one of the leafs, it is possible to verify the status of those BGP sessions.
+
+```
+A:leaf1# show network-instance default protocols bgp neighbor
+------------------------------------------------------------------------------------------------------------------
+BGP neighbor summary for network-instance "default"
+Flags: S static, D dynamic, L discovered by LLDP, B BFD enabled, - disabled, * slow
+
++-----------+---------------+---------------+-------+----------+-------------+--------------+--------------+---------------+
+| Net-Inst  |     Peer      |     Group     | Flags | Peer-AS  |   State     |    Uptime    |   AFI/SAFI   | Rx/Active/Tx] |
++===========+===============+===============+=======+==========+=============+==============+==============+===============+
+| default   | 10.0.2.1      | iBGP-overlay  | S     | 100      | established | 0d:0h:0m:27s | evpn         | [4/4/2]       |
+| default   | 10.0.2.2      | iBGP-overlay  | S     | 100      | established | 0d:0h:0m:28s | evpn         | [4/0/2]       |
+| default   | 192.168.11.1  | eBGP          | S     | 201      | established | 0d:0h:0m:34s | ipv4-unicast | [3/3/2]       |
+| default   | 192.168.12.1  | eBGP          | S     | 202      | established | 0d:0h:0m:33s | ipv4-unicast | [3/3/4]       |
++-----------+---------------+---------------+-------+----------+-------------+--------------+--------------+---------------+
+```
 
 ## Running traffic
 To run traffic between the nodes, leverage `traffic.sh` control script.
@@ -40,7 +78,9 @@ To start the traffic:
 
 To stop the traffic:
 
-* `bash traffic.sh stop` - stop traffic generation
+* `bash traffic.sh stop` - stop traffic generation between all nodes
+* `bash traffic.sh stop 1-2` - stop traffic generation between client1 and client2
+* `bash traffic.sh stop 1-3` - stop traffic generation between client1 and client3
 
 ## Telemetry stack
 As the lab name suggests, telemetry is at its core. The following stack of software solutions has been chosen for this lab:
