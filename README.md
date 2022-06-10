@@ -24,7 +24,7 @@ Once the lab is completed, it can be removed with the destroy command.
 
 ```bash
 # destroy a lab
-clab des -t st.clab.yml
+containerlab destroy -t st.clab.yml
 ```
 
 ## Accessing the network elements
@@ -57,19 +57,14 @@ A:leaf1# show network-instance default protocols bgp neighbor
 BGP neighbor summary for network-instance "default"
 Flags: S static, D dynamic, L discovered by LLDP, B BFD enabled, - disabled, * slow
 
-+-----------+---------------+---------------+-----+--------+------------+------------+-----------+---------------+
-| Net-Inst  |     Peer      |     Group     | Fla | Peer-  |   State    |   Uptime   | AFI/SAFI  | Rx/Active/Tx] |
-|           |               |               | gs  |   AS   |            |            |           |               |
-+===========+===============+===============+=====+========+============+============+===========+===============+
-| default   | 10.0.2.1      | iBGP-overlay  | S   | 100    | establishe | 0d:0h:0m:2 | evpn      | [4/4/2]       |
-|           |               |               |     |        | d          | 7s         |           |               |
-| default   | 10.0.2.2      | iBGP-overlay  | S   | 100    | establishe | 0d:0h:0m:2 | evpn      | [4/0/2]       |
-|           |               |               |     |        | d          | 8s         |           |               |
-| default   | 192.168.11.1  | eBGP          | S   | 201    | establishe | 0d:0h:0m:3 | ipv4-unic | [3/3/2]       |
-|           |               |               |     |        | d          | 4s         | ast       |               |
-| default   | 192.168.12.1  | eBGP          | S   | 202    | establishe | 0d:0h:0m:3 | ipv4-unic | [3/3/4]       |
-|           |               |               |     |        | d          | 3s         | ast       |               |
-+-----------+---------------+---------------+-----+--------+------------+------------+-----------+---------------+
++-----------+---------------+---------------+-------+----------+-------------+--------------+--------------+---------------+
+| Net-Inst  |     Peer      |     Group     | Flags | Peer-AS  |   State     |    Uptime    |   AFI/SAFI   | Rx/Active/Tx] |
++===========+===============+===============+=======+==========+=============+==============+==============+===============+
+| default   | 10.0.2.1      | iBGP-overlay  | S     | 100      | established | 0d:0h:0m:27s | evpn         | [4/4/2]       |
+| default   | 10.0.2.2      | iBGP-overlay  | S     | 100      | established | 0d:0h:0m:28s | evpn         | [4/0/2]       |
+| default   | 192.168.11.1  | eBGP          | S     | 201      | established | 0d:0h:0m:34s | ipv4-unicast | [3/3/2]       |
+| default   | 192.168.12.1  | eBGP          | S     | 202      | established | 0d:0h:0m:33s | ipv4-unicast | [3/3/4]       |
++-----------+---------------+---------------+-------+----------+-------------+--------------+--------------+---------------+
 ```
 
 ## Running traffic
