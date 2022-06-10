@@ -15,7 +15,7 @@ topology:
 
   kinds:
     srl:
-      image: ghcr.io/nokia/srlinux:21.11.3
+      image: ghcr.io/nokia/srlinux:22.3.2
       type: ixrd2l
     linux:
       image: ghcr.io/hellt/network-multitool
@@ -79,6 +79,7 @@ topology:
     ### TELEMETRY STACK ###
     gnmic:
       kind: linux
+      mgmt_ipv4: 172.80.80.41
       image: ghcr.io/karimra/gnmic:0.25.0-rc1
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
@@ -87,6 +88,7 @@ topology:
 
     prometheus:
       kind: linux
+      mgmt_ipv4: 172.80.80.42
       image: prom/prometheus:v2.35.0
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
@@ -97,6 +99,7 @@ topology:
 
     grafana:
       kind: linux
+      mgmt_ipv4: 172.80.80.43
       image: grafana/grafana:8.5.2
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
