@@ -3,7 +3,7 @@ SR Linux has first-class Streaming Telemetry support thanks to 100% YANG coverag
 
 This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srlinux.dev/) switches running as containers. The lab topology consists of a Clos itself, plus a Streaming Telemetry stack comprised of gnmic, prometheus and grafana applications.
 
-![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/5a0deb299f40b1b9572d64c73c9890de/image.png)
+![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
 Goals of this lab:
 
@@ -42,14 +42,14 @@ docker exec -it client1 bash
 ## Fabric configuration
 The DC fabric used in this lab consists of three leaves and two spines interconnected with each other as shown in the diagram.
 
-![pic](https://gitlab.com/rdodin/pics/-/wikis/uploads/6d7c55ab460cff731ae8652a385877f8/image.png)
+![pic](https://gitlab.com/rdodin/pics/-/wikis/uploads/14c768a04fc30e09b0bf5cf0b57b5b63/image.png)
 
 Leaves and spines use Nokia SR Linux IXR-D2 and IXR-D3L chassis respectively. Each network element of this topology is equipped with a [startup configuration file](configs/fabric/) that is applied at the node's startup.
 
 Once booted, network nodes will come up with interfaces, underlay protocols and overlay service configured. The fabric is configured with Layer 2 EVPN service between the leaves.
 
 ### Verifying the underlay and overlay status
-The underlay network is provided by eBGP, the overlay network, by iBGP. By connecting via SSH on one of the leafs, it is possible to verify the status of those BGP sessions.
+The underlay network is provided by eBGP, and the overlay network, by iBGP. By connecting via SSH to one of the leaves, it is possible to verify the status of those BGP sessions.
 
 ```
 A:leaf1# show network-instance default protocols bgp neighbor
