@@ -4043,7 +4043,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "gnmic_srl_if_oper_sate_oper_state",
+          "expr": "gnmic_srl_if_oper_state_oper_state",
           "hide": false,
           "legendFormat": "oper-state:{{source}}:{{interface_name}}",
           "range": true,
@@ -5934,7 +5934,7 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "gnmic_srl_if_oper_sate_oper_state",
+          "expr": "gnmic_srl_if_oper_state_oper_state",
           "legendFormat": "{{source}}:{{interface_name}}",
           "range": true,
           "refId": "A"

@@ -17,7 +17,7 @@ targets:
   spine2:57400:
 
 subscriptions:
-  srl_if_oper_sate:
+  srl_if_oper_state:
     paths:
       - /interface[name=ethernet-1/*]/oper-state
     mode: stream
