@@ -37,7 +37,7 @@ subscriptions:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-  
+
   srl_if_traffic_rate:
     paths:
       - /interface[name=ethernet-1/*]/traffic-rate

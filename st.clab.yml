@@ -15,7 +15,7 @@ topology:
 
   kinds:
     srl:
-      image: ghcr.io/nokia/srlinux:22.3.2
+      image: ghcr.io/nokia/srlinux:22.6.4
       type: ixrd2l
     linux:
       image: ghcr.io/hellt/network-multitool
@@ -80,7 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt_ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.27.0
+      image: ghcr.io/karimra/gnmic:0.26.0
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
