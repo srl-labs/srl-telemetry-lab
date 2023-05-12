@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 username: admin
-password: admin
+password: NokiaSrl1!
 port: 57400
 timeout: 10s
 skip-verify: true
