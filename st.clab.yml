@@ -105,9 +105,11 @@ topology:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
         - configs/grafana/dashboards:/var/lib/grafana/dashboards
-        - configs/grafana/grafana-flowcharting:/var/lib/grafana/plugins/grafana-flowcharting
       ports:
         - 3000:3000
+      exec:
+        - wget https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip -O /tmp/agenty-flowcharting-panel.zip
+        - unzip -d /var/lib/grafana/plugins/ /tmp/agenty-flowcharting-panel.zip 
       group: "10"
 
   links:
