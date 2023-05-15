@@ -8,6 +8,6 @@ global:
 # metrics_path defaults to '/metrics'
 # scheme defaults to 'http'.
 scrape_configs:
-  - job_name: "telegraf"
+  - job_name: "gnmic"
     static_configs:
       - targets: ["gnmic:9273"]
