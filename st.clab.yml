@@ -108,8 +108,7 @@ topology:
       ports:
         - 3000:3000
       exec:
-        - wget https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip -O /tmp/agenty-flowcharting-panel.zip
-        - unzip -d /var/lib/grafana/plugins/ /tmp/agenty-flowcharting-panel.zip 
+        - grafana-cli --pluginUrl https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip plugins install *
       group: "10"
 
   links:
