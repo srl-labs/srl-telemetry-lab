@@ -107,8 +107,8 @@ topology:
         - configs/grafana/dashboards:/var/lib/grafana/dashboards
       ports:
         - 3000:3000
-      exec:
-        - grafana-cli --pluginUrl https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip plugins install *
+      env:
+        GF_INSTALL_PLUGINS: https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip;agenty-flowcharting-panel
       group: "10"
 
   links:
