@@ -133,7 +133,6 @@ topology:
       mgmt-ipv4: 172.80.80.45
       image: grafana/promtail:2.7.4
       binds:
-        - /var/log/:/var/log
         - configs/promtail:/etc/promtail
       cmd: --config.file=/etc/promtail/promtail-config.yml
       ports:
