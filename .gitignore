@@ -2,3 +2,7 @@ clab-st
 *.key
 *.log
 .*.clab.y*ml.bak
+configs/syslog/log/**
+configs/syslog/syslog-ng.ctl
+configs/syslog/syslog-ng.persist
+configs/syslog/syslog-ng.pid

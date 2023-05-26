@@ -116,6 +116,38 @@ topology:
         GF_AUTH_ANONYMOUS: "true"
       group: "10"
 
+    ### LOGGING STACK ###
+    syslog:
+      kind: linux
+      mgmt-ipv4: 172.80.80.44
+      image: linuxserver/syslog-ng:latest
+      binds:
+        - configs/syslog/:/config
+        - configs/syslog/log:/var/log
+      env:
+        PUID: 0
+        PGID: 0
+
+    promtail:
+      kind: linux
+      mgmt-ipv4: 172.80.80.45
+      image: grafana/promtail:2.7.4
+      binds:
+        - configs/promtail:/etc/promtail
+      cmd: --config.file=/etc/promtail/promtail-config.yml
+      ports:
+        - 9080:9080
+
+    loki:
+      kind: linux
+      mgmt-ipv4: 172.80.80.46
+      image: grafana/loki:2.7.4
+      binds:
+        - configs/loki:/etc/loki
+      cmd: --config.file=/etc/loki/loki-config.yml
+      ports:
+        - 3100:3100
+
   links:
     - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
     - endpoints: ["spine1:e1-2", "leaf2:e1-49"]

@@ -24,7 +24,6 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 2,
-  "iteration": 1655112273626,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -52,6 +51,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "axisSoftMax": 3000000,
@@ -111,8 +112,9 @@
       "options": {
         "legend": {
           "calcs": [],
-          "displayMode": "hidden",
-          "placement": "bottom"
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
         },
         "tooltip": {
           "mode": "single",
@@ -216,16 +218,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-120",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-16",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -260,16 +305,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-120",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -290,17 +325,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-16",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -310,6 +334,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -341,16 +366,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-1",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-8",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -385,16 +453,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-1",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -415,17 +473,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-8",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -435,6 +482,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -466,16 +514,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-42",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-5",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -510,16 +601,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-42",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -540,17 +621,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-5",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -560,6 +630,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -591,16 +662,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-15",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-7",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -635,16 +749,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-15",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -665,17 +769,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-7",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -685,6 +778,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -716,16 +810,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-122",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-17",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -760,16 +897,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-122",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -790,17 +917,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-17",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -810,6 +926,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -841,16 +958,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-2",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-11",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -885,16 +1045,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-2",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -915,17 +1065,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-11",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -935,6 +1074,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -966,16 +1106,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-118",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-10",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1010,16 +1193,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-118",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1040,17 +1213,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-10",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1060,6 +1222,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1091,16 +1254,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-0",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-9",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1135,16 +1341,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-0",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1165,17 +1361,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-9",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1185,6 +1370,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1216,16 +1402,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-116",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-14",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1260,16 +1489,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-116",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1290,17 +1509,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-14",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1310,6 +1518,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1341,16 +1550,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-114",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-13",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1385,16 +1637,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-114",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1415,17 +1657,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-13",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1435,6 +1666,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1466,16 +1698,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-112",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-12",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1510,16 +1785,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-112",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1540,17 +1805,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-12",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1560,6 +1814,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1591,16 +1846,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-16",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-15",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1635,16 +1933,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-16",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1665,17 +1953,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-15",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1685,6 +1962,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1716,16 +1994,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-96",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-22",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1760,16 +2081,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-96",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1790,17 +2101,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-22",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1810,6 +2110,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1841,16 +2142,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-19",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-19",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -1885,16 +2229,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-19",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -1915,17 +2249,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-19",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -1935,6 +2258,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -1966,16 +2290,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-55",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-18",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2010,16 +2377,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-55",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2040,17 +2397,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-18",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2060,6 +2406,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -2091,16 +2438,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-100",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-20",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2135,16 +2525,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-100",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2165,17 +2545,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-20",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2185,6 +2554,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -2216,16 +2586,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-107",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-23",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2260,16 +2673,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-107",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2290,17 +2693,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-23",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2310,6 +2702,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -2341,16 +2734,59 @@
               }
             ],
             "decimals": 1,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": true,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-87",
+                    "style": "strokeColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [
+                  {
+                    "hidden": false,
+                    "pattern": "agJGtUolQpaysEPCJuB_-21",
+                    "textOn": "wmd",
+                    "textPattern": "/.*/",
+                    "textReplace": "content"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2385,16 +2821,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-87",
-                "style": "strokeColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": false,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2415,17 +2841,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [
-              {
-                "hidden": false,
-                "pattern": "agJGtUolQpaysEPCJuB_-21",
-                "textOn": "wmd",
-                "textPattern": "/.*/",
-                "textReplace": "content"
-              }
-            ],
-            "textProp": "id",
-            "textRegEx": false,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2435,6 +2850,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "bps",
             "valueData": []
@@ -2466,16 +2882,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-56",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2498,16 +2949,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-56",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2528,9 +2969,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2540,6 +2978,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -2571,16 +3010,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-41",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2603,16 +3077,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-41",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2633,9 +3097,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2645,6 +3106,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -2676,16 +3138,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-40",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2708,16 +3205,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-40",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2738,9 +3225,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2750,6 +3234,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -2781,16 +3266,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-90",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2813,16 +3333,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-90",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2843,9 +3353,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2855,6 +3362,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -2886,16 +3394,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-44",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -2918,16 +3461,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-44",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -2948,9 +3481,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -2960,6 +3490,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -2991,16 +3522,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-49",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3023,16 +3589,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-49",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3053,9 +3609,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3065,6 +3618,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3096,16 +3650,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-101",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3128,16 +3717,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-101",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3158,9 +3737,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3170,6 +3746,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3201,16 +3778,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-50",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3233,16 +3845,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-50",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3263,9 +3865,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3275,6 +3874,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3306,16 +3906,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-51",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3338,16 +3973,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-51",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3368,9 +3993,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3380,6 +4002,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3411,16 +4034,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-39",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3443,16 +4101,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-39",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3473,9 +4121,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3485,6 +4130,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3516,16 +4162,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-43",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3548,16 +4229,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-43",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3578,9 +4249,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3590,6 +4258,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3621,16 +4290,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-45",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3653,16 +4357,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-45",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3683,9 +4377,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3695,6 +4386,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3726,16 +4418,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-46",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3758,16 +4485,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-46",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3788,9 +4505,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3800,6 +4514,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3831,16 +4546,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-47",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3863,16 +4613,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-47",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3893,9 +4633,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -3905,6 +4642,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -3936,16 +4674,51 @@
               }
             ],
             "decimals": 0,
-            "eventData": [],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "MzNvUIA4c6WraNlcx4m_-48",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -3968,16 +4741,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "MzNvUIA4c6WraNlcx4m_-48",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -3998,9 +4761,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": true,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4010,6 +4770,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4053,7 +4814,7 @@
       "title": "Link Bandwidth",
       "type": "agenty-flowcharting-panel",
       "valueName": "current",
-      "version": "1.0.0b"
+      "version": "1.0.0d"
     },
     {
       "datasource": {
@@ -4122,33 +4883,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "6",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4171,16 +4967,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "6",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4201,9 +4987,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4213,6 +4996,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4244,33 +5028,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "4",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4293,16 +5112,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "4",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4323,9 +5132,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4335,6 +5141,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4366,33 +5173,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "5",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4415,16 +5257,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "5",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4445,9 +5277,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4457,6 +5286,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4488,33 +5318,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "11",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4537,16 +5402,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "11",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4567,9 +5422,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4579,6 +5431,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4610,33 +5463,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "7",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4659,16 +5547,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "7",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4689,9 +5567,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4701,6 +5576,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4732,33 +5608,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "8",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4781,16 +5692,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "8",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4811,9 +5712,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4823,6 +5721,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4854,33 +5753,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "12",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -4903,16 +5837,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "12",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -4933,9 +5857,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -4945,6 +5866,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -4976,33 +5898,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "9",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5025,16 +5982,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "9",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5055,9 +6002,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5067,6 +6011,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5098,33 +6043,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "10",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5147,16 +6127,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "10",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5177,9 +6147,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5189,6 +6156,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5220,33 +6188,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "13",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5269,16 +6272,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "13",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5299,9 +6292,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5311,6 +6301,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5342,33 +6333,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "14",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5391,16 +6417,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "14",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5421,9 +6437,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5433,6 +6446,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5464,33 +6478,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "15",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5513,16 +6562,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "15",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5543,9 +6582,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5555,6 +6591,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5586,33 +6623,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "16",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5635,16 +6707,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "16",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5665,9 +6727,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5677,6 +6736,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5708,33 +6768,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "17",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5757,16 +6852,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "17",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5787,9 +6872,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5799,6 +6881,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5830,33 +6913,68 @@
               }
             ],
             "decimals": 0,
-            "eventData": [
-              {
-                "comparator": "eq",
-                "eventOn": 0,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "DOWN"
-              },
-              {
-                "comparator": "eq",
-                "eventOn": 1,
-                "hidden": false,
-                "pattern": "2",
-                "style": "text",
-                "value": "UP"
-              }
-            ],
-            "eventProp": "id",
-            "eventRegEx": false,
             "gradient": false,
             "hidden": false,
             "invert": true,
-            "linkData": [],
-            "linkProp": "id",
-            "linkRegEx": true,
             "mappingType": 1,
+            "mapsDat": {
+              "events": {
+                "dataList": [
+                  {
+                    "comparator": "eq",
+                    "eventOn": 0,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "DOWN"
+                  },
+                  {
+                    "comparator": "eq",
+                    "eventOn": 1,
+                    "hidden": false,
+                    "pattern": "2",
+                    "style": "text",
+                    "value": "UP"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": false,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "links": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "shapes": {
+                "dataList": [
+                  {
+                    "colorOn": "a",
+                    "hidden": false,
+                    "pattern": "18",
+                    "style": "fillColor"
+                  }
+                ],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              },
+              "texts": {
+                "dataList": [],
+                "options": {
+                  "enableRegEx": true,
+                  "identByProp": "id",
+                  "metadata": ""
+                }
+              }
+            },
             "metricType": "serie",
             "newRule": false,
             "numberTHData": [
@@ -5879,16 +6997,6 @@
             "reduce": true,
             "refId": "A",
             "sanitize": false,
-            "shapeData": [
-              {
-                "colorOn": "a",
-                "hidden": false,
-                "pattern": "18",
-                "style": "fillColor"
-              }
-            ],
-            "shapeProp": "id",
-            "shapeRegEx": true,
             "stringTHData": [
               {
                 "color": "rgba(50, 172, 45, 0.97)",
@@ -5909,9 +7017,6 @@
                 "value": "/.*(success|ok).*/"
               }
             ],
-            "textData": [],
-            "textProp": "id",
-            "textRegEx": true,
             "tooltip": false,
             "tooltipColors": false,
             "tooltipLabel": "",
@@ -5921,6 +7026,7 @@
             "tpGraphScale": "linear",
             "tpGraphSize": "100%",
             "tpGraphType": "line",
+            "tpMetadata": false,
             "type": "number",
             "unit": "short",
             "valueData": []
@@ -5943,7 +7049,7 @@
       "title": "Front panel view",
       "type": "agenty-flowcharting-panel",
       "valueName": "current",
-      "version": "1.0.0b"
+      "version": "1.0.0d"
     },
     {
       "collapsed": false,
@@ -6007,7 +7113,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "9.5.2",
       "targets": [
         {
           "datasource": {
@@ -6139,7 +7245,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "9.5.2",
       "targets": [
         {
           "expr": "gnmic_srl_bgp_stats_up_peers{network_instance_name=\"default\",source=\"$NE\"}",
@@ -6178,6 +7284,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "axisSoftMax": 3000000,
@@ -6235,7 +7343,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "right"
+          "placement": "right",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -6326,7 +7435,7 @@
         "showThresholdLabels": false,
         "showThresholdMarkers": true
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "9.5.2",
       "targets": [
         {
           "expr": "gnmic_srl_bgp_stats_total_received_routes{network_instance_name=\"default\",source=\"$NE\"}",
@@ -6358,6 +7467,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -6414,7 +7525,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -6449,6 +7561,8 @@
             "mode": "palette-classic"
           },
           "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
             "axisLabel": "",
             "axisPlacement": "auto",
             "barAlignment": 0,
@@ -6505,7 +7619,8 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom"
+          "placement": "bottom",
+          "showLegend": true
         },
         "tooltip": {
           "mode": "single",
@@ -6623,8 +7738,9 @@
       "options": {
         "alignValue": "center",
         "legend": {
-          "displayMode": "hidden",
-          "placement": "bottom"
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
         },
         "mergeValues": true,
         "rowHeight": 0.9,
@@ -6662,7 +7778,9 @@
           },
           "custom": {
             "align": "left",
-            "displayMode": "auto",
+            "cellOptions": {
+              "type": "auto"
+            },
             "inspect": false
           },
           "mappings": [],
@@ -6690,7 +7808,9 @@
       },
       "id": 34,
       "options": {
+        "cellHeight": "sm",
         "footer": {
+          "countRows": false,
           "enablePagination": true,
           "fields": "",
           "reducer": [
@@ -6701,7 +7821,7 @@
         "frameIndex": 0,
         "showHeader": true
       },
-      "pluginVersion": "8.5.2",
+      "pluginVersion": "9.5.2",
       "targets": [
         {
           "datasource": {
@@ -6740,10 +7860,247 @@
         }
       ],
       "type": "table"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 43
+      },
+      "id": 35,
+      "panels": [],
+      "title": "Logging $NE",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "gridPos": {
+        "h": 13,
+        "w": 15,
+        "x": 0,
+        "y": 44
+      },
+      "id": 37,
+      "options": {
+        "dedupStrategy": "none",
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "editorMode": "code",
+          "expr": "{application=\"$Logs\", source=\"$NE\"}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Log: $Logs",
+      "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": []
+        },
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "sr_aaa_mgr",
+                  "sr_bgp_mgr",
+                  "sr_cli",
+                  "sr_gnmi_server",
+                  "sr_log_mgr",
+                  "sr_mgmt_server",
+                  "sr_xdp_cpm",
+                  "aaa_authkeys"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 21,
+        "w": 9,
+        "x": 15,
+        "y": 44
+      },
+      "id": 36,
+      "options": {
+        "displayLabels": [
+          "value"
+        ],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "showLegend": true
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "editorMode": "code",
+          "expr": "sum by (application) (count_over_time({source=\"$NE\"}[$__range]))",
+          "legendFormat": "{{application}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Total logs $NE",
+      "type": "piechart"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 1,
+            "drawStyle": "bars",
+            "fillOpacity": 100,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "normal"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 15,
+        "x": 0,
+        "y": 57
+      },
+      "id": 38,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "editorMode": "code",
+          "expr": "sum by (level) (count_over_time({application=\"$Logs\",source=\"$NE\"} | logfmt [$__interval]))",
+          "legendFormat": "{{level}}",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "Log volume: $Logs",
+      "type": "timeseries"
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 36,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
@@ -6751,8 +8108,8 @@
       {
         "current": {
           "selected": false,
-          "text": "leaf2",
-          "value": "leaf2"
+          "text": "leaf1",
+          "value": "leaf1"
         },
         "datasource": {
           "type": "prometheus",
@@ -6781,8 +8138,8 @@
       {
         "current": {
           "selected": false,
-          "text": "vrf-1",
-          "value": "vrf-1"
+          "text": "default",
+          "value": "default"
         },
         "datasource": {
           "type": "prometheus",
@@ -6797,6 +8154,34 @@
         "query": {
           "query": "label_values(network_instance_name)",
           "refId": "StandardVariableQuery"
+        },
+        "refresh": 2,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "sr_cli",
+          "value": "sr_cli"
+        },
+        "datasource": {
+          "type": "loki",
+          "uid": "P8E80F9AEF21F6940"
+        },
+        "definition": "",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Logs",
+        "options": [],
+        "query": {
+          "label": "application",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
         },
         "refresh": 2,
         "regex": "",

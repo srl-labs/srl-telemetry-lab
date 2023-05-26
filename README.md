@@ -6,12 +6,15 @@ This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srli
 
 ![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
+In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [promtail](https://grafana.com/docs/loki/latest/clients/promtail/) and [loki](https://grafana.com/oss/loki/).
+
 Goals of this lab:
 
 1. Demonstrate how a telemetry stack can be incorporated into the containerlab topology file.
 2. Explain SR Linux holistic telemetry support.
-2. Provide practical configuration examples for the gnmic collector to subscribe to fabric nodes and export metrics to Prometheus TSDB.
-3. Introduce advanced Grafana dashboarding with [FlowChart](https://grafana.com/grafana/plugins/agenty-flowcharting-panel/) plugin rendering port speeds and statuses.
+3. Provide practical configuration examples for the gnmic collector to subscribe to fabric nodes and export metrics to Prometheus TSDB.
+4. Introduce advanced Grafana dashboarding with [FlowChart](https://grafana.com/grafana/plugins/agenty-flowcharting-panel/) plugin rendering port speeds and statuses.
+5. Give a sneak peek of the modern logging telemetry stack with Loki and Promtail to consume Syslog data from SR Linux nodes.
 
 ## Deploying the lab
 
@@ -132,3 +135,11 @@ To stop the traffic:
 As a result, the traffic will be generated between the clients and the traffic rate will be reflected on the grafana dashboard.
 
 <https://github.com/srl-labs/srl-telemetry-lab/assets/5679861/158914fc-9100-416b-8b0f-cde932895cec>
+
+## Logging stack
+
+The logging stack leverages the promtail->Loki pipeline, where promtail is a log agent that extracts, transforms and ships logs to Loki, a log aggregation system.
+
+In this nice promtail->Loki pipeline another element is ingested - namely Syslog-NG, whos only purpose is to receive Syslog RFC3164 messages from SR Linux and transform it to RFC5424 format that promtail requires on its input. When SR Linux switches to Syslog RFC5424, this element will be removed from the pipeline.
+
+The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
