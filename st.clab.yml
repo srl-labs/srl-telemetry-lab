@@ -14,7 +14,7 @@ topology:
     kind: nokia_srlinux
 
   kinds:
-    srl:
+    nokia_srlinux:
       image: ghcr.io/nokia/srlinux:23.3.1
       type: ixrd2l
     linux:
