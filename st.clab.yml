@@ -11,7 +11,7 @@ mgmt:
 
 topology:
   defaults:
-    kind: srl
+    kind: nokia_srlinux
 
   kinds:
     srl:
