@@ -3,11 +3,14 @@
 # Licensed under the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 
-#look for clab files
-
+# look for clab files
 shopt -s nullglob
 clabfiles=(*.clab.yml)
 
+
+# functions to deal with yml files, 
+# shoutout to Stefan Farestam
+# https://stackoverflow.com/questions/5014632/how-can-i-parse-a-yaml-file-from-a-linux-shell-script
 
 parse_yaml() {
     local yaml_file=$1
@@ -75,6 +78,8 @@ create_variables() {
     eval "${yaml_string}"
 }
 
+#interact with the clients 
+
 startTraffic1-2() {
     echo "starting traffic between clients 1 and 2"
     docker exec ${nameprefix}client2 bash /config/iperf.sh
@@ -109,6 +114,7 @@ stopAll() {
 
 
 
+#main
 
 
 if [ -z "${clabfiles}" ] || [ ${#clabfiles[@]} -ne 1 ]; then
@@ -144,15 +150,26 @@ if [ -f "${ymlfile}" ]; then
     nameprefix=${prefix}"-"${name}"-"
   fi
 else
-
-  echo " no such topolgy"
+  echo "no such topolgy ${ymlfile}"
   exit
 fi
 
 
 
 if [ -z "$1" ] || [ -z "$2" ] ; then
-  echo "Need to specifiy an action (start or stop) and pors 1-2, 1-3 or  all"
+  echo "Usage:"
+  echo "  ./traffic <-t topology.yml> [command] [traffic pattern]"
+  echo ""
+  echo "  Available options:"
+  echo "    -t       Specify the containerlab topology file, defaults to automatic detection"
+  echo "  Available commands:"
+  echo "    start    Start the traffic"
+  echo "    stop     Stop the traffic"
+  echo "  Available traffic patterns:"
+  echo "    all      Generate traffic between all clients"
+  echo "    1-2      Generate traffic between Client 1 and 2"
+  echo "    1-3      Generate traffic between Client 1 and 3"
+  echo ""
   exit
 fi
 
