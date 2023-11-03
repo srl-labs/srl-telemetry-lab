@@ -80,7 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.30.0
+      image: ghcr.io/openconfig/gnmic:0.33.0
       binds:
         - gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
@@ -89,7 +89,7 @@ topology:
     prometheus:
       kind: linux
       mgmt-ipv4: 172.80.80.42
-      image: prom/prometheus:v2.37.8
+      image: prom/prometheus:v2.47.2
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
@@ -100,7 +100,7 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:9.5.8
+      image: grafana/grafana:10.2.0
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -120,7 +120,7 @@ topology:
     syslog:
       kind: linux
       mgmt-ipv4: 172.80.80.44
-      image: linuxserver/syslog-ng:3.38.1-r0-ls75
+      image: linuxserver/syslog-ng:4.1.1
       binds:
         - configs/syslog/:/config
         - configs/syslog/log:/var/log
@@ -131,7 +131,7 @@ topology:
     promtail:
       kind: linux
       mgmt-ipv4: 172.80.80.45
-      image: grafana/promtail:2.7.4
+      image: grafana/promtail:2.9.2
       binds:
         - configs/promtail:/etc/promtail
       cmd: --config.file=/etc/promtail/promtail-config.yml
@@ -141,7 +141,7 @@ topology:
     loki:
       kind: linux
       mgmt-ipv4: 172.80.80.46
-      image: grafana/loki:2.7.4
+      image: grafana/loki:2.9.2
       binds:
         - configs/loki:/etc/loki
       cmd: --config.file=/etc/loki/loki-config.yml
