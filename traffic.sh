@@ -158,7 +158,7 @@ fi
 
 if [ -z "$1" ] || [ -z "$2" ] ; then
   echo "Usage:"
-  echo "  ./traffic <-t topology.yml> [command] [traffic pattern]"
+  echo "  ./traffic <-t topology.clab.yml> [command] [traffic pattern]"
   echo ""
   echo "  Available options:"
   echo "    -t       Specify the containerlab topology file, defaults to automatic detection"
