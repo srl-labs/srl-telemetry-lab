@@ -15,7 +15,7 @@ topology:
 
   kinds:
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:23.7.2
+      image: ghcr.io/nokia/srlinux:23.10.1
       type: ixrd2l
     linux:
       image: ghcr.io/hellt/network-multitool
@@ -100,7 +100,7 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:10.1.5
+      image: grafana/grafana:10.2.1
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -122,7 +122,7 @@ topology:
       mgmt-ipv4: 172.80.80.44
       image: linuxserver/syslog-ng:4.1.1
       binds:
-        - configs/syslog/:/config
+        - configs/syslog/syslog-ng.conf:/config/syslog-ng.conf
         - configs/syslog/log:/var/log
       env:
         PUID: 0
