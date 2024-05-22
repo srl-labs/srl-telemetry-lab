@@ -100,16 +100,16 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:10.2.1
+      image: grafana/grafana:11.0.0
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
         - configs/grafana/dashboards:/var/lib/grafana/dashboards
+        - images/front-panel.png:/usr/share/grafana/public/img/bg/front-panel.png
+        - images/linkbandwidth.jpg:/usr/share/grafana/public/img/bg/linkbandwidth.jpg
       ports:
         - 3000:3000
       env:
-        GF_INSTALL_PLUGINS: https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip;agenty-flowcharting-panel
-        # env vars to enable anonymous access
         GF_ORG_ROLE: "Admin"
         GF_ORG_NAME: "Main Org"
         GF_AUTH_ANONYMOUS_ENABLED: "true"
@@ -147,6 +147,7 @@ topology:
       cmd: --config.file=/etc/loki/loki-config.yml
       ports:
         - 3100:3100
+
 
   links:
     - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
