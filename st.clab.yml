@@ -89,7 +89,7 @@ topology:
     prometheus:
       kind: linux
       mgmt-ipv4: 172.80.80.42
-      image: prom/prometheus:v2.47.2
+      image: quay.io/prometheus/prometheus:v2.47.2
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
