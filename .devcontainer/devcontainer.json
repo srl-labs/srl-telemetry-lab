@@ -1,5 +1,5 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:sha-e081d8a",
+    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:dockerfile-codespaces",
     // containerEnv set the variables applied to entire container
     "containerEnv": {
         "SOME_TOKEN": "${localEnv:ARTOKEN}"
