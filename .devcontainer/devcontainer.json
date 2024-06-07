@@ -1,0 +1,20 @@
+{
+    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:sha-e081d8a",
+    // containerEnv set the variables applied to entire container
+    "containerEnv": {
+        "SOME_TOKEN": "${localEnv:ARTOKEN}"
+    },
+    "secrets": {
+        "SOME_TOKEN": {
+            "description": "some secret token"
+            // "documentationUrl": "https://example.com/link/to/info"
+        }
+    },
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "16gb",
+        "storage": "32gb"
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/${containerWorkspaceFolder},type=bind",
+    "workspaceFolder": "/srl-telemetry-lab"
+}
