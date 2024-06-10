@@ -1,15 +1,5 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:devcontainer-tools",
-    // containerEnv set the variables applied to entire container
-    "containerEnv": {
-        "SOME_TOKEN": "${localEnv:ARTOKEN}"
-    },
-    "secrets": {
-        "SOME_TOKEN": {
-            "description": "some secret token"
-            // "documentationUrl": "https://example.com/link/to/info"
-        }
-    },
+    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:0.55.0",
     "hostRequirements": {
         "cpus": 4,
         "memory": "16gb",
