@@ -4,6 +4,17 @@ SR Linux has first-class Streaming Telemetry support thanks to [100% YANG covera
 
 This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srlinux.dev/) switches running as containers. The lab topology consists of a Clos topology, plus a Streaming Telemetry stack comprised of [gnmic](https://gnmic.openconfig.net), prometheus and grafana applications.
 
+<table>
+    <tr>
+        <td>
+            <img src="https://gitlab.com/rdodin/pics/-/wikis/uploads/d78a6f9f6869b3ac3c286928dd52fa08/run_in_codespaces-v1.svg"/>
+        </td>
+        <td>
+            <p>Try in Codespace</p>
+        </td>
+    </tr>
+</table>
+
 ![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
 In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [promtail](https://grafana.com/docs/loki/latest/clients/promtail/) and [loki](https://grafana.com/oss/loki/).
