@@ -4,18 +4,17 @@ SR Linux has first-class Streaming Telemetry support thanks to [100% YANG covera
 
 This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srlinux.dev/) switches running as containers. The lab topology consists of a Clos topology, plus a Streaming Telemetry stack comprised of [gnmic](https://gnmic.openconfig.net), prometheus and grafana applications.
 
-<table>
-    <tr>
-        <td>
-            <img src="https://gitlab.com/rdodin/pics/-/wikis/uploads/d78a6f9f6869b3ac3c286928dd52fa08/run_in_codespaces-v1.svg?sanitize=true"/>
-        </td>
-        <td>
-            <p>Try in Codespace</p>
-        </td>
-    </tr>
-</table>
+---
+<div align=center>
+<a href="https://codespaces.new/srl-labs/srl-telemetry-lab?quickstart=1&devcontainer_path=.devcontainer%2Fdevcontainer.json">
+<img src="https://gitlab.com/rdodin/pics/-/wikis/uploads/d78a6f9f6869b3ac3c286928dd52fa08/run_in_codespaces-v1.svg?sanitize=true" style="width:30%"/></a>
 
-<img src="https://gitlab.com/rdodin/pics/-/wikis/uploads/d78a6f9f6869b3ac3c286928dd52fa08/run_in_codespaces-v1.svg?sanitize=true"/>
+**[Run](https://codespaces.new/srl-labs/srl-telemetry-lab?quickstart=1&devcontainer_path=.devcontainer%2Fdevcontainer.json) this lab in GitHub Codespaces for free**.  
+[Learn more](#tbd) about Containerlab for Codespaces.
+
+</div>
+
+---
 
 ![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
