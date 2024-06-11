@@ -1,5 +1,5 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/clab-codespaces:0.55.0",
+    "image": "ghcr.io/srl-labs/containerlab/clab-devcontainer:0.55.0",
     "hostRequirements": {
         "cpus": 4,
         "memory": "16gb",
