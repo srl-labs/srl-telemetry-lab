@@ -4,7 +4,5 @@
         "cpus": 4,
         "memory": "16gb",
         "storage": "32gb"
-    },
-    "workspaceMount": "source=${localWorkspaceFolder},target=/${containerWorkspaceFolder},type=bind",
-    "workspaceFolder": "/srl-telemetry-lab"
+    }
 }
