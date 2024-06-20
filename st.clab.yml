@@ -82,7 +82,7 @@ topology:
       mgmt-ipv4: 172.80.80.41
       image: ghcr.io/openconfig/gnmic:0.33.0
       binds:
-        - gnmic-config.yml:/gnmic-config.yml:ro
+        - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
       group: "10" # group 10 is assigned to the nodes of a telemetry stack
 
