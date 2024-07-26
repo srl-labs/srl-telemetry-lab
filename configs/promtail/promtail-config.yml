@@ -5,7 +5,7 @@ scrape_configs:
 - job_name: syslog
   syslog:
     listen_address: 0.0.0.0:1514
-    listen_protocol: tcp
+    listen_protocol: udp
     idle_timeout: 300s
     label_structured_data: yes
     labels:
