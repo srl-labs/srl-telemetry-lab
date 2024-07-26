@@ -117,17 +117,6 @@ topology:
       group: "10"
 
     ### LOGGING STACK ###
-    syslog:
-      kind: linux
-      mgmt-ipv4: 172.80.80.44
-      image: linuxserver/syslog-ng:4.1.1
-      binds:
-        - configs/syslog/syslog-ng.conf:/config/syslog-ng.conf
-        - configs/syslog/log:/var/log
-      env:
-        PUID: 0
-        PGID: 0
-
     promtail:
       kind: linux
       mgmt-ipv4: 172.80.80.45
