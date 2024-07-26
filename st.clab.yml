@@ -18,7 +18,7 @@ topology:
       image: ghcr.io/nokia/srlinux:24.7.1
       type: ixrd2l
     linux:
-      image: ghcr.io/hellt/network-multitool
+      image: ghcr.io/srl-labs/network-multitool
 
   nodes:
     ### SPINES ###
