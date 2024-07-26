@@ -152,6 +152,4 @@ As a result, the traffic will be generated between the clients and the traffic r
 
 The logging stack leverages the promtail->Loki pipeline, where promtail is a log agent that extracts, transforms and ships logs to Loki, a log aggregation system.
 
-In this nice promtail->Loki pipeline another element is ingested - namely Syslog-NG, whos only purpose is to receive Syslog RFC3164 messages from SR Linux and transform it to RFC5424 format that promtail requires on its input. When SR Linux switches to Syslog RFC5424, this element will be removed from the pipeline.
-
 The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
