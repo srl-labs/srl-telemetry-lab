@@ -1,0 +1,190 @@
+---
+anchors:
+  thresholds-operstate: &thresholds-operstate
+  - color: red
+    level: 0
+  - color: green
+    level: 1
+  thresholds-traffic: &thresholds-traffic
+  - color: gray
+    level: 0
+  - color: green
+    level: 199999
+  - color: yellow
+    level: 500000
+  - color: orange
+    level: 1000000
+  - color: red
+    level: 5000000
+  label-config: &label-config
+    separator: replace
+    units: bps
+    decimalPoints: 1
+    valueMappings:
+    - valueMax: 199999
+      text: ​
+    - valueMin: 200000
+cellIdPreamble: cell-
+cells:
+  spine1:e1-1:leaf1:e1-49:
+    dataRef: oper-state:spine1:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine1:e1-1:leaf1:e1-49:
+    dataRef: spine1:e1-1:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  spine1:e1-2:leaf2:e1-49:
+    dataRef: oper-state:spine1:e1-2
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine1:e1-2:leaf2:e1-49:
+    dataRef: spine1:e1-2:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  spine1:e1-3:leaf3:e1-49:
+    dataRef: oper-state:spine1:e1-3
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine1:e1-3:leaf3:e1-49:
+    dataRef: spine1:e1-3:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  spine2:e1-1:leaf1:e1-50:
+    dataRef: oper-state:spine2:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine2:e1-1:leaf1:e1-50:
+    dataRef: spine2:e1-1:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  spine2:e1-2:leaf2:e1-50:
+    dataRef: oper-state:spine2:e1-2
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine2:e1-2:leaf2:e1-50:
+    dataRef: spine2:e1-2:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  spine2:e1-3:leaf3:e1-50:
+    dataRef: oper-state:spine2:e1-3
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:spine2:e1-3:leaf3:e1-50:
+    dataRef: spine2:e1-3:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf1:e1-49:spine1:e1-1:
+    dataRef: oper-state:leaf1:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf1:e1-49:spine1:e1-1:
+    dataRef: leaf1:e1-49:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf1:e1-50:spine2:e1-1:
+    dataRef: oper-state:leaf1:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf1:e1-50:spine2:e1-1:
+    dataRef: leaf1:e1-50:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf1:e1-1:client1:eth1:
+    dataRef: oper-state:leaf1:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf1:e1-1:client1:eth1:
+    dataRef: leaf1:e1-1:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf2:e1-49:spine1:e1-2:
+    dataRef: oper-state:leaf2:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf2:e1-49:spine1:e1-2:
+    dataRef: leaf2:e1-49:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf2:e1-50:spine2:e1-2:
+    dataRef: oper-state:leaf2:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf2:e1-50:spine2:e1-2:
+    dataRef: leaf2:e1-50:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf2:e1-1:client2:eth1:
+    dataRef: oper-state:leaf2:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf2:e1-1:client2:eth1:
+    dataRef: leaf2:e1-1:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf3:e1-49:spine1:e1-3:
+    dataRef: oper-state:leaf3:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf3:e1-49:spine1:e1-3:
+    dataRef: leaf3:e1-49:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf3:e1-50:spine2:e1-3:
+    dataRef: oper-state:leaf3:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf3:e1-50:spine2:e1-3:
+    dataRef: leaf3:e1-50:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  leaf3:e1-1:client3:eth1:
+    dataRef: oper-state:leaf3:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:leaf3:e1-1:client3:eth1:
+    dataRef: leaf3:e1-1:in
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  client1:eth1:leaf1:e1-1:
+    dataRef: oper-state:client1:eth1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:client1:eth1:leaf1:e1-1:
+    dataRef: leaf1:e1-1:out
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  client2:eth1:leaf2:e1-1:
+    dataRef: oper-state:client2:eth1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:client2:eth1:leaf2:e1-1:
+    dataRef: leaf2:e1-1:out
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic
+  client3:eth1:leaf3:e1-1:
+    dataRef: oper-state:client3:eth1
+    fillColor:
+      thresholds: *thresholds-operstate
+  link_id:client3:eth1:leaf3:e1-1:
+    dataRef: leaf3:e1-1:out
+    label: *label-config
+    strokeColor:
+      thresholds: *thresholds-traffic

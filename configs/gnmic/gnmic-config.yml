@@ -3,127 +3,116 @@
 # SPDX-License-Identifier: BSD-3-Clause
 
 username: admin
-password: NokiaSrl1!
-port: 57400
 timeout: 10s
-skip-verify: true
-encoding: json_ietf
+
+common_srl_subscriptions: &common_srl_subs
+  port: 57400
+  skip-verify: true
+  insecure: false
+  password: NokiaSrl1!
+  subscriptions:
+      - srl-if-stats 
+      - srl-bgp
+      - srl-system-performance
+      - srl-routes
+      - srl-bridge
+      - srl-apps
+      - srl-net-instance
 
 targets:
-  leaf1:
-  leaf2:
-  leaf3:
-  spine1:
-  spine2:
+  leaf1: *common_srl_subs
+  leaf2: *common_srl_subs
+  leaf3: *common_srl_subs
+  spine1: *common_srl_subs
+  spine2: *common_srl_subs
 
 subscriptions:
-  srl_if_oper_state:
-    paths:
-      - /interface[name=ethernet-1/*]/oper-state
+
+  srl-system-performance: 
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-
-  srl_net_instance:
+    paths: 
+      - /platform/control[slot=*]/cpu[index=all]/total
+      - /platform/control[slot=*]/memory
+  srl-if-stats:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 3s
+    paths: 
+      - /interface[name=ethernet-1/*]/oper-state
+      - /interface[name=ethernet-1/*]/statistics
+      - /interface[name=ethernet-1/*]/traffic-rate
+  srl-routes:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /network-instance[name=*]/route-table/ipv4-unicast/statistics/
+      - /network-instance[name=*]/route-table/ipv6-unicast/statistics/
+  srl-bgp:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /network-instance[name=*]/protocols/bgp/statistics
+  srl-bridge:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /network-instance[name=*]/bridge-table/statistics/
+  srl-apps:
+    paths:
+      - /system/app-management/application[name=*]
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+  srl-net-instance:
     paths:
       - /network-instance[name=*]/oper-state
     mode: stream
     stream-mode: sample
     sample-interval: 5s
 
-  srl_if_stats:
-    paths:
-      - /interface[name=ethernet-1/*]/statistics
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_if_traffic_rate:
-    paths:
-      - /interface[name=ethernet-1/*]/traffic-rate
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_cpu:
-    paths:
-      - /platform/control[slot=*]/cpu[index=all]/total
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_mem:
-    paths:
-      - /platform/control[slot=*]/memory
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_bgp_stats:
-    paths:
-      - /network-instance[name=*]/protocols/bgp/statistics
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_ipv4_routes:
-    paths:
-      - /network-instance[name=*]/route-table/ipv4-unicast/statistics/
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_ipv6_routes:
-    paths:
-      - /network-instance[name=*]/route-table/ipv6-unicast/statistics/
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
-  srl_apps:
-    paths:
-      - /system/app-management/application[name=*]
-    mode: stream
-    stream-mode: sample
-    sample-interval: 5s
-
 outputs:
-  prom:
+  prom-output:
     type: prometheus
     listen: :9273
-    path: /metrics
-    metric-prefix: gnmic
-    append-subscription-name: true
-    export-timestamps: true
-    debug: false
     event-processors:
-      - trim-prefixes
-      - up-down-map
-  # stdout:
-  #   type: file
-  #   file-type: stdout
-  #   event-processors:
-  #     - proc-convert-strings-to-int
-  #     - trim-prefixes
+     - trim-prefixes
+     - rename-srl-interface
+     - oper-state-to-int
 
 processors:
   trim-prefixes:
     event-strings:
       value-names:
-        - ".*"
+        - "^/state/.*"
       transforms:
-        - path-base:
+        - trim-prefix:
             apply-on: "name"
-  up-down-map:
+            prefix: "/state/"
+
+  oper-state-to-int:
     event-strings:
       value-names:
-        - oper-state
+        - ".*"
       transforms:
         - replace:
             apply-on: "value"
             old: "up"
             new: "1"
-        - replace:
+        - replace: 
             apply-on: "value"
             old: "down"
-            new: "0"
+            new: "0"   
+  rename-srl-interface:
+    event-strings:
+      tag-names:
+        - "^interface_name"
+      transforms:
+        - replace:
+            apply-on: "value"
+            old: "ethernet-(\\d+)/(\\d+)"
+            new: "e$1-$2"

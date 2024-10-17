@@ -25,7 +25,7 @@ Goals of this lab:
 1. Demonstrate how a telemetry stack can be incorporated into the containerlab topology file.
 2. Explain SR Linux holistic telemetry support.
 3. Provide practical configuration examples for the gnmic collector to subscribe to fabric nodes and export metrics to Prometheus TSDB.
-4. Introduce advanced Grafana dashboarding with [FlowChart](https://grafana.com/grafana/plugins/agenty-flowcharting-panel/) plugin rendering port speeds and statuses.
+4. Introduce advanced Grafana dashboarding with [FlowPlugin](https://grafana.com/grafana/plugins/andrewbmchugh-flow-panel/) plugin rendering port speeds and statuses.
 5. Give a sneak peek of the modern logging telemetry stack with Loki and Promtail to consume Syslog data from SR Linux nodes.
 
 ## Deploying the lab
@@ -113,13 +113,15 @@ The gnmic configuration file - [gnmic-config.yml](gnmic-config.yml) - is applied
 
 Grafana is another key component of this lab as it provides the visualisation for the collected telemetry data. Lab's topology file includes grafana node and configuration parameters such as dashboards, datasources and required plugins.
 
-Grafana dashboard provided by this repository provides multiple views on the collected real-time data. Powered by [flowchart plugin](https://grafana.com/grafana/plugins/agenty-flowcharting-panel/) it overlays telemetry sourced data over graphics such as topology and front panel views:
+Grafana dashboard provided by this repository provides multiple views on the collected real-time data. Powered by [flow plugin](https://grafana.com/grafana/plugins/andrewbmchugh-flow-panel/) it overlays telemetry sourced data over graphics such as topology and front panel views:
 
 ![pic3](https://gitlab.com/rdodin/pics/-/wikis/uploads/919092da83782779b960eeb4b893fb4a/image.png)
 
-Using the flowchart plugin and real telemetry data users can create interactive topology maps (aka weathermap) with a visual indication of link rate/utilization.
+Using the flow plugin and real telemetry data users can create interactive topology maps (aka weathermap) with a visual indication of link rate/utilization.
 
 ![pic2](https://gitlab.com/rdodin/pics/-/wikis/uploads/12f154dafca1270f7a1628c1ed3ab77a/image.png)
+
+The panels for the flow plugin has been autocreated by the [clab-io-draw](https://github.com/srl-labs/clab-io-draw) tool 
 
 ### Access details
 
