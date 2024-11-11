@@ -80,7 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.38.2
+      image: ghcr.io/openconfig/gnmic:0.39.1
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
