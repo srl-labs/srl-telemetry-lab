@@ -37,7 +37,7 @@ subscriptions:
   srl-if-stats:
     mode: stream
     stream-mode: sample
-    sample-interval: 3s
+    sample-interval: 5s
     paths:
       - /interface[name=ethernet-1/*]/oper-state
       - /interface[name=ethernet-1/*]/statistics
