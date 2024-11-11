@@ -15,7 +15,7 @@ topology:
 
   kinds:
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:24.7.2
+      image: ghcr.io/nokia/srlinux:24.10.1
       type: ixrd2l
     linux:
       image: ghcr.io/srl-labs/network-multitool
@@ -80,7 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.38.1
+      image: ghcr.io/openconfig/gnmic:0.38.2
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
@@ -89,7 +89,7 @@ topology:
     prometheus:
       kind: linux
       mgmt-ipv4: 172.80.80.42
-      image: quay.io/prometheus/prometheus:v2.47.2
+      image: quay.io/prometheus/prometheus:v2.54.1
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
@@ -100,7 +100,7 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:10.2.1
+      image: grafana/grafana:11.2.0
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -108,19 +108,21 @@ topology:
       ports:
         - 3000:3000
       env:
-        GF_INSTALL_PLUGINS: https://algenty.github.io/flowcharting-repository/archives/agenty-flowcharting-panel-1.0.0d.220606199-SNAPSHOT.zip;agenty-flowcharting-panel
+        GF_INSTALL_PLUGINS: "andrewbmchugh-flow-panel"
         # env vars to enable anonymous access
         GF_ORG_ROLE: "Admin"
         GF_ORG_NAME: "Main Org"
         GF_AUTH_ANONYMOUS_ENABLED: "true"
+        GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
         GF_AUTH_ANONYMOUS: "true"
+        GF_AUTH_OAUTH_AUTO_LOGIN: "true"
       group: "10"
 
     ### LOGGING STACK ###
     promtail:
       kind: linux
       mgmt-ipv4: 172.80.80.45
-      image: grafana/promtail:2.9.2
+      image: grafana/promtail:3.2.0
       binds:
         - configs/promtail:/etc/promtail
       cmd: --config.file=/etc/promtail/promtail-config.yml
@@ -130,7 +132,7 @@ topology:
     loki:
       kind: linux
       mgmt-ipv4: 172.80.80.46
-      image: grafana/loki:2.9.2
+      image: grafana/loki:3.2.0
       binds:
         - configs/loki:/etc/loki
       cmd: --config.file=/etc/loki/loki-config.yml

@@ -1,0 +1,69 @@
+---
+anchors:
+  thresholds-operstate: &thresholds-operstate
+    - color: "#FF3154" # red
+      level: 0
+    - color: "#4BDD33" # green
+      level: 1
+cellIdPreamble: cell-
+cells:
+  spine1:e1-1:
+    dataRef: oper-state:spine1:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  spine1:e1-2:
+    dataRef: oper-state:spine1:e1-2
+    fillColor:
+      thresholds: *thresholds-operstate
+  spine1:e1-3:
+    dataRef: oper-state:spine1:e1-3
+    fillColor:
+      thresholds: *thresholds-operstate
+  spine2:e1-1:
+    dataRef: oper-state:spine2:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  spine2:e1-2:
+    dataRef: oper-state:spine2:e1-2
+    fillColor:
+      thresholds: *thresholds-operstate
+  spine2:e1-3:
+    dataRef: oper-state:spine2:e1-3
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf1:e1-49:
+    dataRef: oper-state:leaf1:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf1:e1-50:
+    dataRef: oper-state:leaf1:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf1:e1-1:
+    dataRef: oper-state:leaf1:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf2:e1-49:
+    dataRef: oper-state:leaf2:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf2:e1-50:
+    dataRef: oper-state:leaf2:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf2:e1-1:
+    dataRef: oper-state:leaf2:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf3:e1-49:
+    dataRef: oper-state:leaf3:e1-49
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf3:e1-50:
+    dataRef: oper-state:leaf3:e1-50
+    fillColor:
+      thresholds: *thresholds-operstate
+  leaf3:e1-1:
+    dataRef: oper-state:leaf3:e1-1
+    fillColor:
+      thresholds: *thresholds-operstate
