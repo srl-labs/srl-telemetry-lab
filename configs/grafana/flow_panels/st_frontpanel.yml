@@ -1,10 +1,10 @@
 ---
 anchors:
   thresholds-operstate: &thresholds-operstate
-  - color: red
-    level: 0
-  - color: green
-    level: 1
+    - color: "#FF3154" # red
+      level: 0
+    - color: "#4BDD33" # green
+      level: 1
 cellIdPreamble: cell-
 cells:
   spine1:e1-1:

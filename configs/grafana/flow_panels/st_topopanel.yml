@@ -1,20 +1,20 @@
 ---
 anchors:
   thresholds-operstate: &thresholds-operstate
-    - color: red
+    - color: "#FF3154" # red
       level: 0
-    - color: green
+    - color: "#4BDD33" # green
       level: 1
   thresholds-traffic: &thresholds-traffic
-    - color: "#bec8d2"
+    - color: "#bec8d2" # grey
       level: 0
-    - color: "#4BDD33"
+    - color: "#4BDD33" # green
       level: 199999
-    - color: "#FFFF00"
+    - color: "#FFFF00" # yellow
       level: 500000
-    - color: "#FF8000"
+    - color: "#FF8000" # orange
       level: 1000000
-    - color: "#FF3154"
+    - color: "#FF3154" # red
       level: 5000000
   label-config: &label-config
     separator: replace
