@@ -1,0 +1,6 @@
+zoomPanPinch:
+  # This optional term defines the array of keys that can be used to enable wheel zoom. There's
+  # a clash of interest between panel zoom and dashboard scrolling which is easy to avoid with small
+  # SVGs, but becomes more problematic when the SVG is large and covers a lot of the screen. By
+  # requiring a combo such as ALT+Scroll this clash can be avoided.
+  wheelActivationKeys: ["Alt"]
