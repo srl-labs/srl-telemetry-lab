@@ -31,7 +31,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine1:e1-1:leaf1:e1-49:
-    dataRef: spine1:e1-1:in
+    dataRef: spine1:e1-1:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -40,7 +40,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine1:e1-2:leaf2:e1-49:
-    dataRef: spine1:e1-2:in
+    dataRef: spine1:e1-2:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -49,7 +49,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine1:e1-3:leaf3:e1-49:
-    dataRef: spine1:e1-3:in
+    dataRef: spine1:e1-3:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -58,7 +58,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine2:e1-1:leaf1:e1-50:
-    dataRef: spine2:e1-1:in
+    dataRef: spine2:e1-1:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -67,7 +67,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine2:e1-2:leaf2:e1-50:
-    dataRef: spine2:e1-2:in
+    dataRef: spine2:e1-2:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -76,7 +76,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:spine2:e1-3:leaf3:e1-50:
-    dataRef: spine2:e1-3:in
+    dataRef: spine2:e1-3:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -85,7 +85,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf1:e1-49:spine1:e1-1:
-    dataRef: leaf1:e1-49:in
+    dataRef: leaf1:e1-49:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -94,7 +94,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf1:e1-50:spine2:e1-1:
-    dataRef: leaf1:e1-50:in
+    dataRef: leaf1:e1-50:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -103,7 +103,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf1:e1-1:client1:eth1:
-    dataRef: leaf1:e1-1:in
+    dataRef: leaf1:e1-1:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -112,7 +112,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf2:e1-49:spine1:e1-2:
-    dataRef: leaf2:e1-49:in
+    dataRef: leaf2:e1-49:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -121,7 +121,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf2:e1-50:spine2:e1-2:
-    dataRef: leaf2:e1-50:in
+    dataRef: leaf2:e1-50:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -130,7 +130,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf2:e1-1:client2:eth1:
-    dataRef: leaf2:e1-1:in
+    dataRef: leaf2:e1-1:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -139,7 +139,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf3:e1-49:spine1:e1-3:
-    dataRef: leaf3:e1-49:in
+    dataRef: leaf3:e1-49:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -148,7 +148,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf3:e1-50:spine2:e1-3:
-    dataRef: leaf3:e1-50:in
+    dataRef: leaf3:e1-50:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -157,7 +157,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:leaf3:e1-1:client3:eth1:
-    dataRef: leaf3:e1-1:in
+    dataRef: leaf3:e1-1:out
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -166,7 +166,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:client1:eth1:leaf1:e1-1:
-    dataRef: leaf1:e1-1:out
+    dataRef: leaf1:e1-1:in
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -175,7 +175,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:client2:eth1:leaf2:e1-1:
-    dataRef: leaf2:e1-1:out
+    dataRef: leaf2:e1-1:in
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
@@ -184,7 +184,7 @@ cells:
     fillColor:
       thresholds: *thresholds-operstate
   link_id:client3:eth1:leaf3:e1-1:
-    dataRef: leaf3:e1-1:out
+    dataRef: leaf3:e1-1:in
     label: *label-config
     strokeColor:
       thresholds: *thresholds-traffic
