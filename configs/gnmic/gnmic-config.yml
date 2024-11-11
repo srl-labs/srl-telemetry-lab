@@ -11,13 +11,13 @@ common_srl_subscriptions: &common_srl_subs
   insecure: false
   password: NokiaSrl1!
   subscriptions:
-      - srl-if-stats 
-      - srl-bgp
-      - srl-system-performance
-      - srl-routes
-      - srl-bridge
-      - srl-apps
-      - srl-net-instance
+    - srl-if-stats
+    - srl-bgp
+    - srl-system-performance
+    - srl-routes
+    - srl-bridge
+    - srl-apps
+    - srl-net-instance
 
 targets:
   leaf1: *common_srl_subs
@@ -27,19 +27,18 @@ targets:
   spine2: *common_srl_subs
 
 subscriptions:
-
-  srl-system-performance: 
+  srl-system-performance:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
-    paths: 
+    paths:
       - /platform/control[slot=*]/cpu[index=all]/total
       - /platform/control[slot=*]/memory
   srl-if-stats:
     mode: stream
     stream-mode: sample
     sample-interval: 3s
-    paths: 
+    paths:
       - /interface[name=ethernet-1/*]/oper-state
       - /interface[name=ethernet-1/*]/statistics
       - /interface[name=ethernet-1/*]/traffic-rate
@@ -80,9 +79,9 @@ outputs:
     type: prometheus
     listen: :9273
     event-processors:
-     - trim-prefixes
-     - rename-srl-interface
-     - oper-state-to-int
+      - trim-prefixes
+      - rename-srl-interface
+      - oper-state-to-int
 
 processors:
   trim-prefixes:
@@ -103,10 +102,10 @@ processors:
             apply-on: "value"
             old: "up"
             new: "1"
-        - replace: 
+        - replace:
             apply-on: "value"
             old: "down"
-            new: "0"   
+            new: "0"
   rename-srl-interface:
     event-strings:
       tag-names:
