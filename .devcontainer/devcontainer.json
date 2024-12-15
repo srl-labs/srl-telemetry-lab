@@ -1,8 +1,15 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/clab-devcontainer:0.55.0",
-    "hostRequirements": {
-        "cpus": 4,
-        "memory": "16gb",
-        "storage": "32gb"
-    }
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood-slim:0.60.1",
+    "runArgs": [
+        "--network=host",
+        "--pid=host",
+        "--privileged"
+    ],
+    "mounts": [
+        "type=bind,src=/run/docker/netns,dst=/run/docker/netns",
+        "type=bind,src=/var/lib/docker,dst=/var/lib/docker",
+        "type=bind,src=/lib/modules,dst=/lib/modules"
+    ],
+    "workspaceFolder": "${localWorkspaceFolder}",
+    "workspaceMount": "source=${localWorkspaceFolder},target=${localWorkspaceFolder},type=bind,consistency=cached"
 }
