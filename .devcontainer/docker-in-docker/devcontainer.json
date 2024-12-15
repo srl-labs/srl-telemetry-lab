@@ -1,0 +1,8 @@
+{
+    "image": "ghcr.io/srl-labs/containerlab/clab-devcontainer:0.60.1",
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "16gb",
+        "storage": "32gb"
+    }
+}
