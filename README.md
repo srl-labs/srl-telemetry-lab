@@ -20,7 +20,7 @@ This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srli
 
 ![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
-In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [promtail](https://grafana.com/docs/loki/latest/clients/promtail/) and [loki](https://grafana.com/oss/loki/).
+In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [Grafana Alloy](https://grafana.com/docs/alloy/latest/) and [loki](https://grafana.com/oss/loki/).
 
 Goals of this lab:
 
@@ -154,6 +154,6 @@ As a result, the traffic will be generated between the clients and the traffic r
 
 ## Logging stack
 
-The logging stack leverages the promtail->Loki pipeline, where promtail is a log agent that extracts, transforms and ships logs to Loki, a log aggregation system.
+The logging stack leverages the Alloy->Loki pipeline, where Alloy receives syslog messages, transforms labels, and ships logs to Loki, a log aggregation system.
 
 The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.

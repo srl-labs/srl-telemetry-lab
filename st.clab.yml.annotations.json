@@ -415,8 +415,8 @@
       "iconCornerRadius": 0
     },
     {
-      "id": "promtail",
-      "icon": "logo-grafana-loki",
+      "id": "alloy",
+      "icon": "grafana_logo-svg",
       "position": {
         "x": 474.26541148538115,
         "y": 111.32705742690571

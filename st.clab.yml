@@ -80,7 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.39.1
+      image: ghcr.io/openconfig/gnmic:0.45.0
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
@@ -89,7 +89,7 @@ topology:
     prometheus:
       kind: linux
       mgmt-ipv4: 172.80.80.42
-      image: quay.io/prometheus/prometheus:v2.54.1
+      image: quay.io/prometheus/prometheus:v3.11.3
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
@@ -100,7 +100,7 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:11.2.0
+      image: grafana/grafana:13.0.1
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -118,20 +118,20 @@ topology:
       group: "10"
 
     ### LOGGING STACK ###
-    promtail:
+    alloy:
       kind: linux
       mgmt-ipv4: 172.80.80.45
-      image: grafana/promtail:3.2.0
+      image: grafana/alloy:v1.16.0
       binds:
-        - configs/promtail:/etc/promtail
-      cmd: --config.file=/etc/promtail/promtail-config.yml
+        - configs/alloy/alloy-config.alloy:/etc/alloy/config.alloy:ro
+      cmd: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
       ports:
-        - 9080:9080
+        - 12345:12345
 
     loki:
       kind: linux
       mgmt-ipv4: 172.80.80.46
-      image: grafana/loki:3.2.0
+      image: grafana/loki:3.7.1
       binds:
         - configs/loki:/etc/loki
       cmd: --config.file=/etc/loki/loki-config.yml

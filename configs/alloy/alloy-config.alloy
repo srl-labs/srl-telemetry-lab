@@ -1,0 +1,52 @@
+loki.source.syslog "srlinux" {
+  listener {
+    address               = "0.0.0.0:1514"
+    protocol              = "udp"
+    idle_timeout          = "300s"
+    label_structured_data = true
+    labels                = { job = "syslog" }
+  }
+
+  relabel_rules = loki.relabel.syslog.rules
+  forward_to    = [loki.write.local.receiver]
+}
+
+loki.relabel "syslog" {
+  forward_to = [loki.write.local.receiver]
+
+  rule {
+    source_labels = ["__syslog_message_hostname"]
+    regex         = "(.+)"
+    target_label  = "source"
+  }
+
+  rule {
+    source_labels = ["__syslog_message_severity"]
+    regex         = "(.+)"
+    target_label  = "level"
+  }
+
+  rule {
+    source_labels = ["__syslog_message_app_name"]
+    regex         = "(.+)"
+    target_label  = "application"
+  }
+
+  rule {
+    source_labels = ["__syslog_message_facility"]
+    regex         = "(.+)"
+    target_label  = "facility"
+  }
+
+  rule {
+    source_labels = ["__syslog_message_proc_id"]
+    regex         = "(.+)"
+    target_label  = "procid"
+  }
+}
+
+loki.write "local" {
+  endpoint {
+    url = "http://loki:3100/loki/api/v1/push"
+  }
+}
