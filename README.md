@@ -132,6 +132,12 @@ Using containerlab's ability to expose ports of the containers to the host, the 
 * Grafana: <http://localhost:3000>. Anonymous access is enabled; no credentials are required. If you want to act as an admin, use `admin/admin` credentials.
 * Prometheus: <http://localhost:9090/graph>
 
+## Logging stack
+
+The logging stack leverages the Alloy->Loki pipeline, where Alloy receives syslog messages, transforms labels, and ships logs to Loki, a log aggregation system.
+
+The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
+
 ## Traffic generation
 
 When the lab is started, there is not traffic running between the nodes as the clients are sending any data. To run traffic between the nodes, leverage `traffic.sh` control script.
@@ -151,9 +157,3 @@ To stop the traffic:
 As a result, the traffic will be generated between the clients and the traffic rate will be reflected on the grafana dashboard.
 
 <https://github.com/srl-labs/srl-telemetry-lab/assets/5679861/158914fc-9100-416b-8b0f-cde932895cec>
-
-## Logging stack
-
-The logging stack leverages the Alloy->Loki pipeline, where Alloy receives syslog messages, transforms labels, and ships logs to Loki, a log aggregation system.
-
-The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
