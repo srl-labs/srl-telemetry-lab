@@ -1,5 +1,5 @@
 {
-    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood-slim:0.71.1",
+    "image": "ghcr.io/srl-labs/containerlab/devcontainer-dood-slim:0.75.0",
     "runArgs": [
         "--network=host",
         "--pid=host",

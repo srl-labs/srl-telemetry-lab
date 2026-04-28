@@ -20,7 +20,7 @@ This lab represents a small Clos fabric with [Nokia SR Linux](https://learn.srli
 
 ![pic1](https://gitlab.com/rdodin/pics/-/wikis/uploads/0784c31d48ec18fd24111ad8d73478b0/image.png)
 
-In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [promtail](https://grafana.com/docs/loki/latest/clients/promtail/) and [loki](https://grafana.com/oss/loki/).
+In addition to the telemetry stack, the lab also includes a modern logging stack comprised of [Grafana Alloy](https://grafana.com/docs/alloy/latest/) and [loki](https://grafana.com/oss/loki/).
 
 Goals of this lab:
 
@@ -132,6 +132,12 @@ Using containerlab's ability to expose ports of the containers to the host, the 
 * Grafana: <http://localhost:3000>. Anonymous access is enabled; no credentials are required. If you want to act as an admin, use `admin/admin` credentials.
 * Prometheus: <http://localhost:9090/graph>
 
+## Logging stack
+
+The logging stack leverages the Alloy->Loki pipeline, where Alloy receives syslog messages, transforms labels, and ships logs to Loki, a log aggregation system.
+
+The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
+
 ## Traffic generation
 
 When the lab is started, there is not traffic running between the nodes as the clients are sending any data. To run traffic between the nodes, leverage `traffic.sh` control script.
@@ -151,9 +157,3 @@ To stop the traffic:
 As a result, the traffic will be generated between the clients and the traffic rate will be reflected on the grafana dashboard.
 
 <https://github.com/srl-labs/srl-telemetry-lab/assets/5679861/158914fc-9100-416b-8b0f-cde932895cec>
-
-## Logging stack
-
-The logging stack leverages the promtail->Loki pipeline, where promtail is a log agent that extracts, transforms and ships logs to Loki, a log aggregation system.
-
-The logging infrastructure logs every message from SR Linux that is above Info level. This includes all the BGP messages, all the system messages, all the interface state changes, etc. The dashboard provides a view on the collected logs and allows filtering on a per-application level.
