@@ -4,205 +4,525 @@
       "id": "freeText_1763721302938_1",
       "text": "172.17.0.1/24",
       "position": {
-        "x": 7,
-        "y": 231
+        "x": -62.03145371322805,
+        "y": 341.6521574647835
       },
-      "fontSize": 4,
+      "fontSize": 13,
       "fontColor": "#ffffff",
       "backgroundColor": "transparent",
       "fontWeight": "normal",
       "fontStyle": "normal",
       "textDecoration": "none",
-      "fontFamily": "monospace",
       "textAlign": "left",
+      "fontFamily": "monospace",
       "roundedBackground": true
     },
     {
       "id": "freeText_1763721327571_0",
       "text": "172.17.0.2/24",
       "position": {
-        "x": 105,
-        "y": 231
+        "x": 101.80142206110926,
+        "y": 343.22916837212443
       },
-      "fontSize": 4,
+      "fontSize": 13,
       "fontColor": "#ffffff",
       "backgroundColor": "transparent",
       "fontWeight": "normal",
       "fontStyle": "normal",
       "textDecoration": "none",
-      "fontFamily": "monospace",
       "textAlign": "left",
+      "fontFamily": "monospace",
       "roundedBackground": true
     },
     {
       "id": "freeText_1763721349748_0",
       "text": "172.17.0.3/24",
       "position": {
-        "x": 203,
-        "y": 231
+        "x": 259.75012301690816,
+        "y": 342.09320250085125
       },
-      "fontSize": 4,
+      "fontSize": 13,
       "fontColor": "#ffffff",
       "backgroundColor": "transparent",
       "fontWeight": "normal",
       "fontStyle": "normal",
       "textDecoration": "none",
-      "fontFamily": "monospace",
       "textAlign": "left",
+      "fontFamily": "monospace",
       "roundedBackground": true
+    }
+  ],
+  "freeShapeAnnotations": [],
+  "trafficRateAnnotations": [
+    {
+      "id": "traffic-rate-spine1-e1-1",
+      "position": {
+        "x": 30.77337820769516,
+        "y": 39.8466722759619
+      },
+      "nodeId": "spine1",
+      "interfaceName": "e1-1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderColor": "#1b1f23",
+      "borderWidth": 0,
+      "borderStyle": "dashed",
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf1-e1-49",
+      "position": {
+        "x": 10,
+        "y": 89
+      },
+      "nodeId": "leaf1",
+      "interfaceName": "e1-49",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-spine1-e1-2",
+      "position": {
+        "x": 85.62005048365705,
+        "y": 39.84667227596189
+      },
+      "nodeId": "spine1",
+      "interfaceName": "e1-2",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf2-e1-49",
+      "position": {
+        "x": 114,
+        "y": 89
+      },
+      "nodeId": "leaf2",
+      "interfaceName": "e1-49",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-spine1-e1-3",
+      "position": {
+        "x": 124.70457719776488,
+        "y": 27.160067311542733
+      },
+      "nodeId": "spine1",
+      "interfaceName": "e1-3",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf3-e1-49",
+      "position": {
+        "x": 218,
+        "y": 89
+      },
+      "nodeId": "leaf3",
+      "interfaceName": "e1-49",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-spine2-e1-1",
+      "position": {
+        "x": 169.05981489325748,
+        "y": 29.082280184939577
+      },
+      "nodeId": "spine2",
+      "interfaceName": "e1-1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf1-e1-50",
+      "position": {
+        "x": 59,
+        "y": 89
+      },
+      "nodeId": "leaf1",
+      "interfaceName": "e1-50",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-spine2-e1-2",
+      "position": {
+        "x": 200.4554901137779,
+        "y": 39.84667227596189
+      },
+      "nodeId": "spine2",
+      "interfaceName": "e1-2",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf2-e1-50",
+      "position": {
+        "x": 163,
+        "y": 89
+      },
+      "nodeId": "leaf2",
+      "interfaceName": "e1-50",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-spine2-e1-3",
+      "position": {
+        "x": 253.37994951634295,
+        "y": 39.462229701282524
+      },
+      "nodeId": "spine2",
+      "interfaceName": "e1-3",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf3-e1-50",
+      "position": {
+        "x": 277.7643920910223,
+        "y": 86.30890197724442
+      },
+      "nodeId": "leaf3",
+      "interfaceName": "e1-50",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf1-e1-1",
+      "position": {
+        "x": -25,
+        "y": 194
+      },
+      "nodeId": "leaf1",
+      "interfaceName": "e1-1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-client1-eth1",
+      "position": {
+        "x": -25,
+        "y": 236
+      },
+      "nodeId": "client1",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf2-e1-1",
+      "position": {
+        "x": 135,
+        "y": 194
+      },
+      "nodeId": "leaf2",
+      "interfaceName": "e1-1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-client2-eth1",
+      "position": {
+        "x": 135,
+        "y": 236
+      },
+      "nodeId": "client2",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-leaf3-e1-1",
+      "position": {
+        "x": 295,
+        "y": 194
+      },
+      "nodeId": "leaf3",
+      "interfaceName": "e1-1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
+    },
+    {
+      "id": "traffic-rate-client3-eth1",
+      "position": {
+        "x": 295,
+        "y": 236
+      },
+      "nodeId": "client3",
+      "interfaceName": "eth1",
+      "mode": "text",
+      "textMetric": "tx",
+      "backgroundOpacity": 20,
+      "borderWidth": 0,
+      "borderRadius": 4,
+      "width": 50,
+      "height": 30
     }
   ],
   "groupStyleAnnotations": [
     {
       "id": "Telemetry Stack:1",
-      "backgroundColor": "#a400f0",
+      "name": "Telemetry Stack",
+      "level": "1",
+      "position": {
+        "x": 429.226434309174,
+        "y": -17.604079625415707
+      },
+      "width": 300,
+      "height": 208,
+      "backgroundColor": "#00d4f0",
       "backgroundOpacity": 40,
       "borderColor": "#dddddd",
       "borderWidth": 0,
       "borderStyle": "solid",
       "borderRadius": 4,
-      "color": "#ebecf0",
-      "labelPosition": "top-center"
+      "labelColor": "#ebecf0",
+      "labelPosition": "top-center",
+      "zIndex": -1
     }
   ],
-  "cloudNodeAnnotations": [],
+  "networkNodeAnnotations": [],
   "nodeAnnotations": [
     {
       "id": "gnmic",
-      "icon": "server",
+      "icon": "gnmic",
       "position": {
-        "x": 357,
-        "y": 105
+        "x": 634.2654114853812,
+        "y": 11.327057426905682
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       },
-      "group": "Telemetry Stack",
-      "level": "1"
+      "level": "1",
+      "groupId": "Telemetry Stack:1",
+      "iconCornerRadius": 0
     },
     {
       "id": "prometheus",
-      "icon": "server",
+      "icon": "prometheus_software_logo-svg",
       "position": {
-        "x": 343,
-        "y": 133
+        "x": 554.2654114853812,
+        "y": 111.32705742690571
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       },
-      "group": "Telemetry Stack",
-      "level": "1"
+      "level": "1",
+      "groupId": "Telemetry Stack:1",
+      "iconCornerRadius": 0
     },
     {
       "id": "grafana",
-      "icon": "server",
+      "icon": "grafana_logo-svg",
       "position": {
-        "x": 301,
-        "y": 105
+        "x": 474.26541148538115,
+        "y": 11.327057426905682
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       },
-      "group": "Telemetry Stack",
-      "level": "1"
+      "level": "1",
+      "groupId": "Telemetry Stack:1",
+      "iconCornerRadius": 0
     },
     {
       "id": "promtail",
-      "icon": "server",
+      "icon": "logo-grafana-loki",
       "position": {
-        "x": 301,
-        "y": 133
+        "x": 474.26541148538115,
+        "y": 111.32705742690571
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       },
-      "group": "Telemetry Stack",
-      "level": "1"
+      "level": "1",
+      "groupId": "Telemetry Stack:1",
+      "iconCornerRadius": 0
     },
     {
       "id": "loki",
-      "icon": "server",
+      "icon": "logo-grafana-loki",
       "position": {
-        "x": 329,
-        "y": 105
+        "x": 554.2654114853812,
+        "y": 11.327057426905682
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       },
-      "group": "Telemetry Stack",
-      "level": "1"
+      "level": "1",
+      "groupId": "Telemetry Stack:1",
+      "iconCornerRadius": 0
     },
     {
       "id": "spine1",
       "icon": "router",
       "position": {
-        "x": 77,
-        "y": 77
+        "x": 80,
+        "y": -20
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}",
+      "labelPosition": "top"
     },
     {
       "id": "spine2",
       "icon": "router",
       "position": {
-        "x": 189,
-        "y": 77
+        "x": 220,
+        "y": -20
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}",
+      "labelPosition": "top"
     },
     {
       "id": "leaf1",
       "icon": "router",
       "position": {
-        "x": 35,
-        "y": 147
+        "x": -20,
+        "y": 140
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}",
+      "labelPosition": "left",
+      "direction": "up"
     },
     {
       "id": "leaf2",
       "icon": "router",
       "position": {
-        "x": 133,
-        "y": 147
+        "x": 140,
+        "y": 140
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}",
+      "labelPosition": "left",
+      "direction": "up"
     },
     {
       "id": "leaf3",
       "icon": "router",
       "position": {
-        "x": 231,
-        "y": 147
+        "x": 300,
+        "y": 140
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
-      }
+      },
+      "interfacePattern": "e1-{n}",
+      "labelPosition": "left",
+      "direction": "up"
     },
     {
       "id": "client1",
       "icon": "client",
       "position": {
-        "x": 35,
-        "y": 217
+        "x": -20,
+        "y": 280
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
@@ -213,8 +533,8 @@
       "id": "client2",
       "icon": "client",
       "position": {
-        "x": 133,
-        "y": 217
+        "x": 140,
+        "y": 280
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
@@ -225,13 +545,39 @@
       "id": "client3",
       "icon": "client",
       "position": {
-        "x": 231,
-        "y": 217
+        "x": 300,
+        "y": 280
       },
       "geoCoordinates": {
         "lat": 48.684826888402256,
         "lng": 9.007895390625677
       }
     }
-  ]
+  ],
+  "edgeAnnotations": [
+    {
+      "id": "Clab-Link7",
+      "source": "leaf2",
+      "target": "client2",
+      "sourceEndpoint": "e1-1",
+      "targetEndpoint": "eth1",
+      "endpointLabelOffsetEnabled": true,
+      "endpointLabelOffset": 28
+    }
+  ],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {
+    "style": "telemetry-style",
+    "linkLabelMode": "telemetry-style",
+    "lastNonTelemetryLinkLabelMode": "show-all",
+    "telemetryNodeSizePx": 40,
+    "telemetryInterfaceSizePercent": 100,
+    "showRateLabels": true,
+    "autoCreateTrafficRateAnnotations": true,
+    "gridLineWidth": 0.5,
+    "gridStyle": "dotted",
+    "gridColor": null,
+    "gridBgColor": null
+  },
+  "cloudNodeAnnotations": []
 }

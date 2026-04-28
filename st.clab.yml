@@ -15,7 +15,7 @@ topology:
 
   kinds:
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:24.10.1
+      image: ghcr.io/nokia/srlinux:25.10
       type: ixr-d2l
     linux:
       image: ghcr.io/srl-labs/network-multitool
@@ -108,10 +108,9 @@ topology:
       ports:
         - 3000:3000
       env:
-        GF_INSTALL_PLUGINS: "andrewbmchugh-flow-panel"
-        # env vars to enable anonymous access
-        GF_ORG_ROLE: "Admin"
-        GF_ORG_NAME: "Main Org"
+        GF_INSTALL_PLUGINS: andrewbmchugh-flow-panel
+        GF_ORG_ROLE: Admin
+        GF_ORG_NAME: Main Org
         GF_AUTH_ANONYMOUS_ENABLED: "true"
         GF_AUTH_ANONYMOUS_ORG_ROLE: Admin
         GF_AUTH_ANONYMOUS: "true"
@@ -140,12 +139,12 @@ topology:
         - 3100:3100
 
   links:
-    - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
-    - endpoints: ["spine1:e1-2", "leaf2:e1-49"]
-    - endpoints: ["spine1:e1-3", "leaf3:e1-49"]
-    - endpoints: ["spine2:e1-1", "leaf1:e1-50"]
-    - endpoints: ["spine2:e1-2", "leaf2:e1-50"]
-    - endpoints: ["spine2:e1-3", "leaf3:e1-50"]
-    - endpoints: ["leaf1:e1-1", "client1:eth1"]
-    - endpoints: ["leaf2:e1-1", "client2:eth1"]
-    - endpoints: ["leaf3:e1-1", "client3:eth1"]
+    - endpoints: [ "spine1:e1-1", "leaf1:e1-49" ]
+    - endpoints: [ "spine1:e1-2", "leaf2:e1-49" ]
+    - endpoints: [ "spine1:e1-3", "leaf3:e1-49" ]
+    - endpoints: [ "spine2:e1-1", "leaf1:e1-50" ]
+    - endpoints: [ "spine2:e1-2", "leaf2:e1-50" ]
+    - endpoints: [ "spine2:e1-3", "leaf3:e1-50" ]
+    - endpoints: [ "leaf1:e1-1", "client1:eth1" ]
+    - endpoints: [ "leaf2:e1-1", "client2:eth1" ]
+    - endpoints: [ "leaf3:e1-1", "client3:eth1" ]
