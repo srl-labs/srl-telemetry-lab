@@ -80,9 +80,7 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.45.0
-      labels:
-        c9s.run/exposePorts: "9273/tcp"
+      image: ghcr.io/openconfig/gnmic:0.47.0
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
       cmd: --config /gnmic-config.yml --log subscribe
@@ -141,12 +139,12 @@ topology:
         - 3100:3100
 
   links:
-    - endpoints: [ "spine1:e1-1", "leaf1:e1-49" ]
-    - endpoints: [ "spine1:e1-2", "leaf2:e1-49" ]
-    - endpoints: [ "spine1:e1-3", "leaf3:e1-49" ]
-    - endpoints: [ "spine2:e1-1", "leaf1:e1-50" ]
-    - endpoints: [ "spine2:e1-2", "leaf2:e1-50" ]
-    - endpoints: [ "spine2:e1-3", "leaf3:e1-50" ]
-    - endpoints: [ "leaf1:e1-1", "client1:eth1" ]
-    - endpoints: [ "leaf2:e1-1", "client2:eth1" ]
-    - endpoints: [ "leaf3:e1-1", "client3:eth1" ]
+    - endpoints: ["spine1:e1-1", "leaf1:e1-49"]
+    - endpoints: ["spine1:e1-2", "leaf2:e1-49"]
+    - endpoints: ["spine1:e1-3", "leaf3:e1-49"]
+    - endpoints: ["spine2:e1-1", "leaf1:e1-50"]
+    - endpoints: ["spine2:e1-2", "leaf2:e1-50"]
+    - endpoints: ["spine2:e1-3", "leaf3:e1-50"]
+    - endpoints: ["leaf1:e1-1", "client1:eth1"]
+    - endpoints: ["leaf2:e1-1", "client2:eth1"]
+    - endpoints: ["leaf3:e1-1", "client3:eth1"]
