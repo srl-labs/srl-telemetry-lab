@@ -2,9 +2,12 @@
 # Licensed under the BSD 3-Clause License.
 # SPDX-License-Identifier: BSD-3-Clause
 
+# gnmic is scraped and the rules are evaluated every second, so a port or
+# BGP session going down, streamed on change by the switches, reaches the
+# dashboard within a second or two.
 global:
-  scrape_interval: 5s
-  evaluation_interval: 5s
+  scrape_interval: 1s
+  evaluation_interval: 1s
 
 rule_files:
   - /etc/prometheus/rules.yml

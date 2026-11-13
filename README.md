@@ -114,14 +114,14 @@ Telemetry is at the core of the lab:
 
 [gnmic](https://gnmic.openconfig.net) is an OpenConfig project that subscribes to streaming telemetry of network devices and exports it to a variety of destinations. Here it subscribes to the five switches and exposes the data to Prometheus. Its configuration, [configs/gnmic/gnmic-config.yml](configs/gnmic/gnmic-config.yml), shows a few practices worth copying:
 
-* **Sample and on-change subscriptions.** Counters and rates are sampled every 5 seconds. States (port oper-state, BGP session state, network instance state, software version) are streamed on-change, so a port going down shows up the moment it happens, with a 10 second heartbeat that keeps the metric alive in Prometheus.
+* **Sample and on-change subscriptions.** Counters and rates are sampled every 5 seconds. States (port oper-state, BGP session state, network instance state, software version) are streamed on-change, with a 10 second heartbeat that keeps the metric alive in Prometheus. Together with Prometheus scraping gnmic every second and the dashboard refreshing every second, a port or BGP session going down shows in Grafana about two seconds after it happened.
 * **Verified TLS.** gnmic checks the certificates of the switches against the CA that containerlab creates for the lab, instead of skipping the verification.
 * **Processors.** Prometheus only stores numbers, so a Starlark processor turns timestamps into epoch seconds, `true`/`false` into 1/0, the BGP session state into a number (6 is established) and text such as the software version and the port descriptions into labels.
 * **EVPN overlay.** Besides interface, BGP, routing, bridge table and platform statistics, gnmic collects the MAC table of the MAC-VRFs (whether a MAC was learnt on a local port or received over EVPN, and where it points to), the traffic per remote VTEP and the EVPN routes of type 2 and 3.
 
 ### Prometheus
 
-[Prometheus](https://prometheus.io) stores the telemetry exported by gnmic. [configs/prometheus/prometheus.yml](configs/prometheus/prometheus.yml) makes it scrape gnmic every 5 seconds.
+[Prometheus](https://prometheus.io) stores the telemetry exported by gnmic. [configs/prometheus/prometheus.yml](configs/prometheus/prometheus.yml) makes it scrape gnmic and evaluate the rules every second.
 
 [configs/prometheus/rules.yml](configs/prometheus/rules.yml) holds the rules:
 
