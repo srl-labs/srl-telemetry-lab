@@ -112,6 +112,8 @@ topology:
         - 3000:3000
       env:
         GF_PLUGINS_PREINSTALL_SYNC: andrewbmchugh-flow-panel,volkovlabs-variable-panel
+        # the dashboard refreshes every second
+        GF_DASHBOARDS_MIN_REFRESH_INTERVAL: 1s
         GF_ORG_ROLE: Admin
         GF_ORG_NAME: Main Org
         GF_AUTH_ANONYMOUS_ENABLED: "true"

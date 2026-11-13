@@ -263,8 +263,10 @@ flow.update(
         "title": "Fabric topology",
     }
 )
+# The map only shows the newest values: instant queries return exactly those,
+# where the last point of a range query can lag by a step.
 for flow_target in flow["targets"]:
-    flow_target["datasource"] = PROM
+    flow_target.update({"datasource": PROM, "instant": True, "range": False})
 
 panel_config = flow["options"]["panelConfig"]
 # Without a label color the rate labels keep currentColor, the text color of
@@ -502,7 +504,7 @@ front_panel = {
         "svg": front_svg,
         "timeSliderEnabled": False,
     },
-    "targets": [target("A", "interface_oper_state", "oper-state:{{source}}:{{interface_name}}")],
+    "targets": [instant("A", "interface_oper_state", "oper-state:{{source}}:{{interface_name}}")],
     "title": "Front panel view",
     "type": flow["type"],
 }
@@ -1018,12 +1020,19 @@ interface_panels = [
                 ("D", "out_discarded", "out discards"),
             )
         ],
-        "Error and discarded packets per second of the selected ports. Flat at zero in a healthy fabric.",
+        "Error and discarded packets per second of the selected ports. A few discards now and then are normal; a steady rate is not.",
         unit="pps",
         legend="bottom",
     ),
     interface_table(53),
 ]
+# gnmic samples the counters every 5s. A min step of 5s makes Grafana size
+# $__rate_interval for that (20s) instead of for the 1s scrape, where single
+# packets would show as peaks.
+for panel in interface_panels:
+    if panel["id"] in (51, 52):
+        for query in panel["targets"]:
+            query["interval"] = "5s"
 
 LOG_SELECTOR = '{job="syslog", source=~"$Node", application=~"$Application", kind=~"$Kind"}'
 SEVERITY_COLOURS = {
@@ -1093,7 +1102,10 @@ log_panels = [
             "showLabels": True,
             "showTime": True,
             "sortOrder": "Descending",
-            "wrapLogMessage": True,
+            # Wrapped lines are measured again on every refresh, which made
+            # them overlap for a moment at a 1s refresh; a click on a line
+            # shows the whole message.
+            "wrapLogMessage": False,
         },
         "targets": [target("A", LOG_SELECTOR, "", ds=LOKI, queryType="range")],
         "title": "Logs",
@@ -1421,12 +1433,12 @@ v1_dashboard = {
         }
     ],
     "panels": panels,
-    "refresh": "5s",
+    "refresh": "1s",
     "schemaVersion": 41,
     "tags": ["gnmi", "srlinux", "telemetry"],
     "templating": {"list": variables},
     "time": {"from": "now-15m", "to": "now"},
-    "timepicker": {},
+    "timepicker": {"refresh_intervals": ["1s", "2s", "5s", "10s", "30s", "1m", "5m"]},
     "timezone": "",
     "title": TITLE,
     "version": 1,

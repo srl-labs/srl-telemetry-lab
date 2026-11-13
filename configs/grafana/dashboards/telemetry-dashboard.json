@@ -1185,9 +1185,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "interface_oper_state",
-                        "instant": false,
+                        "instant": true,
                         "legendFormat": "oper-state:{{source}}:{{interface_name}}",
-                        "range": true
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -1207,9 +1207,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "interface_traffic_rate_out_bps",
-                        "instant": false,
+                        "instant": true,
                         "legendFormat": "{{source}}:{{interface_name}}:out",
-                        "range": true
+                        "range": false
                       }
                     },
                     "refId": "B",
@@ -1229,9 +1229,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "interface_traffic_rate_in_bps",
-                        "instant": false,
+                        "instant": true,
                         "legendFormat": "{{source}}:{{interface_name}}:in",
-                        "range": true
+                        "range": false
                       }
                     },
                     "refId": "C",
@@ -1387,8 +1387,9 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "interface_oper_state",
+                        "instant": true,
                         "legendFormat": "oper-state:{{source}}:{{interface_name}}",
-                        "range": true
+                        "range": false
                       }
                     },
                     "refId": "A",
@@ -1716,7 +1717,7 @@
                 "showLabels": true,
                 "showTime": true,
                 "sortOrder": "Descending",
-                "wrapLogMessage": true
+                "wrapLogMessage": false
               },
               "fieldConfig": {
                 "defaults": {},
@@ -2869,6 +2870,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_in_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) * on(source, interface_name) group_left(description) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} in ({{description}})",
                         "range": true
                       }
@@ -2890,6 +2892,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_out_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) * on(source, interface_name) group_left(description) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} out ({{description}})",
                         "range": true
                       }
@@ -2972,7 +2975,7 @@
         "spec": {
           "id": 52,
           "title": "Errors and discards",
-          "description": "Error and discarded packets per second of the selected ports. Flat at zero in a healthy fabric.",
+          "description": "Error and discarded packets per second of the selected ports. A few discards now and then are normal; a steady rate is not.",
           "links": [],
           "data": {
             "kind": "QueryGroup",
@@ -2991,6 +2994,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_in_error_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) and on(source, interface_name) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} in errors",
                         "range": true
                       }
@@ -3012,6 +3016,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_out_error_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) and on(source, interface_name) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} out errors",
                         "range": true
                       }
@@ -3033,6 +3038,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_in_discarded_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) and on(source, interface_name) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} in discards",
                         "range": true
                       }
@@ -3054,6 +3060,7 @@
                       "spec": {
                         "editorMode": "code",
                         "expr": "rate(interface_statistics_out_discarded_packets{source=~\"$Node\", interface_name=~\"$Interface\"}[$__rate_interval]) and on(source, interface_name) srl:interface:in_use",
+                        "interval": "5s",
                         "legendFormat": "{{source}} {{interface_name}} out discards",
                         "range": true
                       }
@@ -5442,18 +5449,15 @@
     "timeSettings": {
       "from": "now-15m",
       "to": "now",
-      "autoRefresh": "5s",
+      "autoRefresh": "1s",
       "autoRefreshIntervals": [
+        "1s",
+        "2s",
         "5s",
         "10s",
         "30s",
         "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
+        "5m"
       ],
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0

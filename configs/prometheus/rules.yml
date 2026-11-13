@@ -5,7 +5,7 @@
 # Recording rules shared by the Grafana dashboard and the alert rules.
 groups:
   - name: srlinux
-    interval: 5s
+    interval: 1s
     rules:
       # Cabled ports: 1 for every port that has carried traffic, labelled
       # with the port description when it has one. Multiply a port metric
@@ -46,11 +46,11 @@ groups:
   # Alerts of the lab. The Alerts panel of the dashboard and Alerting > Alert
   # rules in Grafana show them; there is no Alertmanager, so nobody is notified.
   - name: srlinux-alerts
-    interval: 5s
+    interval: 1s
     rules:
       - alert: BGPSessionDown
         expr: srl:bgp:sessions_down > 0
-        for: 10s
+        for: 5s
         labels:
           severity: critical
         annotations:
@@ -58,7 +58,7 @@ groups:
 
       - alert: PortDown
         expr: srl:interface:down > 0
-        for: 10s
+        for: 5s
         labels:
           severity: critical
         annotations:

@@ -8,6 +8,10 @@ datasources:
     access: proxy
     url: http://prometheus:9090
     isDefault: true
+    jsonData:
+      # The scrape interval of Prometheus: queries step at 1s, so the newest
+      # value is never more than a second old.
+      timeInterval: 1s
   - name: Loki
     type: loki
     uid: loki
