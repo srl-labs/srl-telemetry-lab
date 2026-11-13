@@ -24,7 +24,7 @@ Grafana picks up the new file within 10 seconds.
 
 Needed when the topology changes: nodes, links or their position in [st.clab.yml.annotations.json](../../st.clab.yml.annotations.json).
 
-The export runs the topology viewer of [containerlab-app](https://github.com/srl-labs/containerlab-app) in its UI harness, with the same Grafana bundle export as **Export SVG > Grafana bundle** in the containerlab VS Code extension and app:
+The export runs the topology viewer of [containerlab-app](https://github.com/srl-labs/containerlab-app) in its UI harness, with the same Grafana bundle export as **Export SVG > Grafana bundle** in the [containerlab app](https://containerlab.app):
 
 ```bash
 # in a checkout of containerlab-app
