@@ -6,17 +6,24 @@ username: admin
 timeout: 10s
 
 common_srl_subscriptions: &common_srl_subs
-  skip-verify: true
-  insecure: false
+  port: 57400
   password: NokiaSrl1!
+  # The switches present a certificate signed by the CA that containerlab
+  # creates for the lab, which the topology file mounts into this container.
+  tls-ca: /etc/gnmic/ca/ca.pem
   subscriptions:
     - srl-if-stats
+    - srl-if-state
     - srl-bgp
+    - srl-bgp-neighbors
+    - srl-bgp-neighbor-state
     - srl-system-performance
     - srl-routes
     - srl-bridge
     - srl-apps
     - srl-net-instance
+    - srl-system-info
+    - srl-evpn
 
 targets:
   leaf1: *common_srl_subs
@@ -26,6 +33,9 @@ targets:
   spine2: *common_srl_subs
 
 subscriptions:
+  # Counters and rates change all the time: they are sampled every 5s.
+  # States change rarely: they are sent the moment they change (on-change),
+  # and repeated every 10s (heartbeat) so the Prometheus output keeps them.
   srl-system-performance:
     mode: stream
     stream-mode: sample
@@ -38,9 +48,16 @@ subscriptions:
     stream-mode: sample
     sample-interval: 5s
     paths:
-      - /interface[name=ethernet-1/*]/oper-state
       - /interface[name=ethernet-1/*]/statistics
       - /interface[name=ethernet-1/*]/traffic-rate
+  srl-if-state:
+    mode: stream
+    stream-mode: on-change
+    heartbeat-interval: 10s
+    paths:
+      - /interface[name=ethernet-1/*]/oper-state
+      - /interface[name=ethernet-1/*]/mtu
+      - /interface[name=ethernet-1/*]/description
   srl-routes:
     mode: stream
     stream-mode: sample
@@ -54,6 +71,21 @@ subscriptions:
     sample-interval: 5s
     paths:
       - /network-instance[name=*]/protocols/bgp/statistics
+  srl-bgp-neighbors:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/afi-safi[afi-safi-name=*]/received-routes
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/afi-safi[afi-safi-name=*]/active-routes
+  srl-bgp-neighbor-state:
+    mode: stream
+    stream-mode: on-change
+    heartbeat-interval: 10s
+    paths:
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/session-state
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/peer-as
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/last-established
   srl-bridge:
     mode: stream
     stream-mode: sample
@@ -70,19 +102,120 @@ subscriptions:
     paths:
       - /network-instance[name=*]/oper-state
     mode: stream
+    stream-mode: on-change
+    heartbeat-interval: 10s
+  srl-system-info:
+    paths:
+      - /system/information/version
+      - /system/information/last-booted
+      - /system/configuration/last-change
+    mode: stream
+    stream-mode: on-change
+    heartbeat-interval: 10s
+  # EVPN overlay: the MAC table of the MAC-VRFs, the traffic per remote VTEP
+  # and the EVPN routes (type 2 MAC/IP and type 3 inclusive multicast).
+  srl-evpn:
+    mode: stream
     stream-mode: sample
     sample-interval: 5s
+    paths:
+      - /network-instance[name=*]/bridge-table/mac-table/mac[address=*]
+      - /tunnel/vxlan-tunnel/vtep[address=*]/statistics
+      - /network-instance[name=default]/bgp-rib/afi-safi[afi-safi-name=evpn]/evpn/rib-in-out/rib-in-post/mac-ip-route/used-route
+      - /network-instance[name=default]/bgp-rib/afi-safi[afi-safi-name=evpn]/evpn/rib-in-out/rib-in-post/imet-route/used-route
 
 outputs:
   prom-output:
     type: prometheus
     listen: :9273
+    # Drop a metric soon after the switch stops reporting it, so a removed
+    # interface, BGP neighbor or MAC address does not linger on the dashboard.
+    # States are repeated every 10s by their heartbeat, so they stay.
+    expiration: 15s
     event-processors:
+      - text-to-number
       - trim-prefixes
       - rename-srl-interface
       - oper-state-to-int
 
 processors:
+  # Prometheus only stores numbers: timestamps become epoch seconds, true and
+  # false become 1 and 0, and text values become labels:
+  # - the software version and the interface description are labels on a
+  #   metric with the value 1
+  # - the BGP session state is a number, 6 meaning established, in the order
+  #   of the BGP finite state machine
+  # - every MAC address is a metric with the value 1, labelled with its type
+  #   (learnt or evpn) and where it points to (a local sub-interface or a VTEP)
+  text-to-number:
+    event-starlark:
+      source: |
+        load("time.star", "time")
+
+        BGP_STATES = {
+          "idle": 1,
+          "connect": 2,
+          "active": 3,
+          "opensent": 4,
+          "openconfirm": 5,
+          "established": 6,
+        }
+
+        def destination(text):
+          # "vxlan-interface:vxlan1.1 vtep:10.0.1.2 vni:1" becomes "vtep 10.0.1.2"
+          for part in text.split(" "):
+            if part.startswith("vtep:"):
+              return "vtep " + part[len("vtep:"):]
+          return text
+
+        def mac_key(e):
+          return (e.tags.get("source", ""), e.tags.get("network-instance_name", ""), e.tags.get("mac_address", ""))
+
+        def mac_leaf(e):
+          # every event carries one value; returns its leaf name for a MAC table entry
+          for name in e.values.keys():
+            if "mac-table/mac/" in name:
+              return name.split("/")[-1]
+          return None
+
+        def mac_entries(events):
+          # A MAC table entry arrives as one event per leaf: keep the "type"
+          # event, label it with the type and the destination, drop the rest.
+          destinations = {}
+          for e in events:
+            if mac_leaf(e) == "destination":
+              destinations[mac_key(e)] = destination(list(e.values.values())[0])
+          kept = []
+          for e in events:
+            leaf = mac_leaf(e)
+            if leaf == None:
+              kept.append(e)
+            elif leaf == "type":
+              name = list(e.values.keys())[0]
+              e.tags["mac_type"] = e.values[name]
+              e.tags["destination"] = destinations.get(mac_key(e), "")
+              e.values[name] = 1
+              kept.append(e)
+          return kept
+
+        def apply(*events):
+          events = mac_entries(events)
+          for e in events:
+            for name, value in list(e.values.items()):
+              if value in ("true", "false", True, False):
+                e.values[name] = 1 if value in ("true", True) else 0
+              elif name.endswith(("/last-booted", "/last-change", "/last-established")):
+                e.values[name] = time.parse_time(value).unix
+              elif name.endswith("/information/version"):
+                e.tags["version"] = value
+                e.values[name] = 1
+              elif name.endswith("/interface/description"):
+                e.tags["description"] = value
+                e.values[name] = 1
+              elif name.endswith("/session-state"):
+                e.values[name] = BGP_STATES.get(value, 0)
+          return events
+
   trim-prefixes:
     event-strings:
       value-names:
@@ -95,7 +228,7 @@ processors:
   oper-state-to-int:
     event-strings:
       value-names:
-        - ".*"
+        - ".*oper-state$"
       transforms:
         - replace:
             apply-on: "value"

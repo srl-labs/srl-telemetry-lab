@@ -15,7 +15,7 @@ topology:
 
   kinds:
     nokia_srlinux:
-      image: ghcr.io/nokia/srlinux:25.10
+      image: ghcr.io/nokia/srlinux:26.7.2
       type: ixr-d2l
     linux:
       image: ghcr.io/srl-labs/network-multitool
@@ -80,18 +80,21 @@ topology:
     gnmic:
       kind: linux
       mgmt-ipv4: 172.80.80.41
-      image: ghcr.io/openconfig/gnmic:0.47.0
+      image: ghcr.io/openconfig/gnmic:0.49.1
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
+        # CA of the lab, to verify the certificates of the switches
+        - __clabDir__/.tls/ca:/etc/gnmic/ca:ro
       cmd: --config /gnmic-config.yml --log subscribe
       group: "10" # group 10 is assigned to the nodes of a telemetry stack
 
     prometheus:
       kind: linux
       mgmt-ipv4: 172.80.80.42
-      image: quay.io/prometheus/prometheus:v3.11.3
+      image: quay.io/prometheus/prometheus:v3.16.0
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+        - configs/prometheus/rules.yml:/etc/prometheus/rules.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
         - 9090:9090
@@ -100,7 +103,7 @@ topology:
     grafana:
       kind: linux
       mgmt-ipv4: 172.80.80.43
-      image: grafana/grafana:13.0.1
+      image: grafana/grafana:13.3.1
       binds:
         - configs/grafana/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yaml:ro
         - configs/grafana/dashboards.yml:/etc/grafana/provisioning/dashboards/dashboards.yaml:ro
@@ -108,7 +111,7 @@ topology:
       ports:
         - 3000:3000
       env:
-        GF_INSTALL_PLUGINS: andrewbmchugh-flow-panel
+        GF_PLUGINS_PREINSTALL_SYNC: andrewbmchugh-flow-panel,volkovlabs-variable-panel
         GF_ORG_ROLE: Admin
         GF_ORG_NAME: Main Org
         GF_AUTH_ANONYMOUS_ENABLED: "true"
@@ -121,7 +124,7 @@ topology:
     alloy:
       kind: linux
       mgmt-ipv4: 172.80.80.45
-      image: grafana/alloy:v1.16.0
+      image: grafana/alloy:v1.22.0
       binds:
         - configs/alloy/alloy-config.alloy:/etc/alloy/config.alloy:ro
       cmd: run --server.http.listen-addr=0.0.0.0:12345 --storage.path=/var/lib/alloy/data /etc/alloy/config.alloy
@@ -131,7 +134,7 @@ topology:
     loki:
       kind: linux
       mgmt-ipv4: 172.80.80.46
-      image: grafana/loki:3.7.1
+      image: grafana/loki:3.7.10
       binds:
         - configs/loki:/etc/loki
       cmd: --config.file=/etc/loki/loki-config.yml

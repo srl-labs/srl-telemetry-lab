@@ -1,0 +1,87 @@
+# Copyright 2020 Nokia
+# Licensed under the BSD 3-Clause License.
+# SPDX-License-Identifier: BSD-3-Clause
+
+# Recording rules shared by the Grafana dashboard and the alert rules.
+groups:
+  - name: srlinux
+    interval: 5s
+    rules:
+      # Cabled ports: 1 for every port that has carried traffic, labelled
+      # with the port description when it has one. Multiply a port metric
+      # with it to keep the cabled ports and add their description:
+      #   interface_traffic_rate_in_bps
+      #     * on(source, interface_name) group_left(description) srl:interface:in_use
+      - record: srl:interface:in_use
+        expr: |
+          group by (source, interface_name, description) (
+              topk by (source, interface_name) (1, timestamp(interface_description))
+            and on (source, interface_name)
+              (interface_statistics_in_packets + interface_statistics_out_packets > 0)
+          )
+          or on (source, interface_name)
+          group by (source, interface_name) (
+            interface_statistics_in_packets + interface_statistics_out_packets > 0
+          )
+
+      # BGP sessions that are not established (session state 6), per switch.
+      - record: srl:bgp:sessions_down
+        expr: |
+          count by (source) (network_instance_protocols_bgp_neighbor_session_state != 6)
+          or on (source)
+          0 * count by (source) (network_instance_protocols_bgp_neighbor_session_state)
+
+      # Cabled ports that are down, per switch.
+      - record: srl:interface:down
+        expr: |
+          count by (source) (interface_oper_state == 0 and on (source, interface_name) srl:interface:in_use)
+          or on (source)
+          0 * count by (source) (srl:interface:in_use)
+
+      # Problems per switch: BGP sessions not established plus cabled ports
+      # down. 0 means healthy.
+      - record: srl:switch:problems
+        expr: srl:bgp:sessions_down + on (source) srl:interface:down
+
+  # Alerts of the lab. The Alerts panel of the dashboard and Alerting > Alert
+  # rules in Grafana show them; there is no Alertmanager, so nobody is notified.
+  - name: srlinux-alerts
+    interval: 5s
+    rules:
+      - alert: BGPSessionDown
+        expr: srl:bgp:sessions_down > 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "{{ $labels.source }}: {{ $value }} BGP session(s) not established"
+
+      - alert: PortDown
+        expr: srl:interface:down > 0
+        for: 10s
+        labels:
+          severity: critical
+        annotations:
+          summary: "{{ $labels.source }}: {{ $value }} cabled port(s) down"
+
+      - alert: PortErrors
+        expr: |
+          sum by (source, interface_name) (
+            increase(interface_statistics_in_error_packets[1m])
+            + increase(interface_statistics_out_error_packets[1m])
+            + increase(interface_statistics_in_discarded_packets[1m])
+            + increase(interface_statistics_out_discarded_packets[1m])
+          ) > 10
+        for: 30s
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $labels.source }} {{ $labels.interface_name }}: {{ $value }} errored or discarded packets in the last minute"
+
+      - alert: HighCPU
+        expr: max by (source) (platform_control_cpu_total_instant) > 80
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "{{ $labels.source }}: CPU at {{ $value }}%"

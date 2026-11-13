@@ -1,0 +1,60 @@
+# Deploys the lab and checks that telemetry, logs, alerts and the Grafana
+# dashboard work, see tools/smoke-test.mjs.
+name: smoke test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  smoke-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install containerlab
+        run: bash -c "$(curl -sL https://get.containerlab.dev)" -- -v 0.83.0
+
+      - name: Deploy the lab
+        run: sudo containerlab deploy -t st.clab.yml
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: tools/package-lock.json
+
+      - name: Install the test tools
+        working-directory: tools
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Run the smoke test
+        run: node tools/smoke-test.mjs
+        env:
+          START_TRAFFIC: "1"
+
+      - name: Show the logs of the telemetry stack
+        if: failure()
+        run: |
+          for node in gnmic prometheus grafana alloy loki; do
+            echo "::group::${node}"
+            docker logs --tail 100 "${node}" 2>&1
+            echo "::endgroup::"
+          done
+
+      - name: Keep the dashboard screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dashboard-screenshots
+          path: tools/smoke-test-results
+          if-no-files-found: ignore
+
+      - name: Destroy the lab
+        if: always()
+        run: sudo containerlab destroy -t st.clab.yml --cleanup
