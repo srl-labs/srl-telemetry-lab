@@ -6,17 +6,20 @@ username: admin
 timeout: 10s
 
 common_srl_subscriptions: &common_srl_subs
+  port: 57400
   skip-verify: true
   insecure: false
   password: NokiaSrl1!
   subscriptions:
     - srl-if-stats
     - srl-bgp
+    - srl-bgp-neighbors
     - srl-system-performance
     - srl-routes
     - srl-bridge
     - srl-apps
     - srl-net-instance
+    - srl-system-info
 
 targets:
   leaf1: *common_srl_subs
@@ -41,6 +44,7 @@ subscriptions:
       - /interface[name=ethernet-1/*]/oper-state
       - /interface[name=ethernet-1/*]/statistics
       - /interface[name=ethernet-1/*]/traffic-rate
+      - /interface[name=ethernet-1/*]/mtu
   srl-routes:
     mode: stream
     stream-mode: sample
@@ -54,6 +58,16 @@ subscriptions:
     sample-interval: 5s
     paths:
       - /network-instance[name=*]/protocols/bgp/statistics
+  srl-bgp-neighbors:
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
+    paths:
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/session-state
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/peer-as
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/last-established
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/afi-safi[afi-safi-name=*]/received-routes
+      - /network-instance[name=default]/protocols/bgp/neighbor[peer-address=*]/afi-safi[afi-safi-name=*]/active-routes
   srl-bridge:
     mode: stream
     stream-mode: sample
@@ -72,17 +86,51 @@ subscriptions:
     mode: stream
     stream-mode: sample
     sample-interval: 5s
+  srl-system-info:
+    paths:
+      - /system/information/version
+      - /system/information/last-booted
+      - /system/configuration/last-change
+    mode: stream
+    stream-mode: sample
+    sample-interval: 5s
 
 outputs:
   prom-output:
     type: prometheus
     listen: :9273
+    # Drop a metric soon after the switch stops reporting it, so a removed
+    # interface or BGP neighbor does not linger on the dashboard.
+    expiration: 15s
     event-processors:
+      - text-to-number
       - trim-prefixes
       - rename-srl-interface
       - oper-state-to-int
 
 processors:
+  # Prometheus only stores numbers: timestamps become epoch seconds, and
+  # text values (the software version, the BGP session state) become a label
+  # on a metric. The session state metric is 1 while the session is
+  # established and 0 otherwise.
+  text-to-number:
+    event-starlark:
+      source: |
+        load("time.star", "time")
+
+        def apply(*events):
+          for e in events:
+            for name, value in e.values.items():
+              if name.endswith(("/last-booted", "/last-change", "/last-established")):
+                e.values[name] = time.parse_time(value).unix
+              elif name.endswith("/information/version"):
+                e.tags["version"] = value
+                e.values[name] = 1
+              elif name.endswith("/session-state"):
+                e.tags["session_state"] = value
+                e.values[name] = 1 if value == "established" else 0
+          return events
+
   trim-prefixes:
     event-strings:
       value-names:

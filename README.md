@@ -28,7 +28,7 @@ Goals of this lab:
 2. Explain SR Linux holistic telemetry support.
 3. Provide practical configuration examples for the gnmic collector to subscribe to fabric nodes and export metrics to Prometheus TSDB.
 4. Introduce advanced Grafana dashboarding with [FlowPlugin](https://grafana.com/grafana/plugins/andrewbmchugh-flow-panel/) plugin rendering port speeds and statuses.
-5. Give a sneak peek of the modern logging telemetry stack with Loki and Promtail to consume Syslog data from SR Linux nodes.
+5. Give a sneak peek of the modern logging telemetry stack with Grafana Alloy and Loki to consume Syslog data from SR Linux nodes.
 
 ## Deploying the lab
 
@@ -107,6 +107,8 @@ As the lab name suggests, telemetry is at its core. The following telemetry stac
 
 The gnmic configuration file - [configs/gnmic/gnmic-config.yml](./configs/gnmic/gnmic-config.yml) - is applied to the gnmic container at the startup and instructs it to subscribe to the telemetry data and export it to the prometheus time-series database.
 
+Besides interface, BGP, routing, bridge table and platform statistics, gnmic subscribes to the state of every BGP neighbor, the software version, the boot time and the time of the last configuration commit. Prometheus only stores numbers, so a small Starlark processor in the gnmic configuration turns timestamps into epoch seconds and text values such as the software version and the BGP session state into labels.
+
 ### Prometheus
 
 [Prometheus](https://prometheus.io) is a popular open-source time-series database. It is used in this lab to store the telemetry data exported by gnmic. The prometheus configuration file - [configs/prometheus/prometheus.yml](configs/prometheus/prometheus.yml) - has a minimal configuration and instructs prometheus to scrape the data from the gnmic collector with a 5s interval.
@@ -115,15 +117,18 @@ The gnmic configuration file - [configs/gnmic/gnmic-config.yml](./configs/gnmic/
 
 Grafana is another key component of this lab as it provides the visualisation for the collected telemetry data. Lab's topology file includes grafana node and configuration parameters such as dashboards, datasources and required plugins.
 
-Grafana dashboard provided by this repository provides multiple views on the collected real-time data. Powered by [flow plugin](https://grafana.com/grafana/plugins/andrewbmchugh-flow-panel/) it overlays telemetry sourced data over graphics such as topology and front panel views:
+The dashboard provided by this repository is organized in tabs:
 
-![pic3](https://gitlab.com/rdodin/pics/-/wikis/uploads/919092da83782779b960eeb4b893fb4a/image.png)
+| Tab      | Shows                                                                                                                                                          |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fabric   | Key figures of the fabric (BGP sessions, ports, client traffic, EVPN MAC addresses, log warnings, software release), a live topology map, the switch faceplates, fabric throughput and every BGP session |
+| Switches | One row per selected switch with throughput, BGP, routes and MACs, network instances, ports, release, uptime, last commit, CPU and memory                       |
+| Ports    | Traffic, packet, error and discard rates of the selected ports and a table of all cabled ports                                                                  |
+| Logs     | Log volume per severity and the syslog messages of the selected switches and applications                                                                      |
 
-Using the flow plugin and real telemetry data users can create interactive topology maps (aka weathermap) with a visual indication of link rate/utilization.
+Switches, ports and applications are picked with the [Business Variable](https://grafana.com/grafana/plugins/volkovlabs-variable-panel/) panel. A red mark next to a switch tells that one of its BGP sessions or cabled ports is down, an orange or red mark next to an application that it logged warnings or errors.
 
-![pic2](https://gitlab.com/rdodin/pics/-/wikis/uploads/12f154dafca1270f7a1628c1ed3ab77a/image.png)
-
-The panels for the flow plugin has been autocreated by the [clab-io-draw](https://github.com/srl-labs/clab-io-draw) tool
+The topology map and the front panel view are powered by the [flow plugin](https://grafana.com/grafana/plugins/andrewbmchugh-flow-panel/), which overlays telemetry data over SVG graphics. Each half of a link is coloured by the traffic rate leaving that end and labelled with it, and the port bubbles and faceplate ports are coloured by their oper-state. The topology panel was generated from the topology file with the Grafana bundle export of the [containerlab](https://containerlab.dev) topology viewer. The SVG graphics and panel configurations of both views are in [configs/grafana/flow_panels](configs/grafana/flow_panels).
 
 ### Access details
 
