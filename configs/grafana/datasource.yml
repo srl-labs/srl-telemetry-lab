@@ -13,3 +13,6 @@ datasources:
     uid: loki
     access: proxy
     url: http://loki:3100
+    jsonData:
+      # The lab runs no Loki ruler; the alerts are Prometheus rules.
+      manageAlerts: false

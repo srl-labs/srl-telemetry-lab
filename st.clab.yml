@@ -83,6 +83,8 @@ topology:
       image: ghcr.io/openconfig/gnmic:0.49.1
       binds:
         - configs/gnmic/gnmic-config.yml:/gnmic-config.yml:ro
+        # CA of the lab, to verify the certificates of the switches
+        - __clabDir__/.tls/ca:/etc/gnmic/ca:ro
       cmd: --config /gnmic-config.yml --log subscribe
       group: "10" # group 10 is assigned to the nodes of a telemetry stack
 
@@ -92,6 +94,7 @@ topology:
       image: quay.io/prometheus/prometheus:v3.16.0
       binds:
         - configs/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+        - configs/prometheus/rules.yml:/etc/prometheus/rules.yml:ro
       cmd: --config.file=/etc/prometheus/prometheus.yml
       ports:
         - 9090:9090

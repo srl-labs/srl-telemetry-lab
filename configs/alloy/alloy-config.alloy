@@ -8,7 +8,7 @@ loki.source.syslog "srlinux" {
   }
 
   relabel_rules = loki.relabel.syslog.rules
-  forward_to    = [loki.write.local.receiver]
+  forward_to    = [loki.process.srlinux.receiver]
 }
 
 loki.relabel "syslog" {
@@ -42,6 +42,53 @@ loki.relabel "syslog" {
     source_labels = ["__syslog_message_proc_id"]
     regex         = "(.+)"
     target_label  = "procid"
+  }
+}
+
+// SR Linux writes two kinds of messages:
+//   events: "chassis|3636|3636|00116|EV|portUp|N: Interface ethernet-1/3 is now up"
+//   traces: "debug|8601|8707|00029|TR||W: bgpmgr  bgp_mgr_inst.cc:5268  HandleFibMgrNhResolve  vrtr_id_ 1 ..."
+// Events report what happened (a port went down, a BGP session changed state,
+// a commit succeeded) and get the labels kind="event" and event=<name>.
+// Traces are debug output of the applications and get kind="trace"; at boot
+// they come in bursts of thousands, many of them at warning level.
+// The prefix moves to structured metadata, the log line keeps the message.
+loki.process "srlinux" {
+  forward_to = [loki.write.local.receiver]
+
+  stage.regex {
+    expression = `^\s*(?P<subsystem>[\w-]+)\|\d+\|\d+\|\d+\|(?P<kind>EV|TR)\|(?P<event>[\w-]*)\|\w: (?P<text>(?s:.*))$`
+  }
+
+  // Traces start with the module, the source location and the function.
+  stage.regex {
+    source     = "text"
+    expression = `^(?P<module>\w+)\s+(?P<location>[\w.-]+:\d+)\s+(?P<function>\S+)\s+(?P<text>(?s:.*))$`
+  }
+
+  stage.template {
+    source   = "kind"
+    template = `{{ if eq .Value "EV" }}event{{ else if eq .Value "TR" }}trace{{ end }}`
+  }
+
+  stage.labels {
+    values = {
+      kind  = "",
+      event = "",
+    }
+  }
+
+  stage.structured_metadata {
+    values = {
+      subsystem = "",
+      module    = "",
+      location  = "",
+      function  = "",
+    }
+  }
+
+  stage.output {
+    source = "text"
   }
 }
 
