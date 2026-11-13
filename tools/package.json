@@ -1,0 +1,14 @@
+{
+  "name": "srl-telemetry-lab-tools",
+  "private": true,
+  "type": "module",
+  "description": "Dashboard build and smoke test of the SR Linux telemetry lab",
+  "scripts": {
+    "smoke-test": "node smoke-test.mjs",
+    "export-bundle": "node dashboard/export-bundle.mjs",
+    "build-dashboard": "python3 dashboard/build-dashboard.py"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  }
+}
