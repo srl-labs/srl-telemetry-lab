@@ -37,7 +37,7 @@ Goals of this lab:
 The lab is deployed with [containerlab](https://containerlab.dev); [`st.clab.yml`](st.clab.yml) describes its topology. In the cloned directory:
 
 ```bash
-containerlab deploy --reconfigure
+containerlab deploy
 ```
 
 To remove the lab:
